@@ -74,7 +74,7 @@ public final class Picture implements ActionListener {
     private JFrame frame;                      // on-screen view
     private String filename;                   // name of file
     private boolean isOriginUpperLeft = true;  // location of origin
-    private int width, height = 200;           // width and height in px
+    private int width, height;           // width and height in px
 
    /**
      * Initializes a blank {@code width}-by-{@code height} picture, with {@code width} columns
