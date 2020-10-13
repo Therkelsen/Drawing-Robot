@@ -17,23 +17,35 @@ public class DrawingRobotMain {
         System.out.println("Starting program");
         
         double grayVal;
-        //Picture danny = new Picture("Drawing-Robot/assets/danny.jpg");
-        Picture shapes = new Picture("Drawing-Robot/assets/shapes.png");
+        Picture shapes = new Picture("Drawing-Robot/assets/danny.jpg");
         DrawingRobot draw = new DrawingRobot();
         
         shapes.show();
         
         for (int row = 0; row < shapes.height(); row++) {
             if (row % 2 != 0) {
-                for (int col = 0; col <= shapes.width(); col++) {
-                    System.out.println(col + ", " + row);
+                for (int col = 0; col < shapes.width(); col++) {
+                    
+                    grayVal = draw.convertGray(shapes.get(col,row).getRed(), 
+                    shapes.get(col,row).getGreen(), 
+                    shapes.get(col,row).getBlue());
+                    
+                    System.out.println("Coordinates [col, row]: [" + col + ", " + row
+                    + "] | Grayscale value: [" + Math.round(grayVal) + "] | Draw: [" 
+                    + draw.drawOrNot(grayVal) + "]");
                 }
             }  else {
-                for (int col = shapes.width(); col >= 0; col--) {
-                    System.out.println(col + ", " + row);
+                for (int col = shapes.width()-1; col > 0; col--) {
+                    grayVal = draw.convertGray(shapes.get(col,row).getRed(), 
+                    shapes.get(col,row).getGreen(), 
+                    shapes.get(col,row).getBlue());
+                    
+                    System.out.println("Coordinates [col, row]: [" + col + ", " + row
+                    + "] | Grayscale value: [" + Math.round(grayVal) + "] | Draw: [" 
+                    + draw.drawOrNot(grayVal) + "]");
                 }
             }
         }
-
+        System.out.println("Program done");
     }
 }

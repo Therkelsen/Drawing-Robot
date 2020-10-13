@@ -216,7 +216,7 @@ public final class Picture implements ActionListener {
             JMenuItem menuItem1 = new JMenuItem(" Save...   ");
             menuItem1.addActionListener(this);
             menuItem1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,
-                                     Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
+            Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
             menu.add(menuItem1);
             frame.setJMenuBar(menuBar);
 
