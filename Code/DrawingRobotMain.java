@@ -22,57 +22,18 @@ public class DrawingRobotMain {
         DrawingRobot draw = new DrawingRobot();
         
         shapes.show();
-        /*
-        for (int row = 1; row < shapes.height(); row++) {
-            int i = 1;
-            if (i % 2 == 0) {
-                for (int col = i; col < shapes.width(); col++) {
-                    grayVal = draw.convertGray(shapes.get(col,row).getRed(), shapes.get(col,row).getGreen(), shapes.get(col,row).getBlue());
-                    draw.drawOrNot(grayVal);
-                    System.out.println("Coords [x,y]: [" + col + ","+ row
-                    + "] | Grayscale value : [" + grayVal 
-                    + "] | Draw : " + draw.drawOrNot(grayVal));
-                }
-            } else {
-                for (int col = i; col <= 1; col++) {
-                    grayVal = draw.convertGray(shapes.get(col,row).getRed(), shapes.get(col,row).getGreen(), shapes.get(col,row).getBlue());
-                    draw.drawOrNot(grayVal);
-                    System.out.println("Coords [x,y]: [" + col + ","+ row
-                    + "] | Grayscale value : [" + grayVal 
-                    + "] | Draw : " + draw.drawOrNot(grayVal));
-                }
-            }
-            i++;
-        }*/
-
-        /*for (int col = 1; col < shapes.width(); col++) {
-            for (int row = 1; row < shapes.height(); row++) {
-                if (col % 2 == 0) {
-                    for (int i = 255; i < 1; i--) {
-                        System.out.println(col + "," + i);
-                    }
-                } else {
-                    System.out.println(col + "," + row);
-                }
-            }
-        }*/
         
-        for (int i = 1; i < shapes.width(); i++) {
-            if (i % 2 == 0) {
-                System.out.println("x");
-                for (int col = 1; col < shapes.width(); col++) {
-                    for (int row = i; row < shapes.height(); row++) {
-                                System.out.println(col + ", " + row);
-                    }
+        for (int row = 0; row < shapes.height(); row++) {
+            if (row % 2 != 0) {
+                for (int col = 0; col <= shapes.width(); col++) {
+                    System.out.println(col + ", " + row);
                 }
-            } else {
-                System.out.println("y");
-                for (int col = shapes.width(); col > 0; col--) {
-                    for (int row = i; row < shapes.height(); row++) {
-                                System.out.println(col + ", " + row);
-                    }
+            }  else {
+                for (int col = shapes.width(); col >= 0; col--) {
+                    System.out.println(col + ", " + row);
                 }
             }
         }
+
     }
 }
