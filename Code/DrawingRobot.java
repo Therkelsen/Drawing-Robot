@@ -1,17 +1,12 @@
 
 package dk.sdu.mmmi.rd1.edgedetect;
 
+import java.awt.Color;
+
 public class DrawingRobot {
-
-    public DrawingRobot() {
-    }
-
-    public double convertGray(double r, double g, double b) {
-                return 0.299*r + 0.587*g + 0.114*b;
-    }
     
-    public boolean drawOrNot(double gray){
-        if (gray < 128) {
+    public static boolean drawOrNot(float gray){
+        if (gray > 128) {
             return true;    // Blyant ned
         } else {
             return false;   // Blyant op

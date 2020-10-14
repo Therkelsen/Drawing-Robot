@@ -16,36 +16,58 @@ public class DrawingRobotMain {
         System.out.println("====================");
         System.out.println("Starting program");
         
-        double grayVal;
-        Picture shapes = new Picture("Drawing-Robot/assets/danny.jpg");
-        DrawingRobot draw = new DrawingRobot();
+        Color grayVal = new Color(0,0,0);
+        Color black = new Color(0,0,0);
+        Color white = new Color(255,255,255);
+        int threshold = 60;
+        float grVal;
+        Picture image = new Picture("Drawing-Robot/assets/danny.jpg");  
+        Picture convertedImage = new Picture(image.width(),image.height());
         
-        shapes.show();
+        image.show();
         
-        for (int row = 0; row < shapes.height(); row++) {
+        for (int row = 0; row < image.height(); row++) {
             if (row % 2 != 0) {
-                for (int col = 0; col < shapes.width(); col++) {
+                for (int col = 0; col < image.width(); col++) {
                     
-                    grayVal = draw.convertGray(shapes.get(col,row).getRed(), 
-                    shapes.get(col,row).getGreen(), 
-                    shapes.get(col,row).getBlue());
+                    grayVal = Luminance.toGray(image.get(col,row));
+                    convertedImage.set(col, row, grayVal);
+                    grVal = convertedImage.get(col,row).getRed();
                     
+                    if (grVal < threshold) {
+                        convertedImage.set(col, row, black);
+                    } else {
+                        convertedImage.set(col, row, white);
+                    }
+                    
+                    convertedImage.show();
+
                     System.out.println("Coordinates [col, row]: [" + col + ", " + row
-                    + "] | Grayscale value: [" + Math.round(grayVal) + "] | Draw: [" 
-                    + draw.drawOrNot(grayVal) + "]");
+                    + "] | Grayscale value: [" + Math.round(grVal) + "] | Draw: [" 
+                    + DrawingRobot.drawOrNot(grVal) + "]");
                 }
             } else {
-                for (int col = shapes.width()-1; col >= 0; col--) {
-                    grayVal = draw.convertGray(shapes.get(col,row).getRed(), 
-                    shapes.get(col,row).getGreen(), 
-                    shapes.get(col,row).getBlue());
+                for (int col = image.width()-1; col >= 0; col--) {
+                    
+                    grayVal = Luminance.toGray(image.get(col,row));
+                    convertedImage.set(col, row, grayVal);
+                    grVal = convertedImage.get(col,row).getRed();
+
+                    if (grVal < threshold) {
+                        convertedImage.set(col, row, black);
+                    } else {
+                        convertedImage.set(col, row, white);
+                    }
+                    
+                    convertedImage.show();
                     
                     System.out.println("Coordinates [col, row]: [" + col + ", " + row
-                    + "] | Grayscale value: [" + Math.round(grayVal) + "] | Draw: [" 
-                    + draw.drawOrNot(grayVal) + "]");
+                    + "] | Grayscale value: [" + Math.round(grVal) + "] | Draw: [" 
+                    + DrawingRobot.drawOrNot(grVal) + "]");
                 }
             }
         }
+
         System.out.println("Program done");
     }
 }
