@@ -11,7 +11,7 @@ public class DrawingRobot {
     }
     
     public boolean drawOrNot(double gray){
-        if (gray < 240) {
+        if (gray < 128) {
             return true;    // Blyant ned
         } else {
             return false;   // Blyant op

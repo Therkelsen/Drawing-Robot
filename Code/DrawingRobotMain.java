@@ -34,8 +34,8 @@ public class DrawingRobotMain {
                     + "] | Grayscale value: [" + Math.round(grayVal) + "] | Draw: [" 
                     + draw.drawOrNot(grayVal) + "]");
                 }
-            }  else {
-                for (int col = shapes.width()-1; col > 0; col--) {
+            } else {
+                for (int col = shapes.width()-1; col >= 0; col--) {
                     grayVal = draw.convertGray(shapes.get(col,row).getRed(), 
                     shapes.get(col,row).getGreen(), 
                     shapes.get(col,row).getBlue());
