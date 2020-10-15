@@ -19,11 +19,19 @@ public class DrawingRobotMain {
         Color grayVal = new Color(0,0,0);
         Color black = new Color(0,0,0);
         Color white = new Color(255,255,255);
+
         int threshold = 60;
         float grVal;
+
+        int xVal = 0;
+        int draw = 0;
+
         Picture image = new Picture("Drawing-Robot/assets/danny.jpg");  
         Picture convertedImage = new Picture(image.width(),image.height());
         
+        int[][] startDraw = new int[image.width()][2];
+        int[][] endDraw = new int[image.width()][2];
+
         image.show();
         
         for (int row = 0; row < image.height(); row++) {
@@ -36,10 +44,11 @@ public class DrawingRobotMain {
                     
                     if (grVal < threshold) {
                         convertedImage.set(col, row, black);
+                        startDraw[col][row] = 1;
                     } else {
                         convertedImage.set(col, row, white);
                     }
-                    
+
                     convertedImage.show();
 
                     System.out.println("Coordinates [col, row]: [" + col + ", " + row
