@@ -6,10 +6,10 @@ import java.awt.Color;
 public class DrawingRobot {
 
     public static boolean drawOrNot(float gray, int threshold) {
-        if (gray < threshold) {
-            return true;    // Blyant ned
+        if (gray < threshold) { // *  If the intensity of gray is higher than the set limit
+            return true;    // * Pencil down (Draw)
         } else {
-            return false;   // Blyant op
+            return false;   // * Pencil up (Stop drawing)
         }
     }
 

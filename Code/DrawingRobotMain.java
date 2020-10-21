@@ -3,42 +3,46 @@ package dk.sdu.mmmi.rd1.edgedetect;
 
 import java.awt.Color;
 
-import javax.swing.plaf.synth.SynthSplitPaneUI;
-
 import DrawingRobot;
 import Picture.java;
-import jdk.dynalink.linker.GuardingTypeConverterFactory;
 import Luminance.java;
 import EdgeDetector.java;
 
 public class DrawingRobotMain {
     public static void main(String[] args) {
         
-        //  This is where we will put our main code
-        
         System.out.println("====================");
         System.out.println("Starting program");
         
+        // *  Colors needed
         Color grayVal = new Color(0,0,0);
-        Color black = new Color(0,0,0);
+        Color gray = new Color(100,100,100);
         Color white = new Color(255,255,255);
 
+        // * Variables needed
         int threshold = 60;
         float grVal;
         int draw;
+        //int prevDraw;
 
-        String instructions = "Test, ";
+        String instructions = "";
 
         //int xVal = 0;
         
-        Picture image = new Picture("Drawing-Robot/assets/danny.jpg");
+        // *  Loading image and initializing an image to convert onto
+        Picture image = new Picture("assets/danny.jpg");
         Picture convertedImage = new Picture(image.width(), image.height());
         
         //int[][] startDraw = new int[image.width()][2];
         //int[][] endDraw = new int[image.width()][2];
 
+        //  Display the loaded image
         image.show();
         
+        // *   For every column in every row, where every other row iterates backwards
+        // *   Convert image to grayscale, then convert to "black"/white
+        // *  Then update frame displaying converted image, and add current instruction to string
+
         for (int row = 0; row < image.height(); row++) {
             if (row % 2 != 0) {
                 for (int col = 0; col < image.width(); col++) {
@@ -48,7 +52,7 @@ public class DrawingRobotMain {
                     grVal = convertedImage.get(col,row).getRed();
                     
                     if (DrawingRobot.drawOrNot(grVal, threshold)) {
-                        convertedImage.set(col, row, black);
+                        convertedImage.set(col, row, gray);
                         //startDraw[col][row] = 1;
                     } else {
                         convertedImage.set(col, row, white);
@@ -70,7 +74,7 @@ public class DrawingRobotMain {
                     grVal = convertedImage.get(col,row).getRed();
 
                     if (DrawingRobot.drawOrNot(grVal, threshold)) {
-                        convertedImage.set(col, row, black);
+                        convertedImage.set(col, row, gray);
                     } else {
                         convertedImage.set(col, row, white);
                     }
@@ -84,6 +88,7 @@ public class DrawingRobotMain {
             }
         }
 
+        // * Print everything in the terminal
         System.out.println("Instructions: ");
         System.out.println(instructions);
         System.out.println("End of instructions");
