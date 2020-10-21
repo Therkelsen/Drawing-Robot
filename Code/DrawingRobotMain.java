@@ -24,10 +24,11 @@ public class DrawingRobotMain {
         float grVal;
 
         int xVal = 0;
-        int draw = 0;
+        
 
         Picture image = new Picture("Drawing-Robot/assets/danny.jpg");  
-        Picture convertedImage = new Picture(image.width(),image.height());
+        Picture convertedImage = new Picture(image.width(), image.height());
+
         
         int[][] startDraw = new int[image.width()][2];
         int[][] endDraw = new int[image.width()][2];
