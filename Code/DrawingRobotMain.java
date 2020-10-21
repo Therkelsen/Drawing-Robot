@@ -14,7 +14,7 @@ public class DrawingRobotMain {
         System.out.println("====================");
         System.out.println("Starting program");
         
-        // *  Colors needed
+        // * Colors needed
         Color grayVal = new Color(0,0,0);
         Color gray = new Color(100,100,100);
         Color white = new Color(255,255,255);
@@ -29,7 +29,7 @@ public class DrawingRobotMain {
 
         //int xVal = 0;
         
-        // *  Loading image and initializing an image to convert onto
+        // * Loading image and initializing an image to convert onto
         Picture image = new Picture("assets/danny.jpg");
         Picture convertedImage = new Picture(image.width(), image.height());
         
@@ -39,9 +39,9 @@ public class DrawingRobotMain {
         //  Display the loaded image
         image.show();
         
-        // *   For every column in every row, where every other row iterates backwards
-        // *   Convert image to grayscale, then convert to "black"/white
-        // *  Then update frame displaying converted image, and add current instruction to string
+        // * For every column in every row, where every other row iterates backwards
+        // * Convert image to grayscale, then convert to "black"/white
+        // * Then update frame displaying converted image, and add current instruction to string
 
         for (int row = 0; row < image.height(); row++) {
             if (row % 2 != 0) {
