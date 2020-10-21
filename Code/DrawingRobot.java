@@ -5,15 +5,15 @@ import java.awt.Color;
 
 public class DrawingRobot {
 
-    public static boolean drawOrNot(float gray){
-        if (gray > 128) {
+    public static boolean drawOrNot(float gray, int threshold) {
+        if (gray < threshold) {
             return true;    // Blyant ned
         } else {
             return false;   // Blyant op
         }
     }
 
-    public static int checkSize(int width, int height, int maxWidth, int maxHeight) {
+    /*public static int checkSize(int width, int height, int maxWidth, int maxHeight) {
         if (width < maxWidth || height < maxHeight) {
             if (width != height) {
                 if ((width / maxWidth) > (height / maxHeight)) {
@@ -27,7 +27,7 @@ public class DrawingRobot {
         } else {
             return 1;
         }
-    }
+    }*/
 
     /*  For main method
     

@@ -2,6 +2,9 @@
 package dk.sdu.mmmi.rd1.edgedetect;
 
 import java.awt.Color;
+
+import javax.swing.plaf.synth.SynthSplitPaneUI;
+
 import DrawingRobot;
 import Picture.java;
 import jdk.dynalink.linker.GuardingTypeConverterFactory;
@@ -22,16 +25,17 @@ public class DrawingRobotMain {
 
         int threshold = 60;
         float grVal;
+        int draw;
 
-        int xVal = 0;
+        String instructions = "Test, ";
+
+        //int xVal = 0;
         
-
-        Picture image = new Picture("Drawing-Robot/assets/danny.jpg");  
+        Picture image = new Picture("Drawing-Robot/assets/danny.jpg");
         Picture convertedImage = new Picture(image.width(), image.height());
-
         
-        int[][] startDraw = new int[image.width()][2];
-        int[][] endDraw = new int[image.width()][2];
+        //int[][] startDraw = new int[image.width()][2];
+        //int[][] endDraw = new int[image.width()][2];
 
         image.show();
         
@@ -43,18 +47,20 @@ public class DrawingRobotMain {
                     convertedImage.set(col, row, grayVal);
                     grVal = convertedImage.get(col,row).getRed();
                     
-                    if (grVal < threshold) {
+                    if (DrawingRobot.drawOrNot(grVal, threshold)) {
                         convertedImage.set(col, row, black);
-                        startDraw[col][row] = 1;
+                        //startDraw[col][row] = 1;
                     } else {
                         convertedImage.set(col, row, white);
                     }
 
                     convertedImage.show();
 
-                    System.out.println("Coordinates [col, row]: [" + col + ", " + row
-                    + "] | Grayscale value: [" + Math.round(grVal) + "] | Draw: [" 
-                    + DrawingRobot.drawOrNot(grVal) + "]");
+                    draw = DrawingRobot.drawOrNot(grVal, threshold) ? 1 : 0;
+
+                    String s = String.valueOf(col) + "-"
+                    + draw + ",";
+                    instructions = instructions.concat(s);
                 }
             } else {
                 for (int col = image.width()-1; col >= 0; col--) {
@@ -63,20 +69,27 @@ public class DrawingRobotMain {
                     convertedImage.set(col, row, grayVal);
                     grVal = convertedImage.get(col,row).getRed();
 
-                    if (grVal < threshold) {
+                    if (DrawingRobot.drawOrNot(grVal, threshold)) {
                         convertedImage.set(col, row, black);
                     } else {
                         convertedImage.set(col, row, white);
                     }
                     
-                    convertedImage.show();
-                    
-                    System.out.println("Coordinates [col, row]: [" + col + ", " + row
-                    + "] | Grayscale value: [" + Math.round(grVal) + "] | Draw: [" 
-                    + DrawingRobot.drawOrNot(grVal) + "]");
+                    draw = DrawingRobot.drawOrNot(grVal, threshold) ? 1 : 0;
+
+                    String s = String.valueOf(col) + "-"
+                    + draw + ",";
+                    instructions = instructions.concat(s);
                 }
             }
         }
+
+        System.out.println("Instructions: ");
+        System.out.println(instructions);
+        System.out.println("End of instructions");
+        System.out.println("");
+
+        System.out.println("Length of string: " + instructions.length() + "characters");
 
         System.out.println("Program done");
     }
