@@ -23,7 +23,7 @@ public class DrawingRobotMain {
         int threshold = 60;
         float grVal;
         int draw;
-        //int prevDraw;
+        int prevDraw = 1;
 
         String instructions = "";
 
@@ -61,10 +61,16 @@ public class DrawingRobotMain {
                     convertedImage.show();
 
                     draw = DrawingRobot.drawOrNot(grVal, threshold) ? 1 : 0;
-
-                    String s = String.valueOf(col) + "-"
-                    + draw + ",";
-                    instructions = instructions.concat(s);
+                    
+                    if (draw == 1 && prevDraw == 0) {
+                        String s = String.valueOf(col) + ",";
+                        instructions = instructions.concat(s);
+                    } else if (draw == 0 && prevDraw == 1) {
+                        String s = String.valueOf(col) + ",";
+                        instructions = instructions.concat(s);
+                    }
+                    
+                    prevDraw = draw;
                 }
             } else {
                 for (int col = image.width()-1; col >= 0; col--) {
@@ -79,11 +85,19 @@ public class DrawingRobotMain {
                         convertedImage.set(col, row, white);
                     }
                     
-                    draw = DrawingRobot.drawOrNot(grVal, threshold) ? 1 : 0;
+                    convertedImage.show();
 
-                    String s = String.valueOf(col) + "-"
-                    + draw + ",";
-                    instructions = instructions.concat(s);
+                    draw = DrawingRobot.drawOrNot(grVal, threshold) ? 1 : 0;
+                    
+                    if (draw == 1 && prevDraw == 0) {
+                        String s = String.valueOf(col) + ",";
+                        instructions = instructions.concat(s);
+                    } else if (draw == 0 && prevDraw == 1) {
+                        String s = String.valueOf(col) + ",";
+                        instructions = instructions.concat(s);
+                    }
+                    
+                    prevDraw = draw;
                 }
             }
         }
@@ -94,7 +108,7 @@ public class DrawingRobotMain {
         System.out.println("End of instructions");
         System.out.println("");
 
-        System.out.println("Length of string: " + instructions.length() + "characters");
+        System.out.println("Length of string: " + instructions.length() + " characters");
 
         System.out.println("Program done");
     }
