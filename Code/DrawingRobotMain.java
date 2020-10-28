@@ -63,10 +63,10 @@ public class DrawingRobotMain {
                     draw = DrawingRobot.drawOrNot(grVal, threshold) ? 1 : 0;
                     
                     if (draw == 1 && prevDraw == 0) {
-                        String s = String.valueOf(col) + ",";
+                        String s = String.valueOf(col) + " " + String.valueOf(row) + " " + String.valueOf(draw) + ",";
                         instructions = instructions.concat(s);
                     } else if (draw == 0 && prevDraw == 1) {
-                        String s = String.valueOf(col) + ",";
+                        String s = String.valueOf(col) + " " + String.valueOf(row) + " " + String.valueOf(draw) + ",";
                         instructions = instructions.concat(s);
                     }
                     
@@ -90,10 +90,10 @@ public class DrawingRobotMain {
                     draw = DrawingRobot.drawOrNot(grVal, threshold) ? 1 : 0;
                     
                     if (draw == 1 && prevDraw == 0) {
-                        String s = String.valueOf(col) + ",";
+                        String s = String.valueOf(col) + " " + String.valueOf(row) + " " + String.valueOf(draw) + ",";
                         instructions = instructions.concat(s);
                     } else if (draw == 0 && prevDraw == 1) {
-                        String s = String.valueOf(col) + ",";
+                        String s = String.valueOf(col) + " " + String.valueOf(row) + " " + String.valueOf(draw) + ",";
                         instructions = instructions.concat(s);
                     }
                     
