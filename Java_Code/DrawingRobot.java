@@ -65,7 +65,7 @@ public class DrawingRobot {
 
         if (draw != prevDraw) {
             s = String.valueOf(col+1) + " " + String.valueOf(row+1) 
-            + " " + String.valueOf(draw) + ", ";
+            + " " + String.valueOf(draw);
             instructions.add(s);
         }
         
