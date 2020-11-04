@@ -1,0 +1,19 @@
+VAR
+	count : UINT;
+	bspidser : {REDUND_UNREPLICABLE} BOOL;
+	enable1 : {REDUND_UNREPLICABLE} BOOL;
+	enable2 : {REDUND_UNREPLICABLE} BOOL;
+	enable3 : {REDUND_UNREPLICABLE} BOOL;
+	direction1 : BOOL;
+	direction2 : BOOL;
+	direction3 : BOOL;
+	step1x : BOOL;
+	step2y : BOOL;
+	step3z : BOOL;
+	stopb : BOOL;
+	stop1 : BOOL;
+	stop2 : BOOL;
+	stop3 : BOOL;
+	start1 : BOOL;
+	timer : TON;
+END_VAR

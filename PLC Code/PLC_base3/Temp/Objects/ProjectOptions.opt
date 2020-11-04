@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version="4.8.2.72"?>
+<ProjectOptions
+  IecNamingConventions="true"
+  IecKeywordsAsStructureMembers="false"
+  IecExtendedConstants="true"
+  LogicalDirectory="C:\Users\Bruger\Documents\Robotteknologi\Automation studios projekter\PLC_base3\Logical\"
+  TempDirectory="C:\Users\Bruger\Documents\Robotteknologi\Automation studios projekter\PLC_base3\Temp\"
+  AutomationStudioVersion="4.8.2.72"
+  AutomationStudioEdition="Standard"
+  BuildCrossReference="false"
+  ActiveConfiguration="Config1"
+  CreateAnsiCDeclarations="false" />

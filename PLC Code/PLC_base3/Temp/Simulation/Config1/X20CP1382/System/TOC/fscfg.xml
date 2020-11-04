@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FILESYSTEMCONFIGURATION TOCVERSION="2" MINORVERSION="0">
+
+<FILECLASSIFICATION>
+	<CLASS ID="Os" PART="SYSTEM" DIR="" GROUPSALLOWED="no">
+		<ADDITIONALDIR>BRM</ADDITIONALDIR>
+		<ADDITIONALDIR>SYSTEM</ADDITIONALDIR>
+		<ADDITIONALDIR>SIM</ADDITIONALDIR>
+	</CLASS>
+	<CLASS ID="Addons" PART="SYSTEM" DIR="ADDONS/BIN" GROUPSALLOWED="yes"/>
+	<CLASS ID="AddonsData" PART="SYSTEM" DIR="ADDONS/DATA" GROUPSALLOWED="yes"/>
+	<CLASS ID="Data0" PART="DATA0" DIR="RPSHD" GROUPSALLOWED="no"/>
+	<CLASS ID="Data1" PART="DATA1" DIR="RPSHDS" GROUPSALLOWED="no"/>
+	<CLASS ID="User" PART="USER" DIR="USER" GROUPSALLOWED="no"/>
+</FILECLASSIFICATION>
+
+<KNOWNFILEGROUPS>
+<GROUP ID="PKI" CLASS="AddonsData"/>
+<GROUP ID="DEVICE" CLASS="AddonsData"/>
+</KNOWNFILEGROUPS>
+
+<PARTITIONINGRULES DOPARTITION="false">
+	<RULE FILESYSTEM="Normal" USERPARTITION="false">
+		<PARTITIONS>1</PARTITIONS>
+	</RULE>
+	<RULE FILESYSTEM="Normal" USERPARTITION="true">
+		<PARTITIONS>1</PARTITIONS>
+	</RULE>
+	<RULE FILESYSTEM="Safe" USERPARTITION="false">
+		<PARTITIONS>1</PARTITIONS>
+	</RULE>
+	<RULE FILESYSTEM="Safe" USERPARTITION="true">
+		<PARTITIONS>1</PARTITIONS>
+	</RULE>
+</PARTITIONINGRULES>
+
+<!--
+	variables which came from AS:
+	SIZE_OF_ADDONS					-> size of all files in Addons file-class summed up
+	SIZE_OF_ADDONSDATA				-> size of all files in AddonsData file-class summed up
+	ACTUAL_SIZE_OF_PROJECT			-> size of all project dependent br-modules + configured sizes of special modules(e.g. logger) summed up
+	ACTUAL_SIZE_OF_PROGRAMS			-> size of all programs summed up
+	ACTUAL_SIZE_OF_COSY_MOD			-> size of all cosy modules summed up
+	ACTUAL_SIZE_OF_CONF_MOD			-> size of all configuration modules(incl. cosy modules) summed up
+	ACTUAL_SIZE_OF_DATA_OBJ			-> size of all data objects summed up
+	ACTUAL_SIZE_OF_SYSTEM_MOD		-> size of all system modules summed up
+	ACTUAL_SIZE_OF_MAPPING_MOD		-> size of all mapping modules summed up
+	ACTUAL_SIZE_OF_OTHER_MOD		-> size of all modules, which not belongs to one of the previous categories, summed up
+	SIZE_OF_VOLUME 					-> size of disk
+	SIZE_OF_OS						-> size of all files in Os file-class summed up
+	SIZE_OF_USER					-> size of all files in User file-class summed up
+	SIZE_OF_USER_PARTITION			-> entered USER partition size
+	
+	variables for calculation:
+	SIZE_OF_AR						-> size of base AR (includes: arimg, base-sysconf, base-HWD, etc.)
+	SIZE_OF_SYSTEM 					-> required size for SYSTEM
+	SIZE_OF_SYSTEM_MARGIN			-> size of SYSTEM with reserve
+	SIZE_OF_ADDONS_MARGIN			-> size of ADDONS file-class with reserve
+	SIZE_OF_ADDONSDATA_MARGIN		-> size of ADDONSDATA file-class with reserve
+	SIZE_OF_USER_PARTITION_MARGIN	-> size of USER partition with reserve
+	SIZE_OF_RPSHD					-> required size for DATA0 partition
+	SIZE_OF_RPSHDS					-> required size for DATA1 partition
+	SIZE_OF_FREESPACE				-> size of freespace for partitioning
+	SIZE_OF_RPSHD_PARTITION			-> size of DATA0 partition, on this partition the transfer module is stored
+	SIZE_OF_RPSHDS_PARTITION		-> size of DATA1 partition
+	SIZE_OF_DOUBLED_MODULES			-> size of modules which are needed twice(old and new) while transfer
+	TOTAL_SIZE						-> size of the hole application (no user partition)
+	MAX_SIZE_OF_SYSTEM_PARTITION	-> maximal size for SYSTEM partition (bootloader supports maximal 1GB SYSTEM partition)
+	SIZE_OF_SYSTEM_PARTITION_RAW_2	-> free size for SYSTEM partition not limited
+	DIFF_SIZE_OF_SYSTEM_PARTITION_2	-> difference size from max to raw size of SYSTEM partition.
+	SIZE_OF_USER_PARTITION_ENHANCED	-> size of USER partition with reserve plus unused space because of limitation
+	DIFF_SIZE_OF_SYSTEM_PARTITION_3	-> difference size from max to size plus reserve of SYSTEM partition.
+	SIZE_OF_RPSHD_PARTITION_ENHANCED-> size of RPSHD partition with reserve plus unused space because of limitation.
+	
+	partition values:
+	REQUIREDSIZEONSTORAGE			-> required size of a partition, used to compare with the actual size of a partition
+	CALCULATEDSIZEFORSTORAGE		-> partition size used for partitioning the storage device
+!-->
+
+<VOLUMECALCULATIONRULES>
+  <DEFINITIONS>
+  	<DEFINITION VARIABLENAME="SIZE_OF_AR">
+      <CONSTANT>67108864</CONSTANT>
+    </DEFINITION>
+    <DEFINITION VARIABLENAME="PROJECT_RESERVE">
+      <CONSTANT>5242880</CONSTANT>
+    </DEFINITION>
+    <DEFINITION VARIABLENAME="PROJECT_SIZE_MARGIN">
+      <VARIABLE>ACTUAL_SIZE_OF_PROJECT</VARIABLE>
+      <VARIABLE>PROJECT_RESERVE</VARIABLE>
+      <OPERATOR>+</OPERATOR>
+    </DEFINITION>
+     <DEFINITION VARIABLENAME="SIZE_OF_TRSFM">
+      <VARIABLE>SIZE_OF_AR</VARIABLE>
+      <VARIABLE>SIZE_OF_ADDONS</VARIABLE>
+      <VARIABLE>SIZE_OF_ADDONSDATA</VARIABLE>
+	  <VARIABLE>SIZE_OF_USER</VARIABLE>
+	  <VARIABLE>PROJECT_SIZE_MARGIN</VARIABLE>
+	  <OPERATOR>+</OPERATOR>
+	  <OPERATOR>+</OPERATOR>
+	  <OPERATOR>+</OPERATOR>
+	  <OPERATOR>+</OPERATOR>
+    </DEFINITION>
+    <DEFINITION VARIABLENAME="SIZE_OF_SYSTEM">
+      <VARIABLE>SIZE_OF_AR</VARIABLE>
+      <VARIABLE>SIZE_OF_ADDONS</VARIABLE>
+      <VARIABLE>SIZE_OF_ADDONSDATA</VARIABLE>
+      <OPERATOR>+</OPERATOR>
+      <OPERATOR>+</OPERATOR>
+    </DEFINITION>
+    <DEFINITION VARIABLENAME="TOTAL_SIZE">
+      <VARIABLE>SIZE_OF_USER</VARIABLE>
+      <VARIABLE>SIZE_OF_SYSTEM</VARIABLE>
+      <VARIABLE>SIZE_OF_TRSFM</VARIABLE>
+      <VARIABLE>PROJECT_SIZE_MARGIN</VARIABLE>
+      <CONSTANT>2</CONSTANT>
+      <OPERATOR>*</OPERATOR>
+      <OPERATOR>+</OPERATOR>
+      <OPERATOR>+</OPERATOR>
+	  <OPERATOR>+</OPERATOR>
+    </DEFINITION>
+  </DEFINITIONS>
+  <CONFIGURATIONS>
+    <CONFIGURATION PARTITIONS="1">
+      <PARTITIONSIZE ID="0">
+        <REQUIREDSIZEONSTORAGE>
+          <VARIABLE>TOTAL_SIZE</VARIABLE>
+        </REQUIREDSIZEONSTORAGE>
+        <CALCULATEDSIZEFORSTORAGE>
+          <VARIABLE>SIZE_OF_VOLUME</VARIABLE>
+        </CALCULATEDSIZEFORSTORAGE>
+      </PARTITIONSIZE>
+    </CONFIGURATION>
+  </CONFIGURATIONS>
+</VOLUMECALCULATIONRULES>
+
+</FILESYSTEMCONFIGURATION>
+

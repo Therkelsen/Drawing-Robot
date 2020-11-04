@@ -1,0 +1,16 @@
+VAR_CONFIG
+	::Program:enable1 AT %QX."X3a".DigitalOutput01;
+	::Program:enable2 AT %QX."X3a".DigitalOutput02;
+	::Program:enable3 AT %QX."X3a".DigitalOutput03;
+	::Program:direction1 AT %QX."X3a".DigitalOutput04;
+	::Program:direction2 AT %QX."X3a".DigitalOutput05;
+	::Program:direction3 AT %QX."X3a".DigitalOutput06;
+	::Program:bspidser AT %QX."X3a".DigitalOutput08;
+	::Program:step1x AT %QX."X3a".DigitalOutput09;
+	::Program:step2y AT %QX."X3a".DigitalOutput10;
+	::Program:step3z AT %QX."X3a".DigitalOutput11;
+	::Program:stop3 AT %IX."X1a".DigitalInput01;
+	::Program:stop2 AT %IX."X1a".DigitalInput02;
+	::Program:stop1 AT %IX."X1a".DigitalInput03;
+	::Program:stopb AT %IX."X1a".DigitalInput04;
+END_VAR

@@ -1,0 +1,18 @@
+Mon Oct 12 14:01:14 2020
+COPYRIGHT (C) B&R Industrial Automation GmbH
+
+Mon Oct 12 14:01:14 2020
+No ARsim registration found!
+
+Mon Oct 12 14:01:14 2020
+InstanceName: 01d6a08f626d0e10
+
+Mon Oct 12 14:01:14 2020
+WorkingDirectory: C:\Users\Bruger\Documents\Robotteknologi\Automation studios projekter\PLC_base3\Temp\Simulation\Config1\X20CP1382\
+
+Mon Oct 12 14:01:14 2020
+COMMAND_COLDSTART
+
+Mon Oct 12 14:01:15 2020
+COMMAND_TERMINATE
+
