@@ -42,31 +42,24 @@ PROGRAM _CYCLIC
 			step3z := NOT step3z;
 		END_IF;
 		  
-	
-		//mynikkr
 		
 		
 		
 		 
 	END_IF;*)
+	
 	IF start1 = TRUE THEN
 	  
-	
-	
-	
-	IF stop1 = FALSE THEN
+		IF stop1 = FALSE THEN
 			step1x := NOT step1x;
 			count := count + 1;
-	END_IF
+		END_IF
 	
 		IF stop1 = TRUE THEN
-	  start1 := FALSE;
-		END_IF;
-		
+	  		start1 := FALSE;
+		END_IF;	
 		
 	END_IF;
-	
-	
 	
 	
 	   

@@ -2,10 +2,10 @@
 <?AutomationStudio Version=4.8.2.72?>
 <SwConfiguration CpuAddress="SL1" xmlns="http://br-automation.co.at/AS/SwConfiguration">
   <TaskClass Name="Cyclic#1" />
-  <TaskClass Name="Cyclic#2">
+  <TaskClass Name="Cyclic#2" />
+  <TaskClass Name="Cyclic#3">
     <Task Name="Program" Source="Program.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
-  <TaskClass Name="Cyclic#3" />
   <TaskClass Name="Cyclic#4" />
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />
