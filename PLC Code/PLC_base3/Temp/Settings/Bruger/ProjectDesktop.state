@@ -1,3 +1,0 @@
-<?xml version="1.0"?>
-<?AutomationStudio Version=3.0?>
-<Project xmlns="http://br-automation.co.at/AS/Project"><Active ID="0"/><Configuration Name="Config1"/><ConfigurationFiles xmlns="" ConfigurationName="Config1" ActiveConfigurationFile="\Logical\Program\Main.st"><ConfigurationFile Placement="\Logical\Program\Main.st,Program,2,44,0,1,-1,-1,-1,-1,2,34,1614,791"/><ConfigurationFile Placement="\Logical\Program\Variables.var,Program,1,44,0,1,-1,-1,-1,-1,2,34,1614,791"/><ConfigurationFile Placement="\Virtual\X3a.iom,,1,44,0,1,-1,-1,-1,-1,2,34,1614,791"/><ConfigurationFile Placement="\Physical\Config1\X20CP1382\Cpu.sw,,1,44,0,1,-1,-1,-1,-1,2,34,1614,791"/><ConfigurationFile Placement="\Virtual\X20CP1382.hw,,1,44,0,1,-1,-1,-1,-1,2,34,1614,791"/></ConfigurationFiles></Project>
