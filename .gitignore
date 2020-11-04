@@ -17,3 +17,5 @@ PLC_Code/PLC_base3/Logical/Visualization/build.typ
 PLC_Code/PLC_base3/Logical/Revision.var
 PLC_Code/PLC_base3/Logical/Visualization/visServ/build.typ
 PLC_Code/PLC_base3/Logical/Programs/FileHandling/MachineConfiguration/machineConfiguration/build.typ
+PLC_Code/PLC_base3/Physical
+PLC_Code/PLC_base3/Logical/Libraries
