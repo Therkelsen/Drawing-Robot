@@ -14,6 +14,8 @@ public class DrawingRobotMain {
         rc.connect();
         System.out.println("Is connected: " + rc.isConnected());
         
+        RobotClient rc = new RobotClient("127.0.0.1",80);
+        
         // * For every column in every row, where every other row iterates backwards
 
         for (int row = 0; row < DrawingRobot.image.height(); row++) {
@@ -33,10 +35,18 @@ public class DrawingRobotMain {
             DrawingRobot.instructions = "";
         }
         
+<<<<<<< Updated upstream
         
         
         //DrawingRobot.print();
         rc.disconnect();
         System.out.println("Program done");
+=======
+        DrawingRobot.print();
+        
+        rc.connect();
+        System.out.println("Is connected: " + rc.isConnected());
+        rc.write(DrawingRobot.instructions);
+>>>>>>> Stashed changes
     }
 }
