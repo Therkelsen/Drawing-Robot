@@ -1,4 +1,6 @@
 VAR
+	commstate : COMMSTATE;
+	robostate : movestate;
 	count : UINT;
 	bspidser : {REDUND_UNREPLICABLE} BOOL;
 	enable1 : {REDUND_UNREPLICABLE} BOOL;
@@ -16,4 +18,16 @@ VAR
 	stop3 : BOOL;
 	start1 : BOOL;
 	timer : TON;
+END_VAR
+(*TCPSOCKET*)
+VAR
+	tcpstate : TCPSTATE;
+	tcpOpen1 : TcpOpen;
+	tcpServer1 : TcpServer;
+	tcpSend1 : TcpSend;
+	tcpReceive1 : TcpRecv;
+	tcpClose1 : TcpClose;
+	tcpClose2 : TcpClose;
+	receiveData : STRING[80];
+	sendData : STRING[80];
 END_VAR

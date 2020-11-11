@@ -25,6 +25,7 @@
       <Parameter ID="ActivateSnmp" Value="2" />
     </Connector>
     <Parameter ID="ConfigurationID" Value="PLC_base3_Config1" />
+    <Parameter ID="Simulation" Value="1" />
     <Parameter ID="SystemTick" Value="1000" />
     <Parameter ID="Cyclic1Duration" Value="1000" />
     <Parameter ID="Cyclic1Tolerance" Value="1000" />
