@@ -60,14 +60,12 @@ public class DrawingRobot {
 
         // * Update frame displaying image, and add current instruction to string
 
-        image.show();
+        //image.show();
 
         draw = drawOrNot(grVal, threshold) ? 1 : 0;
 
         if (draw != prevDraw) {
-            s = String.valueOf(col+1) + "," + String.valueOf(row + 1);
-            //System.out.println(s);
-            //instructions.add(s);
+            s = String.valueOf(col+1) + " " + String.valueOf(row + 1) + ",";
             instructions = instructions.concat(s);
         }
         
