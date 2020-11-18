@@ -14,11 +14,11 @@ PLC_Code/PLC_base3/Logical/Visualization/build.typ
 *.orig
 *.set
 *.isopen
-PLC_Code/TCPIPKomm/Logical/Revision.var
-PLC_Code/TCPIPKomm/Logical/Visualization/visServ/build.typ
-PLC_Code/TCPIPKomm/Logical/Programs/FileHandling/MachineConfiguration/machineConfiguration/build.typ
-PLC_Code/TCPIPKomm/Physical
-PLC_Code/TCPIPKomm/Logical/Libraries
+PLC_Code/PLC_base3/Logical/Revision.var
+PLC_Code/PLC_base3/Logical/Visualization/visServ/build.typ
+PLC_Code/PLC_base3/Logical/Programs/FileHandling/MachineConfiguration/machineConfiguration/build.typ
+PLC_Code/PLC_base3/Physical
+PLC_Code/PLC_base3/Logical/Libraries/*
 
 PLC_Code/TCPIPKomm/Temp/**
 PLC_Code/TCPIPKomm/Binaries/**
@@ -40,4 +40,4 @@ PLC_Code/TCPIPKomm/Logical/Revision.var
 PLC_Code/TCPIPKomm/Logical/Visualization/visServ/build.typ
 PLC_Code/TCPIPKomm/Logical/Programs/FileHandling/MachineConfiguration/machineConfiguration/build.typ
 PLC_Code/TCPIPKomm/Physical
-PLC_Code/TCPIPKomm/Logical/Libraries
+PLC_Code/TCPIPKomm/Logical/Libraries/*
