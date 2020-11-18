@@ -73,22 +73,23 @@ public class DrawingRobot {
         prevDraw = draw;
     }
 
+    /*public static String instruct() {
+        for (int i = 0; i < inst.size(); i++) {
+            if (i % 2 == 0) {
+                instructions = instructions.concat(String.valueOf(inst.get(i)));
+                return instructions;
+            } else {
+                instructions = "";
+                instructions = instructions.concat(String.valueOf(inst.get(i)));
+            }
+        }
+        return "";
+    }*/
+
     public static void print() {
 
         // * Print everything in the terminal
 
-        System.out.println("Instructions: ");
-        //System.out.println(instructions);
-        for (int i = 0; i < inst.size(); i++) {
-            if (i % 2 == 0) {
-                instructions = String.valueOf(inst.get(i));
-                System.out.println(s);
-                instructions = "";
-            } else {
-                instructions = String.valueOf(inst.get(i));
-                System.out.println(s);
-            }
-        }
         System.out.println("End of instructions");
         System.out.println("");
 

@@ -36,6 +36,20 @@ public class DrawingRobotMain {
             }
             //Thread.sleep(500);
         }
+
+        System.out.println("Instructions: ");
+
+        for (int i = 0; i < DrawingRobot.inst.size(); i++) {
+            if (i % 2 == 0) {
+                DrawingRobot.instructions = DrawingRobot.instructions.concat(String.valueOf(DrawingRobot.inst.get(i)));
+                rc.write(DrawingRobot.instructions + "\n");
+                System.out.println(DrawingRobot.instructions);
+                DrawingRobot.instructions = "";
+            } else {
+                DrawingRobot.instructions = DrawingRobot.instructions.concat(String.valueOf(DrawingRobot.inst.get(i)));
+            }
+            
+        }
         
         DrawingRobot.print();
         
