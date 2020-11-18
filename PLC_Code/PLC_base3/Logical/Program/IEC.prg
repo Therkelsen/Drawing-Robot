@@ -5,5 +5,7 @@
     <File Description="Init, cyclic, exit code">Main.st</File>
     <File Description="Local data types" Private="true">Types.typ</File>
     <File Description="Local variables" Private="true">Variables.var</File>
+    <File Private="true">LocalFunctions.fun</File>
+    <File>COORD_TO_STEP.st</File>
   </Files>
 </Program>
