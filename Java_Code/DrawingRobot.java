@@ -27,7 +27,7 @@ public class DrawingRobot {
     // * Loading image and initializing an image to convert onto
     static Picture image = new Picture("assets/danny.jpg");
 
-    //static ArrayList<String> instructions = new ArrayList<String>();
+    static ArrayList<String> inst = new ArrayList<String>();
     static String instructions = "";
 
     public static boolean drawOrNot(float gray, int threshold) {
@@ -60,13 +60,14 @@ public class DrawingRobot {
 
         // * Update frame displaying image, and add current instruction to string
 
-        //image.show();
+        image.show();
 
         draw = drawOrNot(grVal, threshold) ? 1 : 0;
 
         if (draw != prevDraw) {
             s = String.valueOf(col+1) + " " + String.valueOf(row + 1) + ",";
-            instructions = instructions.concat(s);
+
+            inst.add(s);
         }
         
         prevDraw = draw;
@@ -77,11 +78,21 @@ public class DrawingRobot {
         // * Print everything in the terminal
 
         System.out.println("Instructions: ");
-        System.out.println(instructions);
+        //System.out.println(instructions);
+        for (int i = 0; i < inst.size(); i++) {
+            if (i % 2 == 0) {
+                instructions = String.valueOf(inst.get(i));
+                System.out.println(s);
+                instructions = "";
+            } else {
+                instructions = String.valueOf(inst.get(i));
+                System.out.println(s);
+            }
+        }
         System.out.println("End of instructions");
         System.out.println("");
 
-        System.out.println("Length of instructions: [" + instructions.length() + "] pairs");
+        System.out.println("Length of instructions: [" + inst.size() + "] pairs");
         System.out.println("Size of image: [" + image.width() + " * " + image.height() + "] px = [" + (image.width()*image.height()) + "] px");
         
     }
