@@ -54,16 +54,6 @@ PROGRAM _CYCLIC
 				sendData := LEFT(receiveData, UDINT_TO_INT(tcpReceive1.recvlen));
 			END_IF
 			
-		(*TCPSTATE_SEND:
-			tcpSend1.enable := TRUE;
-			tcpSend1.ident := tcpServer1.identclnt;
-			tcpSend1.pData := ADR(sendData);
-			tcpSend1.datalen := brsstrlen (ADR(sendData));     // We use brsstrlen() to get the length in UDINT datatype
-			tcpSend1();
-			IF (tcpSend1.status = ERR_OK) THEN
-				tcpstate := TCPSTATE_SOCKET_CLOSE;
-			END_IF*)
-			
 		TCPSTATE_SOCKET_CLOSE:
 			tcpClose1.enable := TRUE;
 			tcpClose1.ident := tcpServer1.identclnt;
@@ -73,30 +63,47 @@ PROGRAM _CYCLIC
 				tcpServer1();
 				tcpstate := TCPSTATE_SERVER_CREATE;
 			END_IF
-
 		
-	END_CASE;													//Socket communications end
+	END_CASE;		//Socket communications end
 	
 	
-	//StringTokenizer
-	(*CASE Variable OF
-		value:
-		  
-
-	END_CASE;*)
+	CASE ROBOSTATE OF	//Movement
+		RECEIVE:
+		timer2(IN := NOT timer2.Q, PT := T#15000ms);
 	
 	
+		IF (receivedData) THEN
+			readyForData := FALSE;
+			receivedData := FALSE;
+			moreData := TRUE;
+			
+			IF (firstData) THEN
+				firstData := FALSE;
+				readyForData := TRUE;
+				IF (activeData = 2) THEN
+					activeData := 1;
+				ELSE
+					activeData := 2;
+				END_IF
+			END_IF;
+		END_IF;
 	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	CASE ROBOSTATE OF								//Movement
+		IF (timer.Q) THEN
+			IF (moreData) THEN
+				moreData := FALSE;
+					
+				IF (activeData = 2) THEN
+					activeData := 1;
+				ELSE
+					activeData := 2;
+				END_IF
+			ELSE
+				firstData := TRUE;
+			END_IF
+			
+			readyForData := TRUE;
+		END_IF
+		
 		CONVERT:
 			delim1 := ' ';
 			delim2 := ',';
@@ -152,18 +159,6 @@ PROGRAM _CYCLIC
 		MOVE0:
 			
 			//bevæg sig til udgangsposition / origo
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 			
 	(*	BLYANTSPIDSER:
 			IF   start1 = TRUE THEN

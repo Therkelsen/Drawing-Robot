@@ -70,3 +70,13 @@ VAR
 	xPos : INT;
 	scale : INT;
 END_VAR
+(*BUFFER DATA RECEIVE*)
+VAR
+	timer2 : TON;
+	firstData : BOOL;
+	moreData : BOOL;
+	receivedData : BOOL;
+	readyForData : BOOL;
+	activeData : USINT;
+END_VAR
+
