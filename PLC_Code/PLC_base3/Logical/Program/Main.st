@@ -160,7 +160,9 @@ PROGRAM _CYCLIC
 			
 			//bevæg sig til udgangsposition / origo
 			
-	(*	BLYANTSPIDSER:
+			
+			//Primitiv blyantspidser-sekvens fra en af de første dage jeg kørte med robottens motorer
+		BLYANTSPIDSER:
 			IF   start1 = TRUE THEN
 		
 		IF stopZ = FALSE AND stopX = FALSE THEN
@@ -195,14 +197,17 @@ PROGRAM _CYCLIC
 		END_IF;
 		  
 	END_IF;
-		*)
-			
+		
+		
+			//state for hvornår blyanten er nede på papiret og der altså tegnes. Lettere priimitivt
 		DRAW:
 			WHILE NOT stopB DO
 				directionZ := TRUE;
 				stepZ := NOT stepZ;
 			END_WHILE;
 			
+			//state for vornår blyanten er løftet fra papiret og den bevæger sig til næste koordinat hvor der skal tegnes
+			//Lettere primitivt.
 		NOT_DRAW:
 			WHILE NOT stopZ DO
 				directionZ := FALSE;
