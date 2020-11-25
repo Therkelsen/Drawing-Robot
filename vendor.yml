@@ -1,8 +1,3 @@
 $ cat .gitattributes
-PLC/PLC_base3/Logical/Libraries/AsIecCon/AsIecCon.fun linguist-vendored
-PLC/PLC_base3/Logical/Libraries/astime/astime.fun linguist-vendored
-PLC/PLC_base3/Logical/Libraries/operator/operator.fun linguist-vendored
-PLC/PLC_base3/Logical/Libraries/runtime/runtime.fun linguist-vendored
-PLC/PLC_base3/Logical/Libraries/standard/standard.fun linguist-vendored
-PLC/PLC_base3/Logical/Program/LocalFunctions.fun linguist-vendored
+PLC/PLC_base3/Logical/Libraries/* linguist-vendored
 jquery.js linguist-vendored=false
