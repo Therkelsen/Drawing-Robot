@@ -1,4 +1,6 @@
 $ cat .gitattributes
 PLC/PLC_base3/Logical/Libraries/* linguist-vendored
 DrawingRobotApp/app/Assets/1semesterproject/Logical/Libraries/* linguist-vendored
+*.md linguist-vendored
+*.fun linguist-vendored
 jquery.js linguist-vendored=false
