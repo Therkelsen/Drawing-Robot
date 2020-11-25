@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.8.2.72?>
+<State Top="0" Left="0" Width="0" Height="0" WindowState="Normal" xmlns="http://br-automation.co.at/AS/State">
+  <TreeView ID="X3a-Config1-X20CP1382" EditColumn="7" TopRow="0" HorizontalScrollOffset="0" SortedColumn="0">
+    <Columns>
+      <Column Index="0" Width="0" Position="0" />
+      <Column Index="1" Width="0" Position="1" />
+      <Column Index="2" Width="0" Position="2" />
+      <Column Index="3" Width="152" Position="3" />
+      <Column Index="4" Width="0" Position="4" />
+      <Column Index="5" Width="0" Position="5" />
+      <Column Index="6" Width="0" Position="6" />
+      <Column Index="7" Width="172" Position="7" />
+      <Column Index="8" Width="0" Position="8" />
+      <Column Index="9" Width="108" Position="9" />
+      <Column Index="10" Width="114" Position="10" />
+      <Column Index="11" Width="78" Position="11" />
+      <Column Index="12" Width="92" Position="12" />
+      <Column Index="13" Width="118" Position="13" />
+      <Column Index="14" Width="146" Position="14" />
+      <Column Index="15" Width="0" Position="15" />
+      <Column Index="16" Width="0" Position="16" />
+    </Columns>
+    <ExpandedNodes />
+    <SelectedNodes />
+    <ZoomIndices />
+  </TreeView>
+  <TreeView ID="X1a-Config1-X20CP1382" EditColumn="0" TopRow="0" HorizontalScrollOffset="0" SortedColumn="0">
+    <Columns>
+      <Column Index="0" Width="0" Position="0" />
+      <Column Index="1" Width="0" Position="1" />
+      <Column Index="2" Width="0" Position="2" />
+      <Column Index="3" Width="152" Position="3" />
+      <Column Index="4" Width="0" Position="4" />
+      <Column Index="5" Width="0" Position="5" />
+      <Column Index="6" Width="0" Position="6" />
+      <Column Index="7" Width="172" Position="7" />
+      <Column Index="8" Width="0" Position="8" />
+      <Column Index="9" Width="108" Position="9" />
+      <Column Index="10" Width="114" Position="10" />
+      <Column Index="11" Width="78" Position="11" />
+      <Column Index="12" Width="92" Position="12" />
+      <Column Index="13" Width="118" Position="13" />
+      <Column Index="14" Width="146" Position="14" />
+      <Column Index="15" Width="0" Position="15" />
+      <Column Index="16" Width="0" Position="16" />
+    </Columns>
+    <ExpandedNodes />
+    <SelectedNodes />
+    <ZoomIndices />
+  </TreeView>
+  <TreeView ID="X20CP1382.IF2-Config1-X20CP1382" EditColumn="0" TopRow="0" HorizontalScrollOffset="0" SortedColumn="0">
+    <Columns>
+      <Column Index="0" Width="0" Position="0" />
+      <Column Index="1" Width="0" Position="1" />
+      <Column Index="2" Width="0" Position="2" />
+      <Column Index="3" Width="152" Position="3" />
+      <Column Index="4" Width="0" Position="4" />
+      <Column Index="5" Width="0" Position="5" />
+      <Column Index="6" Width="0" Position="6" />
+      <Column Index="7" Width="172" Position="7" />
+      <Column Index="8" Width="0" Position="8" />
+      <Column Index="9" Width="108" Position="9" />
+      <Column Index="10" Width="114" Position="10" />
+      <Column Index="11" Width="78" Position="11" />
+      <Column Index="12" Width="92" Position="12" />
+      <Column Index="13" Width="118" Position="13" />
+      <Column Index="14" Width="146" Position="14" />
+      <Column Index="15" Width="0" Position="15" />
+      <Column Index="16" Width="0" Position="16" />
+    </Columns>
+    <ExpandedNodes />
+    <SelectedNodes />
+    <ZoomIndices />
+  </TreeView>
+  <TextEdit ID="C:\projects\1semesterproject\Logical\Master\Main.st" CaretLine="14" CaretColumn="12" FirstVisibleLine="1">
+    <Bookmarks />
+  </TextEdit>
+  <TreeView ID="C:\projects\1semesterproject\Logical\Master\Variables.var" EditColumn="1" TopRow="0" HorizontalScrollOffset="0" SortedColumn="0">
+    <Columns>
+      <Column Index="0" Width="200" Position="0" />
+      <Column Index="1" Width="100" Position="1" />
+      <Column Index="2" Width="110" Position="2" />
+      <Column Index="3" Width="98" Position="3" />
+      <Column Index="4" Width="72" Position="4" />
+      <Column Index="5" Width="112" Position="5" />
+      <Column Index="6" Width="100" Position="6" />
+      <Column Index="7" Width="200" Position="7" />
+      <Column Index="8" Width="0" Position="8" />
+      <Column Index="9" Width="0" Position="9" />
+      <Column Index="10" Width="0" Position="10" />
+    </Columns>
+    <ExpandedNodes />
+    <SelectedNodes>
+      <SelectedNode Row="0" />
+    </SelectedNodes>
+    <ZoomIndices />
+  </TreeView>
+</State>

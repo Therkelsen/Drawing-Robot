@@ -1,0 +1,16 @@
+VAR_CONFIG
+	::Xenable AT %QX."X3a".DigitalOutput01;
+	::Yenable AT %QX."X3a".DigitalOutput02;
+	::Zenable AT %QX."X3a".DigitalOutput03;
+	::Xdirection AT %QX."X3a".DigitalOutput04;
+	::Ydirection AT %QX."X3a".DigitalOutput05;
+	::Zdirection AT %QX."X3a".DigitalOutput06;
+	::Pencilsharper AT %QX."X3a".DigitalOutput08;
+	::Xstep AT %QX."X3a".DigitalOutput09;
+	::Ystep AT %QX."X3a".DigitalOutput10;
+	::Zstep AT %QX."X3a".DigitalOutput11;
+	::Zsensor AT %IX."X1a".DigitalInput01;
+	::Ysensor AT %IX."X1a".DigitalInput02;
+	::Xsensor AT %IX."X1a".DigitalInput03;
+	::Pencilsensor AT %IX."X1a".DigitalInput04;
+END_VAR

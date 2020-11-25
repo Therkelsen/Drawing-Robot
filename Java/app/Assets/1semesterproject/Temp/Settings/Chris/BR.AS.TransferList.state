@@ -1,0 +1,3 @@
+<?xml version="1.0"?>
+<State xmlns="http://br-automation.co.at/AS/State" Top="-1" Left="-1"><RadioButtonGroup ID="UpdateList" Selection="0"/><CheckBox ID="IncludeOS" Checked="1"/><CheckBox ID="IncludeModules" Checked="0"/><ComboBox ID="Baud" Selection="3"><Item Baudrate="20000"/><Item Baudrate="125000"/><Item Baudrate="250000"/><Item Baudrate="500000"/></ComboBox><TextBox ID="ID" Text="1598"/><TextBox ID="AutomationRuntime" Text="CP1382"/><TextBox/>
+</State>
