@@ -20,7 +20,7 @@ public class DrawingRobot {
     static String s = "";
 
     // Loading image and initializing an image to convert onto
-    static Picture image = new Picture("assets/test.png");
+    static Picture image = new Picture("assets/swarte_piet.png");
 
     static ArrayList<String> inst = new ArrayList<String>();
     static String instructions = "";
