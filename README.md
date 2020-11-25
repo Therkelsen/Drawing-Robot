@@ -5,4 +5,4 @@ As a part the robotics technology engineering bachelor education, the first seme
 
 The only thing given, is the robot is assembled and some Java classes for image- and color manipulation are given. - The rest is up to each group to solve.
  
-![Danny Devito](DrawingRobotApp/app/Assets/drawingrobot.gif)
+![Drawing Robot GIF](DrawingRobotApp/app/Assets/drawingrobot.gif)
