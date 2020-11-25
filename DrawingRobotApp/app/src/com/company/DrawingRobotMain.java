@@ -7,7 +7,7 @@ public class DrawingRobotMain {
         System.out.println("====================");
         System.out.println("Starting program");
 
-        RobotClient rc = new RobotClient("127.0.0.1", 80);
+        RobotClient rc = new RobotClient("127.0.0.1", 11159);
         rc.connect();
         System.out.println("Is connected: " + rc.isConnected());
         
