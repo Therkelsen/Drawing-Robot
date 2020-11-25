@@ -1,0 +1,5 @@
+VAR
+	timer : TON;
+	firstData : BOOL;
+	moreData : BOOL;
+END_VAR
