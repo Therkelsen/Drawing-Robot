@@ -20,7 +20,11 @@
     <Connector Name="IF2">
       <Parameter ID="ActivateDevice" Value="1" />
       <Parameter ID="Mode" Value="Manual" />
+<<<<<<< Updated upstream:DrawingRobotApp/app/Assets/1semesterproject/Physical/Config1/Hardware.hw
       <Parameter ID="InternetAddress" Value="192.168.0.1" />
+=======
+      <Parameter ID="InternetAddress" Value="10.0.0.69" />
+>>>>>>> Stashed changes:PLC_Code/PLC_base3/Physical/Config1/Hardware.hw
       <Parameter ID="SubnetMask" Value="255.255.255.0" />
       <Parameter ID="ActivateSnmp" Value="2" />
     </Connector>

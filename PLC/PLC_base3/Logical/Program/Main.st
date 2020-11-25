@@ -5,6 +5,8 @@ PROGRAM _INIT
 	enableZ := FALSE;
 	mainstring := '';
 	
+	stateGUI := 0;
+	
 count:= 0;
 	
 END_PROGRAM
@@ -22,6 +24,16 @@ PROGRAM _CYCLIC
 		  
 
 	END_CASE;*)
+	
+	//stateGUI
+	IF stateGUI = 0 THEN
+		ROBOSTATE := IDLE;
+	ELSIF stateGUI = 1 THEN
+		ROBOSTATE := DRAW;
+	ELSIF stateGUI = 2 THEN
+		ROBOSTATE := NOT_DRAW;
+		
+	END_IF;
 	
 	
 	CASE tcpstate OF										//Socket communications
@@ -68,6 +80,12 @@ PROGRAM _CYCLIC
 	
 	
 	CASE ROBOSTATE OF	//Movement
+		IDLE:
+			IF count <> 0 THEN
+				count := 0;
+			END_IF;
+				
+		
 		RECEIVE:
 		timer2(IN := NOT timer2.Q, PT := T#15000ms);
 	
@@ -201,18 +219,24 @@ PROGRAM _CYCLIC
 		
 			//state for hvornår blyanten er nede på papiret og der altså tegnes. Lettere priimitivt
 		DRAW:
-			WHILE NOT stopB DO
+			count := 0;
+			IF NOT stopB THEN
 				directionZ := TRUE;
 				stepZ := NOT stepZ;
-			END_WHILE;
+			END_IF;
 			
 			//state for vornår blyanten er løftet fra papiret og den bevæger sig til næste koordinat hvor der skal tegnes
 			//Lettere primitivt.
 		NOT_DRAW:
-			WHILE NOT stopZ DO
+			IF  count < 600 THEN
+				count := count + 1;
 				directionZ := FALSE;
 	  			stepZ := NOT stepZ;
-			END_WHILE;
+			END_IF;
+			IF count = 600 OR count > 600 THEN
+				ROBOSTATE := IDLE;
+			END_IF;
+		
 
 	END_CASE;
 

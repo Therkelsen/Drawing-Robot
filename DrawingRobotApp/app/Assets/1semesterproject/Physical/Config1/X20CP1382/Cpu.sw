@@ -26,7 +26,14 @@
     <BinaryObject Name="ashwac" Source="" Memory="UserROM" Language="Binary" />
   </Binaries>
   <Libraries>
+<<<<<<< Updated upstream:DrawingRobotApp/app/Assets/1semesterproject/Physical/Config1/X20CP1382/Cpu.sw
     <LibraryObject Name="runtime" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+=======
+    <LibraryObject Name="standard" Source="Libraries.standard.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="AsTCP" Source="Libraries.AsTCP.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="runtime" Source="Libraries.runtime.lby" Memory="UserROM" Language="binary" Debugging="true" />
+    <LibraryObject Name="AsBrStr" Source="Libraries.AsBrStr.lby" Memory="UserROM" Language="binary" Debugging="true" />
+>>>>>>> Stashed changes:PLC_Code/PLC_base3/Physical/Config1/X20CP1382/Cpu.sw
     <LibraryObject Name="astime" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="asieccon" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
   </Libraries>
