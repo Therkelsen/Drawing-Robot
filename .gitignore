@@ -63,3 +63,5 @@ Assets/1semesterproject/Logical/Visualization/visServ/build.typ
 Assets/1semesterproject/Logical/Programs/FileHandling/MachineConfiguration/machineConfiguration/build.typ
 Assets/1semesterproject/Physical
 Assets/1semesterproject/Logical/Libraries/**
+
+DrawingRobotApp/out/**
