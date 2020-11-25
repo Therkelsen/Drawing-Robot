@@ -19,6 +19,13 @@ PLC/PLC_base3/Logical/Visualization/visServ/build.typ
 PLC/PLC_base3/Logical/Programs/FileHandling/MachineConfiguration/machineConfiguration/build.typ
 PLC/PLC_base3/Physical
 PLC/PLC_base3/Logical/Libraries/**
+PLC/PLC_base3/Logical/Libraries/AsIecCon/AsIecCon.fun
+PLC/PLC_base3/Logical/Libraries/astime/astime.fun
+PLC/PLC_base3/Logical/Libraries/operator/operator.fun
+PLC/PLC_base3/Logical/Libraries/runtime/runtime.fun
+PLC/PLC_base3/Logical/Libraries/standard/standard.fun
+PLC/PLC_base3/Logical/Program/LocalFunctions.fun
+
 
 PLC/TCPIPKomm/Temp/**
 PLC/TCPIPKomm/Binaries/**
