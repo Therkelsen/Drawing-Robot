@@ -64,4 +64,10 @@ Assets/1semesterproject/Logical/Programs/FileHandling/MachineConfiguration/machi
 Assets/1semesterproject/Physical
 Assets/1semesterproject/Logical/Libraries/**
 
-DrawingRobotApp/out/**
+DrawingRobotApp/out/production/app/com/company/DrawingRobot.class
+DrawingRobotApp/out/production/app/com/company/DrawingRobotMain.class
+DrawingRobotApp/out/production/app/com/company/EdgeDetector.class
+DrawingRobotApp/out/production/app/com/company/Luminance.class
+DrawingRobotApp/out/production/app/com/company/Picture.class
+DrawingRobotApp/out/production/app/com/company/RobotClient.class
+DrawingRobotApp/out/production/app/com/company/StringTokenizer.class
