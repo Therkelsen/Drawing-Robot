@@ -7,7 +7,7 @@ public class DrawingRobotMain {
         System.out.println("====================");
         System.out.println("Starting program");
 
-        RobotClient rc = new RobotClient("127.0.0.1", 11159);
+        RobotClient rc = new RobotClient("10.0.0.69", 80);
         rc.connect();
         System.out.println("Is connected: " + rc.isConnected());
         
@@ -23,11 +23,11 @@ public class DrawingRobotMain {
                     DrawingRobot.processImage(col, row);
                 }
             }
-            //Thread.sleep(500);
+
         }
 
         System.out.println("Instructions: ");
-
+        Thread.sleep(1000);
         for (int i = 0; i < DrawingRobot.inst.size(); i++) {
             if (i % 2 != 0) {
                 System.out.println("Sending data");
@@ -41,7 +41,7 @@ public class DrawingRobotMain {
         }
         DrawingRobot.print();
         
-        rc.disconnect();
+        //rc.disconnect();
         System.out.println("Program done");
     }
 }
