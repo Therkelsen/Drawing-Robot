@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=EdgeDetector
+comment0.text=\r\n\r\n\ @author\ ancla\r\n
+comment1.params=imagePath
+comment1.target=EdgeDetector(java.lang.String)
+comment1.text=\r\n\ \r\n\ @param\ imagePath\ Path\ of\ the\ image\ to\ perform\ edgedetection\ on.\r\n
+comment2.params=a
+comment2.target=int\ truncate(int)
+comment3.params=a
+comment3.target=int\ binaryTruncate(int)
+comment4.params=
+comment4.target=java.awt.image.BufferedImage\ getBufferedImage()
+comment4.text=\r\n\ This\ method\ performs\ edge-detection\ of\ the\ image\ on\ the\ path\ provided\ to\ the\ constructor,\ and\ returns\ a\ BufferedImage\ representation\ of\ the\ result.\r\n\ @return\ A\ BufferedImage-object\ representation\ of\ the\ image\ provided.\r\n
+comment5.params=
+comment5.target=int[][]\ getMagnitudeArray()
+comment5.text=\r\n\ This\ method\ performs\ edge-detection\ of\ the\ image\ on\ the\ path\ provided\ to\ the\ constructor,\ and\ returns\ a\ two-dimensional\ int-array\ representation\ of\ the\ result.\r\n\ @return\ A\ two\ dimensional\ array\ showing\ the\ magnitude\ (intensity)\ in\ each\ pixel\ of\ the\ picture\ provided.\r\n
+comment6.params=
+comment6.target=java.awt.Color[][]\ getGreyscaleArray()
+comment6.text=\r\n\ This\ method\ performs\ edge-detection\ of\ the\ image\ on\ the\ path\ provided\ to\ the\ constructor,\ and\ returns\ a\ two-dimensional\ Color-array\ representation\ of\ the\ result.\r\n\ @return\ A\ two-dimensional\ array\ with\ Color\ objects,\ representing\ a\ greyscale\ interpretation\ of\ the\ image.\r\n
+numComments=7

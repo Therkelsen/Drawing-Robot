@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Luminance
+comment1.params=color
+comment1.target=double\ lum(java.awt.Color)
+comment2.params=color
+comment2.target=double\ intensity(java.awt.Color)
+comment3.params=color
+comment3.target=java.awt.Color\ toGray(java.awt.Color)
+comment4.params=a\ b
+comment4.target=boolean\ areCompatible(java.awt.Color,\ java.awt.Color)
+numComments=5

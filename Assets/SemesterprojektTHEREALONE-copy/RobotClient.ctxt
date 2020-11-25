@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=RobotClient
+comment0.text=\r\n\r\n\ @author\ ancla\r\n
+comment1.params=hostname\ port
+comment1.target=RobotClient(java.lang.String,\ int)
+comment1.text=\r\n\r\n\ @param\ hostname\ Hostname\ of\ the\ robot\r\n\ @param\ port\ Port\ of\ the\ robot\r\n
+comment2.params=
+comment2.target=void\ connect()
+comment2.text=\r\n\ Method\ which\ connects\ to\ the\ robot,\ using\ the\ parameters\ provided\ to\ the\ constructor.\r\n
+comment3.params=
+comment3.target=boolean\ isConnected()
+comment3.text=\r\n\ This\ method\ is\ used\ to\ determine\ if\ a\ connection\ has\ been\ established\ to\r\n\ the\ robot.\r\n\r\n\ @return\ COnnection\ state\ to\ see\ if\ connection\ is\ established\ (true)\ or\r\n\ not\ (false).\r\n
+comment4.params=message
+comment4.target=void\ write(java.lang.String)
+comment4.text=\r\n\ This\ method\ writes\ a\ message\ to\ the\ robot\ iff\ a\ connection\ to\ the\ robot\r\n\ is\ established.\r\n\r\n\ @param\ message\ The\ message\ to\ write\ to\ the\ robot.\r\n
+comment5.params=
+comment5.target=void\ disconnect()
+comment5.text=\r\n\ Method\ to\ close\ connection\ to\ the\ robot.\r\n
+numComments=6
