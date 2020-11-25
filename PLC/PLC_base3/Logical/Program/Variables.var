@@ -1,7 +1,6 @@
 VAR
 	COMMSTATE : COMMSTATE2;
 	ROBOSTATE : ROBOSTATE2;
-	stateGUI : USINT;
 	count : UINT;
 	bspidser : {REDUND_UNREPLICABLE} BOOL;
 	enableX : {REDUND_UNREPLICABLE} BOOL;
@@ -80,3 +79,4 @@ VAR
 	readyForData : BOOL;
 	activeData : USINT;
 END_VAR
+
