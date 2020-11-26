@@ -20,37 +20,25 @@ VAR
 	timer : TON;
 	A_KILL_SWITCH : BOOL;
 END_VAR
-(*STRING_TOKENIZER*)
+(*CONVERSION*)
 VAR
-	delim2 : STRING[80];
+	counter : USINT;
 	delim1 : STRING[80];
-	mainstring : STRING[80];
-	x1 : INT;
-	y1 : INT;
-	x2 : INT;
-	y2string : STRING[80];
-	x2string : STRING[80];
-	y1string : STRING[80];
-	x1string : STRING[80];
-	y2 : INT;
+	delim2 : STRING[80];
 	string1 : STRING[80];
 	string2 : STRING[80];
 	D1 : INT;
 	D2 : INT;
 	D3 : INT;
 	D4 : INT;
-END_VAR
-(*TCPSOCKET*)
-VAR
-	tcpstate : TCPSTATE2;
-	tcpOpen1 : TcpOpen;
-	tcpServer1 : TcpServer;
-	tcpSend1 : TcpSend;
-	tcpReceive1 : TcpRecv;
-	tcpClose1 : TcpClose;
-	tcpClose2 : TcpClose;
-	receiveData : STRING[80];
-	sendData : STRING[80];
+	D5 : INT;
+	D6 : INT;
+	x1 : INT;
+	y1 : INT;
+	x2 : INT;
+	y2 : INT;
+	z1 : INT;
+	z2 : INT;
 END_VAR
 (*STRING_ANALYZER*)
 VAR
@@ -70,13 +58,3 @@ VAR
 	xPos : INT;
 	scale : INT;
 END_VAR
-(*BUFFER DATA RECEIVE*)
-VAR
-	timer2 : TON;
-	firstData : BOOL;
-	moreData : BOOL;
-	receivedData : BOOL;
-	readyForData : BOOL;
-	activeData : USINT;
-END_VAR
-
