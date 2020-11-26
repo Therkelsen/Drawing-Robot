@@ -40,14 +40,16 @@ PROGRAM _CYCLIC
 				TcpReceive1.datamax := SIZEOF(receiveData);
 				TcpReceive1();
 				IF (TcpReceive1.status = ERR_OK) THEN
-					tcpst := TCPSTATE_SEND;
+					tcpst := TCPSTATE_RECEIVE;
 					// Select right data buffer
 					IF (activeData = 1) THEN
 						data2 := '';
 						data2 := LEFT(receiveData, UDINT_TO_INT(TcpReceive1.recvlen));
+						instructions := CONCAT(instructions, data2);
 					ELSE
 						data1 := '';
 						data1 := LEFT(receiveData, UDINT_TO_INT(TcpReceive1.recvlen));
+						instructions := CONCAT(instructions, data1);
 					END_IF
 						
 					// Important: set variables that is changed by higher priority tasks
@@ -56,31 +58,43 @@ PROGRAM _CYCLIC
 					receivedData := TRUE;
 				END_IF
 			END_IF
+			IF (TcpSend1.status = ERR_OK) THEN
+				tcpst := TCPSTATE_RECEIVE;
+			END_IF
 
-		(*TCPSTATE_SEND :
+		TCPSTATE_SEND :
 			sendData := 'OK';
 			TcpSend1.enable := TRUE;
 			TcpSend1.ident := TcpServer1.identclnt;
 			TcpSend1.pData := ADR(sendData);
 			TcpSend1.datalen := brsstrlen(ADR(sendData));     // We use brsstrlen() to get the length in UDINT datatype
 			TcpSend1();
+			//readyForData := TRUE;
 			IF (TcpSend1.status = ERR_OK) THEN
-				tcpst := TCPSTATE_CLOSE;
+				tcpst := TCPSTATE_RECEIVE;
 			END_IF
 
 		TCPSTATE_CLOSE :
 			TcpClose1.enable := TRUE;
 			TcpClose1.ident := TcpServer1.identclnt;
 			TcpClose1();
+			data1 := '';
+			data2 := '';
+			activeData := 2;
+			readyForData := TRUE;
+			firstData := TRUE;
+			receivedData := FALSE;
+			moreData := FALSE;
+			instructions := '';
 			IF (TcpClose1.status = ERR_OK) THEN
 				TcpServer1.enable := FALSE;
 				TcpServer1();
 				tcpst := TCPSTATE_SERVER_CREATE;
-			END_IF*)
+			END_IF
 			
 	END_CASE
 	
-	timer(IN := NOT timer.Q, PT := T#15000ms);
+	timer(IN := NOT timer.Q, PT := T#500ms);
 	
 	
 	IF (receivedData) THEN
