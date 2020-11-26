@@ -7,7 +7,7 @@ public class DrawingRobotMain {
         System.out.println("====================");
         System.out.println("Starting program");
 
-        RobotClient rc = new RobotClient("10.0.0.69", 80);
+        RobotClient rc = new RobotClient("10.0.0.69", 12345);
         rc.connect();
         System.out.println("Is connected: " + rc.isConnected());
         
@@ -27,7 +27,7 @@ public class DrawingRobotMain {
         }
 
         System.out.println("Instructions: ");
-        Thread.sleep(1000);
+        Thread.sleep(10000);
         for (int i = 0; i < DrawingRobot.inst.size(); i++) {
             if (i % 2 != 0) {
                 System.out.println("Sending data");
@@ -35,7 +35,11 @@ public class DrawingRobotMain {
                 rc.write(DrawingRobot.instructions + "\n");
                 System.out.println(DrawingRobot.instructions);
                 DrawingRobot.instructions = "";
+                Thread.sleep(1500);
+                //rc.disconnect();
+
             } else {
+                //rc.connect();
                 DrawingRobot.instructions = DrawingRobot.instructions.concat(String.valueOf(DrawingRobot.inst.get(i)));
             }
         }

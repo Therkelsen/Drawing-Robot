@@ -17,7 +17,7 @@ PROGRAM _CYCLIC
 	CASE tcpst OF
 		TCPSTATE_SOCKET_OPEN :
 			TcpOpen1.enable := TRUE;
-			TcpOpen1.port := 80;
+			TcpOpen1.port := 12345;
 			TcpOpen1.options := tcpOPT_REUSEADDR;
 			TcpOpen1();
 			IF (TcpOpen1.status = ERR_OK) THEN
