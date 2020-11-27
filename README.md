@@ -9,7 +9,7 @@
 <br>
 
 ## Introduction
-<div style="text-align: justify">As a part the robotics technology engineering bachelor education, the first semestes' project is about creating a Drawing Robot. The general idea is to upload an image to a Java program, that then processes and sends commands to a PLC, through a communication socket - Allowing a PLC based drawing robot to draw any given picture, on paper with a pencil. 
+<div style="text-align: justify">As a part the robotics technology engineering bachelor education, the first semester project is about creating a Drawing Robot. The general idea is to upload an image to a Java program, that then processes and sends commands to a PLC, through a communication socket - Allowing a PLC based drawing robot to draw any given picture, on paper with a pencil. 
 </div> 
 <br>
 
