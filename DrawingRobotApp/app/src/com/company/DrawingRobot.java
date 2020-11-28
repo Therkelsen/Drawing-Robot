@@ -20,7 +20,7 @@ public class DrawingRobot {
     static String s = "";
 
     // Loading image and initializing an image to convert onto
-    static Picture image = new Picture("assets/swarte_piet.png");
+    static Picture image = new Picture("app/Assets/test.png");
 
     static ArrayList<String> inst = new ArrayList<String>();
     static String instructions = "";
@@ -69,6 +69,7 @@ public class DrawingRobot {
 
         System.out.println("End of instructions");
         System.out.println("");
+
 
         System.out.println("Length of instructions: [" + inst.size() + "] pairs");
         System.out.println("Size of image: [" + image.width() + " * " + image.height() + "] px = [" + (image.width() * image.height()) + "] px");

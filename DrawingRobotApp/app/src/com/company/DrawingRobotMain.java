@@ -7,7 +7,8 @@ public class DrawingRobotMain {
         System.out.println("====================");
         System.out.println("Starting program");
 
-        RobotClient rc = new RobotClient("127.0.0.1", 11159);
+        RobotClient rc = new RobotClient("10.0.0.69", 12345);
+        //RobotClient rc = new RobotClient("127.0.0.1", 80);
         rc.connect();
         System.out.println("Is connected: " + rc.isConnected());
         
@@ -23,25 +24,38 @@ public class DrawingRobotMain {
                     DrawingRobot.processImage(col, row);
                 }
             }
-            //Thread.sleep(500);
+
         }
 
         System.out.println("Instructions: ");
-
+        Thread.sleep(5000);
+        //rc.write("Number of pairs of coordinate sets: " + DrawingRobot.inst.size());
+        int x = 0;
+        for (int i = 0; i < DrawingRobot.inst.size(); i++) {
+            if (i % 2 == 0) {
+                x++;
+            }
+        }
+        //rc.write(String.valueOf(x));
         for (int i = 0; i < DrawingRobot.inst.size(); i++) {
             if (i % 2 != 0) {
                 System.out.println("Sending data");
                 DrawingRobot.instructions = DrawingRobot.instructions.concat(String.valueOf(DrawingRobot.inst.get(i)));
-                rc.write(DrawingRobot.instructions + "\n");
+                rc.write(DrawingRobot.instructions);
                 System.out.println(DrawingRobot.instructions);
                 DrawingRobot.instructions = "";
+                //rc.disconnect();
+
             } else {
+                //rc.connect();
                 DrawingRobot.instructions = DrawingRobot.instructions.concat(String.valueOf(DrawingRobot.inst.get(i)));
             }
+            Thread.sleep(500);
         }
         DrawingRobot.print();
         
-        rc.disconnect();
+        //rc.disconnect();
         System.out.println("Program done");
+        System.exit(0);
     }
 }

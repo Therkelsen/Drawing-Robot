@@ -1,8 +1,8 @@
-
 VAR
-
-END_VAR
-
-VAR CONSTANT
-
+	data1 : STRING[1000];
+	data2 : STRING[1000];
+	activeData : USINT;
+	readyForData : BOOL;
+	receivedData : BOOL;
+	instructionsArray : ARRAY[0..4] OF STRING[200];
 END_VAR
