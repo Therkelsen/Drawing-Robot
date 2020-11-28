@@ -45,7 +45,7 @@ PROGRAM _CYCLIC
 			enableY := TRUE;
 			enableZ := TRUE;
 			
-		MOVE_1: // Move to given coordinates
+		(*MOVE_1: // Move to given coordinates
 			xPos := x1;
 			yPos := y1;
 			
@@ -99,7 +99,7 @@ PROGRAM _CYCLIC
 				END_IF;
 		  
 			END_IF;
-		
+			
 		
 			// State for when robot is drawing or not
 		DRAW:
@@ -113,7 +113,7 @@ PROGRAM _CYCLIC
 			WHILE NOT stopZ DO
 				directionZ := FALSE;
 				stepZ := NOT stepZ;
-			END_WHILE;
+			END_WHILE;*)
 
 	END_CASE;
 END_PROGRAM
