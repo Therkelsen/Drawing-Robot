@@ -64,16 +64,16 @@ public class DrawingRobot {
         prevDraw = draw;
     }
 
-    public static void print() {
+    public static void print(String ip, int port) {
         // Print everything in the terminal
-
-        System.out.println("End of instructions");
         System.out.println("");
-
-
+        System.out.println("Transfer done");
         System.out.println("Length of instructions: [" + inst.size() + "] pairs");
         System.out.println("Size of image: [" + image.width() + " * " + image.height() + "] px = [" + (image.width() * image.height()) + "] px");
-
+        System.out.println("");
+        System.out.println("Program done");
+        System.out.println("Disconnecting from socket ip " + ip + " on port " + String.valueOf(port));
+        System.out.println("Exiting program");
     }
 
 }

@@ -1,7 +1,7 @@
 VAR
-	ZCalib : UINT;
-	YCalib : UINT;
-	XCalib : UINT;
+	ZCalib : DINT;
+	YCalib : DINT;
+	XCalib : DINT;
 	ROBOSTATE : ROBOSTATE2;
 	count : UINT;
 	sharpener : {REDUND_UNREPLICABLE} BOOL;
@@ -10,9 +10,9 @@ VAR
 	Zenable : {REDUND_UNREPLICABLE} BOOL;
 	StopMaskine : BOOL;
 	Programsteps : UINT;
-	XCounter : UINT;
-	YCounter : UINT;
-	ZCounter : UINT;
+	XCounter : DINT;
+	YCounter : DINT;
+	ZCounter : DINT;
 	Xdirection : BOOL;
 	Ydirection : BOOL;
 	Zdirection : BOOL;
@@ -41,7 +41,7 @@ VAR
 END_VAR
 (*CONVERSION*)
 VAR
-	counter : USINT;
+	counter : UINT;
 	delim1 : STRING[80];
 	delim2 : STRING[80];
 	string1 : STRING[80];

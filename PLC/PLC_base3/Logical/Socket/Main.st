@@ -12,8 +12,12 @@ PROGRAM _INIT
 	receiveData := '';
 	FOR count := 0 TO 4 DO
 		instructionsArray[count] := '';
+		xArray[count] := 0;
+		yArray[count] := 0;
+		zArray[count] := 0;
 	END_FOR;
 	count := 0;
+	readyToConvert := FALSE;
 END_PROGRAM
 
 PROGRAM _CYCLIC
@@ -48,11 +52,21 @@ PROGRAM _CYCLIC
 					IF (activeData = 1) THEN
 						data2 := '';
 						data2 := LEFT(receiveData, UDINT_TO_INT(TcpReceive1.recvlen));
-						instructionsArray[count] := data2;
+						IF (data2 <> 'DONE') THEN
+							instructionsArray[count] := data2;
+						ELSE
+							instSize := count;
+							readyToConvert := TRUE;
+						END_IF
 					ELSE
 						data1 := '';
 						data1 := LEFT(receiveData, UDINT_TO_INT(TcpReceive1.recvlen));
-						instructionsArray[count] := data1;
+						IF (data1 <> 'DONE') THEN
+							instructionsArray[count] := data1;
+						ELSE
+							instSize := count;
+							readyToConvert := TRUE;
+						END_IF
 					END_IF
 						
 					// Important: set variables that is changed by higher priority tasks

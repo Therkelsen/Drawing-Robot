@@ -9,12 +9,13 @@ TYPE
 		);
 	ROBOSTATE2 : 
 		(
+		READY,
+		RECEIVE,
 		CONVERT,
-		STOP,
+		RESET,
 		CALIBRATE,
 		DRAW,
-		RECEIVE,
-		RESET
+		STOP
 		);
 	STRING_ANALYZER : 
 		(
