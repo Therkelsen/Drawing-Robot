@@ -4,5 +4,10 @@ VAR
 	activeData : USINT;
 	readyForData : BOOL;
 	receivedData : BOOL;
+	readyToConvert : BOOL;
+	instSize : USINT;
 	instructionsArray : ARRAY[0..4] OF STRING[200];
+	xArray : ARRAY[0..100] OF INT;
+	yArray : ARRAY[0..100] OF INT;
+	zArray : ARRAY[0..100] OF INT;
 END_VAR

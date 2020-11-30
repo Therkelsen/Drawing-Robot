@@ -1,11 +1,30 @@
 VAR
-	COMMSTATE : COMMSTATE2;
+	ZCalib : DINT;
+	YCalib : DINT;
+	XCalib : DINT;
 	ROBOSTATE : ROBOSTATE2;
 	count : UINT;
-	bspidser : {REDUND_UNREPLICABLE} BOOL;
-	enableX : {REDUND_UNREPLICABLE} BOOL;
-	enableY : {REDUND_UNREPLICABLE} BOOL;
-	enableZ : {REDUND_UNREPLICABLE} BOOL;
+	sharpener : {REDUND_UNREPLICABLE} BOOL;
+	Xenable : {REDUND_UNREPLICABLE} BOOL;
+	Yenable : {REDUND_UNREPLICABLE} BOOL;
+	Zenable : {REDUND_UNREPLICABLE} BOOL;
+	StopMaskine : BOOL;
+	Programsteps : UINT;
+	XCounter : DINT;
+	YCounter : DINT;
+	ZCounter : DINT;
+	Xdirection : BOOL;
+	Ydirection : BOOL;
+	Zdirection : BOOL;
+	Xstep : BOOL;
+	Ystep : BOOL;
+	Zstep : BOOL;
+	XNegMove : BOOL;
+	YNegMove : BOOL;
+	ZNegMove : BOOL;
+	XPosMove : BOOL;
+	YPosMove : BOOL;
+	ZPosMove : BOOL;
 	directionX : BOOL;
 	directionY : BOOL;
 	directionZ : BOOL;
@@ -22,7 +41,7 @@ VAR
 END_VAR
 (*CONVERSION*)
 VAR
-	counter : USINT;
+	counter : UINT;
 	delim1 : STRING[80];
 	delim2 : STRING[80];
 	string1 : STRING[80];

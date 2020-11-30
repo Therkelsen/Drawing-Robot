@@ -7,8 +7,10 @@ public class DrawingRobotMain {
         System.out.println("====================");
         System.out.println("Starting program");
 
-        RobotClient rc = new RobotClient("10.0.0.69", 12345);
-        //RobotClient rc = new RobotClient("127.0.0.1", 80);
+        String ip = "10.0.0.69";
+        int port = 12345;
+
+        RobotClient rc = new RobotClient(ip, port);
         rc.connect();
         System.out.println("Is connected: " + rc.isConnected());
         
@@ -39,7 +41,7 @@ public class DrawingRobotMain {
         //rc.write(String.valueOf(x));
         for (int i = 0; i < DrawingRobot.inst.size(); i++) {
             if (i % 2 != 0) {
-                System.out.println("Sending data");
+                System.out.print("Sending data : ");
                 DrawingRobot.instructions = DrawingRobot.instructions.concat(String.valueOf(DrawingRobot.inst.get(i)));
                 rc.write(DrawingRobot.instructions);
                 System.out.println(DrawingRobot.instructions);
@@ -52,10 +54,9 @@ public class DrawingRobotMain {
             }
             Thread.sleep(500);
         }
-        DrawingRobot.print();
-        
-        //rc.disconnect();
-        System.out.println("Program done");
+        Thread.sleep(2000);
+        rc.write("DONE");
+        DrawingRobot.print(ip, port);
         System.exit(0);
     }
 }
