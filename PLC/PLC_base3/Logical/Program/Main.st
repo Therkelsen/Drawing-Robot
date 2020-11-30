@@ -11,63 +11,68 @@ PROGRAM _INIT
 	Zenable := FALSE;
 	
 	count := 0;
-	Programsteps := 1;
-	StopMaskine := FALSE;
-	XCounter := 0;
-	YCounter := 0;
-	ZCounter := 0;
-	XCalib := 0; //17680
-	YCalib := 13364; //13364
-	ZCalib := 0;
-	Xdirection := FALSE;
-	Ydirection := FALSE;
-	Zdirection := FALSE;
-	Xstep := FALSE;
-	Ystep := FALSE;
-	Zstep := FALSE;
-	XNegMove := FALSE;
-	YNegMove := FALSE;
-	ZNegMove := FALSE;
-	XPosMove := FALSE;
-	YPosMove := FALSE;
-	ZPosMove := FALSE;
+	xCounter := 0;
+	yCounter := 0;
+	zCounter := 0;
+	xCalib := 0; //17680
+	yCalib := 0; //13364
+	zCalib := 0;
+	xNext := FALSE;
+	yNext := FALSE;
+	zNext := FALSE;
+	xDirection := FALSE;
+	yDirection := FALSE;
+	zDirection := FALSE;
+	xStep := FALSE;
+	yStep := FALSE;
+	zStep := FALSE;
+	xNegMove := FALSE;
+	yNegMove := FALSE;
+	zNegMove := FALSE;
+	xPosMove := FALSE;
+	yPosMove := FALSE;
+	zPosMove := FALSE;
 END_PROGRAM
 
 PROGRAM _CYCLIC 
-	IF A_KILL_SWITCH THEN // Killswitch to stop robot in case of emergency
+	IF killswitch THEN // Killswitch to stop robot in case of emergency
 		//ROBOSTATE := STOP;
 	END_IF;
 	
 	CASE ROBOSTATE OF 
-		INIT:	
+		INIT:
 			counter := 0;
 			delim1 := ' ';
 			delim2 := ',';
-	
+			
 			Xenable := FALSE;
 			Yenable := FALSE;
 			Zenable := FALSE;
-	
+			
 			count := 0;
 			Programsteps := 1;
 			StopMaskine := FALSE;
-			XCounter := 0;
-			YCounter := 0;
-			ZCounter := 0;
-			XCalib := 17680;
-			YCalib := 13364;
-			Xdirection := FALSE;
-			Ydirection := FALSE;
-			Zdirection := FALSE;
-			Xstep := FALSE;
-			Ystep := FALSE;
-			Zstep := FALSE;
-			XNegMove := FALSE;
-			YNegMove := FALSE;
-			ZNegMove := FALSE;
-			XPosMove := FALSE;
-			YPosMove := FALSE;
-			ZPosMove := FALSE;
+			xCounter := 0;
+			yCounter := 0;
+			zCounter := 0;
+			xCalib := 0; //17680
+			yCalib := 0; //13364
+			zCalib := 0;
+			xNext := FALSE;
+			yNext := FALSE;
+			zNext := FALSE;
+			xDirection := FALSE;
+			yDirection := FALSE;
+			zDirection := FALSE;
+			xStep := FALSE;
+			yStep := FALSE;
+			zStep := FALSE;
+			xNegMove := FALSE;
+			yNegMove := FALSE;
+			zNegMove := FALSE;
+			xPosMove := FALSE;
+			yPosMove := FALSE;
+			zPosMove := FALSE;
 			
 		READY: // Does nothing, is meant to wait until finished receiving instructions
 			IF (readyToConvert = TRUE) THEN
@@ -101,124 +106,177 @@ PROGRAM _CYCLIC
 					counter := counter + 1;
 				ELSE
 					ROBOSTATE := DRAW;
+					counter := 0;
 				END_IF
 			END_IF
 			
-		DRAW:
-			IF (A_KILL_SWITCH <> TRUE) THEN
-				IF (stopX <> TRUE OR XCounter > 0) THEN
-					IF (XPosMove = TRUE) THEN
-						IF (XPosMove = XNegMove) THEN
-							XPosMove := FALSE;
+		MANUAL:
+			IF (killswitch <> TRUE) THEN
+				IF (xStop <> TRUE OR xCounter > 0) THEN
+					IF (xPosMove = TRUE) THEN
+						IF (xPosMove = xNegMove) THEN
+							xPosMove := FALSE;
 						END_IF
-						Xdirection := FALSE;
-						Xstep := NOT Xstep;
-						XCounter := XCounter + 1;
+						xDirection := FALSE;
+						xStep := NOT xStep;
+						xCounter := xCounter + 1;
 					END_IF
 				
-					IF (XNegMove = TRUE) THEN
-						IF (XPosMove = XNegMove) THEN
-							XNegMove := FALSE;
+					IF (xNegMove = TRUE) THEN
+						IF (xPosMove = xNegMove) THEN
+							xNegMove := FALSE;
 						END_IF
-						Xdirection := TRUE;
-						Xstep := NOT Xstep;
-						XCounter := XCounter - 1;
+						xDirection := TRUE;
+						xStep := NOT xStep;
+						xCounter := xCounter - 1;
 					END_IF
 				END_IF
 				
-				IF (stopY <> TRUE OR YCounter > 0) THEN
-					IF (YPosMove = TRUE) THEN
-						IF (YPosMove = YNegMove) THEN
-							YPosMove := FALSE;
+				IF (yStop <> TRUE OR yCounter > 0) THEN
+					IF (yPosMove = TRUE) THEN
+						IF (yPosMove = yNegMove) THEN
+							yPosMove := FALSE;
 						END_IF
-						Ydirection := FALSE;
-						Ystep := NOT Ystep;
-						YCounter := YCounter + 1;
+						yDirection := FALSE;
+						yStep := NOT yStep;
+						yCounter := yCounter + 1;
 					END_IF
 				
-					IF (YNegMove = TRUE) THEN
-						IF (YPosMove = YNegMove) THEN
-							YNegMove := FALSE;
+					IF (yNegMove = TRUE) THEN
+						IF (yPosMove = yNegMove) THEN
+							yNegMove := FALSE;
 						END_IF
-						Ydirection := TRUE;
-						Ystep := NOT Ystep;
-						YCounter := YCounter - 1;
+						yDirection := TRUE;
+						yStep := NOT yStep;
+						yCounter := yCounter - 1;
 					END_IF
 				END_IF
 				
-				IF (ZCounter >= 0) THEN
-					IF (ZPosMove = TRUE) THEN
-						IF (ZPosMove = ZNegMove) THEN
-							ZPosMove := FALSE;
+				IF (zCounter >= 0) THEN
+					IF (zPosMove = TRUE) THEN
+						IF (zPosMove = zNegMove) THEN
+							zPosMove := FALSE;
 						END_IF
-						Zdirection := TRUE;
-						Zstep := NOT Zstep;
-						ZCounter := ZCounter + 1;
+						zDirection := TRUE;
+						zStep := NOT zStep;
+						zCounter := zCounter + 1;
 					END_IF
 				
-					IF (ZNegMove = TRUE) THEN
-						IF (ZPosMove = ZNegMove) THEN
-							ZNegMove := FALSE;
+					IF (zNegMove = TRUE) THEN
+						IF (zPosMove = zNegMove) THEN
+							zNegMove := FALSE;
 						END_IF
-						Zdirection := FALSE;
-						Zstep := NOT Zstep;
-						ZCounter := ZCounter - 1;
+						zDirection := FALSE;
+						zStep := NOT zStep;
+						zCounter := zCounter - 1;
 					END_IF
-					count := count + 1;
 				END_IF
 			END_IF
 		
+		DRAW:
+			IF (killswitch <> TRUE) THEN
+				IF (xStop <> TRUE AND xNext <> TRUE) THEN
+					IF (xCounter < xArray[counter]) THEN
+						xDirection := TRUE;
+						xStep := NOT xStep;
+						xCounter := xCounter + 1;
+					ELSIF (xCounter > xArray[counter]) THEN
+						xDirection := FALSE;
+						xStep := NOT xStep;
+						xCounter := xCounter - 1;
+					ELSE
+						XNext := TRUE;
+					END_IF
+				END_IF
+				
+				IF (yStop <> TRUE AND yNext <> TRUE) THEN
+					IF (yCounter < yArray[counter]) THEN
+						yDirection := TRUE;
+						yStep := NOT yStep;
+						yCounter := yCounter + 1;
+					ELSIF (yCounter > yArray[counter]) THEN
+						yDirection := FALSE;
+						yStep := NOT yStep;
+						yCounter := yCounter - 1;
+					ELSE
+						XNext := TRUE;
+					END_IF
+				END_IF
+			END_IF
+
+		PENCIL: IF (killswitch <> TRUE) THEN
+					IF (xCounter >= 3280 AND xCounter <= 17680 AND yCounter >= 1364 AND yCounter <= 13364) THEN
+						IF (bStop <> TRUE AND zCounter < 0 AND zArray[counter] = TRUE) THEN
+							zDirection := TRUE;
+							zStep := NOT zStep;
+							zCounter := zCounter - 1;
+						ELSIF (bStop <> TRUE AND zCounter < 250 AND zArray[counter] = FALSE) THEN
+							zDirection := FALSE;
+							zStep := NOT zStep;
+							zCounter := zCounter + 1;
+						END_IF
+					END_IF
+				END_IF
+			END_IF
+
 		RESET: // ASSUMES XCALIB AND YCALIB AS CONTAINING MAX STEPS ON X AND Y AXIS AS IT USES THESE TO FIND ORIGO
-			IF (A_KILL_SWITCH <> TRUE) THEN
-				ZCalib := 0;
-				IF (stopZ <> TRUE) THEN
-					Zdirection := FALSE;
-					Zstep := NOT Zstep;
-					ZCounter := ZCounter - 1;
+			IF (killswitch <> TRUE) THEN
+				zCalib := 0;
+				IF (zStop <> TRUE) THEN
+					zDirection := FALSE;
+					zStep := NOT zStep;
+					zCounter := zCounter - 1;
 				ELSE
-					ZCounter := ZCalib;
+					zCounter := zCalib;
 				END_IF
-				IF (stopX <> TRUE AND stopZ = TRUE) THEN
-					Xdirection := FALSE;
-					Xstep := NOT Xstep;
-					XCounter := XCounter + 1;
+				IF (xStop <> TRUE AND zStop = TRUE) THEN
+					xDirection := FALSE;
+					xStep := NOT xStep;
+					xCounter := xCounter + 1;
 				ELSE
-					XCounter := XCalib;
+					xCounter := xCalib;
 				END_IF
-				IF (stopY <> TRUE AND stopZ = TRUE) THEN
-					Ydirection := FALSE;
-					Ystep := NOT Ystep;
-					YCounter := YCounter + 1;
+				IF (yStop <> TRUE AND zStop = TRUE) THEN
+					yDirection := FALSE;
+					yStep := NOT yStep;
+					yCounter := yCounter + 1;
 				ELSE
-					YCounter := YCalib;
+					yCounter := yCalib;
 				END_IF
 				
 			END_IF
 			
 		CALIBRATE: // ONLY USE CALIBRATE IF ALL STOP SENSORS ARE ACTIVATED
-			IF (XCounter < 3280) THEN
-				Xdirection := TRUE;
-				Xstep := NOT Xstep;
-				XCounter := XCounter + 1;
+			IF (xCounter < 3280) THEN
+				xDirection := TRUE;
+				xStep := NOT xStep;
+				xCounter := xCounter + 1;
 			END_IF
-			IF (YCounter > 12000) THENW
-				Ydirection := TRUE;
-				Ystep := NOT Ystep;
-				YCounter := YCounter - 1;
+			IF (yCounter < 1364) THEN
+				yDirection := TRUE;
+				yStep := NOT yStep;
+				yCounter := yCounter + 1;
 			END_IF
-			IF (stopB <> TRUE AND XCounter >= 3280 AND YCounter >= 12000) THEN
-				Zdirection := TRUE;
-				Zstep := NOT Zstep;
-				ZCounter := ZCounter + 1;
-			ELSIF (stopB = TRUE) THEN
-				ZCalib := ZCounter - 50;
-			ELSIF (ZCounter > ZCalib) THEN
-				Zdirection := FALSE;
-				Zstep := NOT Zstep;
-				ZCounter := ZCounter - 1;
+			IF (xCounter >= 3280 AND xCounter <= 17680 AND yCounter >= 1364 AND yCounter <= 13364) THEN
+				IF (stopB <> TRUE AND zPosMove = FALSE) THEN
+					zDirection := TRUE;
+					zStep := NOT zStep;
+					zCounter := zCounter + 1;
+				ELSIF (bStop = TRUE AND zPosMove = FALSE) THEN
+					zPosMove = TRUE;
+					zCounter = 0;
+				ELSIF (zPosMove = TRUE) THEN
+					IF (zCounter < 250) THEN
+						zDirection := FALSE;
+						zStep := NOT zStep;
+						zCounter := zCounter + 1;
+					ELSE
+						zPosMove = FALSE
+						ROBOSTATE = DRAW;
+					END_IF
+				END_IF
 			END_IF
 	END_CASE
-					
 END_PROGRAM
 
 PROGRAM _EXIT

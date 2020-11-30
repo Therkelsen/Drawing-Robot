@@ -1,44 +1,3 @@
-VAR
-	ZCalib : DINT;
-	YCalib : DINT;
-	XCalib : DINT;
-	ROBOSTATE : ROBOSTATE2;
-	count : UINT;
-	sharpener : {REDUND_UNREPLICABLE} BOOL;
-	Xenable : {REDUND_UNREPLICABLE} BOOL;
-	Yenable : {REDUND_UNREPLICABLE} BOOL;
-	Zenable : {REDUND_UNREPLICABLE} BOOL;
-	StopMaskine : BOOL;
-	Programsteps : UINT;
-	XCounter : DINT;
-	YCounter : DINT;
-	ZCounter : DINT;
-	Xdirection : BOOL;
-	Ydirection : BOOL;
-	Zdirection : BOOL;
-	Xstep : BOOL;
-	Ystep : BOOL;
-	Zstep : BOOL;
-	XNegMove : BOOL;
-	YNegMove : BOOL;
-	ZNegMove : BOOL;
-	XPosMove : BOOL;
-	YPosMove : BOOL;
-	ZPosMove : BOOL;
-	directionX : BOOL;
-	directionY : BOOL;
-	directionZ : BOOL;
-	stepX : BOOL;
-	stepY : BOOL;
-	stepZ : BOOL;
-	stopB : BOOL;
-	stopX : BOOL;
-	stopY : BOOL;
-	stopZ : BOOL;
-	start1 : BOOL;
-	timer : TON;
-	A_KILL_SWITCH : BOOL;
-END_VAR
 (*CONVERSION*)
 VAR
 	counter : UINT;
@@ -59,21 +18,42 @@ VAR
 	z1 : INT;
 	z2 : INT;
 END_VAR
-(*STRING_ANALYZER*)
-VAR
-	stringState : STRING_ANALYZER;
-	MoveX : INT;
-	MoveY : INT;
-	MoveZ : INT;
-	value_countX : INT;
-	value_countY : INT;
-	value_countZ : INT;
-END_VAR
 (*MOVEMENT*)
 VAR
-	yPosPrev : INT;
-	xPosPrev : INT;
-	yPos : INT;
-	xPos : INT;
-	scale : INT;
+	ROBOSTATE : ROBOSTATE2;
+	xCalib : DINT;
+	yCalib : DINT;
+	zCalib : DINT;
+	count : UINT;
+	sharpener : {REDUND_UNREPLICABLE} BOOL;
+	xEnable : {REDUND_UNREPLICABLE} BOOL;
+	yEnable : {REDUND_UNREPLICABLE} BOOL;
+	zEnable : {REDUND_UNREPLICABLE} BOOL;
+	StopMaskine : BOOL;
+	Programsteps : UINT;
+	xCounter : DINT;
+	yCounter : DINT;
+	zCounter : DINT;
+	xDirection : BOOL;
+	yDirection : BOOL;
+	zDirection : BOOL;
+	xNext : BOOL;
+	yNext : BOOL;
+	zNext : BOOL;
+	xStep : BOOL;
+	yStep : BOOL;
+	zStep : BOOL;
+	xNegMove : BOOL;
+	yNegMove : BOOL;
+	zNegMove : BOOL;
+	zPosMove : BOOL;
+	yPosMove : BOOL;
+	zPosMove : BOOL;
+	bStop : BOOL;
+	xStop : BOOL;
+	yStop : BOOL;
+	zStop : BOOL;
+	start1 : BOOL;
+	timer : TON;
+	killswitch : BOOL;
 END_VAR
