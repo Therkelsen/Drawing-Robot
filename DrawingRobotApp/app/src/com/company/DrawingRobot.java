@@ -1,79 +1,77 @@
 
 package com.company;
 
+//  Importing external classes needed
 import java.awt.Color;
-
 import java.util.ArrayList;
 
 public class DrawingRobot {
-    // Colors needed
-    static Color grayVal = new Color(0, 0, 0);
-    static Color gray = new Color(100, 100, 100);
-    static Color white = new Color(255, 255, 255);
 
-    // Variables needed
-    static int threshold = 60;
-    static float grVal;
-    static int draw = 0;
-    static int prevDraw = 0;
+    // Initialize color objects needed for image processing
+    Color gray = new Color(100, 100, 100);
+    Color white = new Color(255, 255, 255);
 
-    static String s = "";
+    // Initialize variables needed for image processing
+    int threshold;
+    float grayVal;
+    int draw = 0;
+    int prevDraw = 0;
 
-    // Loading image and initializing an image to convert onto
-    static Picture image = new Picture("app/Assets/test.png");
+    // Create an image object to convert onto
+    Picture image;
 
-    static ArrayList<String> inst = new ArrayList<String>();
-    static String instructions = "";
+    //  Initialize variables for storing/sending instructions
+    ArrayList<String> inst = new ArrayList<>();
+    String instructions;
 
-    public static boolean drawOrNot(float gray, int threshold) {
-        // If the intensity of gray is higher than the set limit
-        // Pencil down (Draw), if not, Pencil up (Stop drawing)
-
-        return gray < threshold;
+    public DrawingRobot(String path, int threshold){
+        this.image = new Picture(path);
+        this.threshold = threshold;
     }
 
-    public static void processImage(int col, int row) {
-        // Convert image to grayscale, then convert to "black"/white
+    public void convertImage(int col, int row) {
+        // Convert image to grayscale, then convert to black/white (no shading)
+        image.set(col, row, Luminance.toGray(image.get(col, row)));
+        grayVal = image.get(col, row).getRed();
 
-        grayVal = Luminance.toGray(image.get(col, row));
-        image.set(col, row, grayVal);
-        grVal = image.get(col, row).getRed();
-
-        if (drawOrNot(grVal, threshold)) {
+        if (draw == 1) {
             image.set(col, row, gray);
         } else {
             image.set(col, row, white);
         }
 
         // Update frame displaying image, and add current instruction to string
-
         image.show();
+    }
 
-        draw = drawOrNot(grVal, threshold) ? 1 : 0;
+    public void processImage(int col, int row) {
+        // If the intensity of gray is higher than the set limit
+        // Pencil down (Draw), if not, Pencil up (Stop drawing)
+        draw = (grayVal < threshold) ? 1 : 0;
 
+        //  Only send an instruction if draw is different from prevDraw
+        //  (Image goes from black to white, or vice versa
+        String s;
         if (draw != prevDraw) {
             if (draw == 1) {
-                s = String.valueOf(col + 1) + " " + String.valueOf(row + 1) + " " + String.valueOf(draw) + ",";
+                s = (col + 1) + " " + (row + 1) + " " + draw + ",";
             } else {
-                s = String.valueOf(col) + " " + String.valueOf(row + 1) + " " + String.valueOf(draw) + ",";
+                s = col + " " + (row + 1) + " " + draw + ",";
             }
-
             inst.add(s);
         }
-
         prevDraw = draw;
     }
 
-    public static void print(String ip, int port) {
+    public void print(String ip, int port, int size) {
         // Print everything in the terminal
-        System.out.println("");
+        System.out.println();
         System.out.println("Transfer done");
-        System.out.println("Length of instructions: [" + inst.size() + "] pairs");
+        System.out.println("Length of instructions: [" + size + "] pairs");
         System.out.println("Size of image: [" + image.width() + " * " + image.height() + "] px = [" + (image.width() * image.height()) + "] px");
-        System.out.println("");
+        System.out.println();
         System.out.println("Program done");
-        System.out.println("Disconnecting from socket ip " + ip + " on port " + String.valueOf(port));
+        System.out.println("Disconnecting from socket ip " + ip + " on port " + port);
         System.out.println("Exiting program");
     }
-
 }
