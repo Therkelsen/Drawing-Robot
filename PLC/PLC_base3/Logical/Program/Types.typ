@@ -9,6 +9,7 @@ TYPE
 		);
 	ROBOSTATE2 : 
 		(
+		INIT,
 		READY,
 		RECEIVE,
 		CONVERT,

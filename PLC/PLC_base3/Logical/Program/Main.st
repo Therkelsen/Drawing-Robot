@@ -16,8 +16,9 @@ PROGRAM _INIT
 	XCounter := 0;
 	YCounter := 0;
 	ZCounter := 0;
-	XCalib := 17680;
-	YCalib := 13364;
+	XCalib := 0; //17680
+	YCalib := 13364; //13364
+	ZCalib := 0;
 	Xdirection := FALSE;
 	Ydirection := FALSE;
 	Zdirection := FALSE;
@@ -38,6 +39,36 @@ PROGRAM _CYCLIC
 	END_IF;
 	
 	CASE ROBOSTATE OF 
+		INIT:	
+			counter := 0;
+			delim1 := ' ';
+			delim2 := ',';
+	
+			Xenable := FALSE;
+			Yenable := FALSE;
+			Zenable := FALSE;
+	
+			count := 0;
+			Programsteps := 1;
+			StopMaskine := FALSE;
+			XCounter := 0;
+			YCounter := 0;
+			ZCounter := 0;
+			XCalib := 17680;
+			YCalib := 13364;
+			Xdirection := FALSE;
+			Ydirection := FALSE;
+			Zdirection := FALSE;
+			Xstep := FALSE;
+			Ystep := FALSE;
+			Zstep := FALSE;
+			XNegMove := FALSE;
+			YNegMove := FALSE;
+			ZNegMove := FALSE;
+			XPosMove := FALSE;
+			YPosMove := FALSE;
+			ZPosMove := FALSE;
+			
 		READY: // Does nothing, is meant to wait until finished receiving instructions
 			IF (readyToConvert = TRUE) THEN
 				ROBOSTATE := CONVERT;
@@ -64,9 +95,9 @@ PROGRAM _CYCLIC
 					yArray[counter] := STRING_TO_INT(MID(string1, D2 - D1 - 1, D1 + 1));
 					zArray[counter] := STRING_TO_INT(MID(string1, D3 - D2 - 1, D2 + 1));
 					
-					xArray[counter + 1] := STRING_TO_INT(LEFT(string2, D4 - 1));
-					yArray[counter + 1] := STRING_TO_INT(MID(string2, D5 - D4 - 1, D4 + 1));
-					zArray[counter + 1] := STRING_TO_INT(MID(string2, D6 - D5 - 1, D5 + 1));
+					xArray[counter + 3] := STRING_TO_INT(LEFT(string2, D4 - 1));
+					yArray[counter + 3] := STRING_TO_INT(MID(string2, D5 - D4 - 1, D4 + 1));
+					zArray[counter + 3] := STRING_TO_INT(MID(string2, D6 - D5 - 1, D5 + 1));
 					counter := counter + 1;
 				ELSE
 					ROBOSTATE := DRAW;
@@ -75,7 +106,7 @@ PROGRAM _CYCLIC
 			
 		DRAW:
 			IF (A_KILL_SWITCH <> TRUE) THEN
-				IF (stopX <> TRUE) THEN
+				IF (stopX <> TRUE OR XCounter > 0) THEN
 					IF (XPosMove = TRUE) THEN
 						IF (XPosMove = XNegMove) THEN
 							XPosMove := FALSE;
@@ -95,7 +126,7 @@ PROGRAM _CYCLIC
 					END_IF
 				END_IF
 				
-				IF (stopY <> TRUE) THEN
+				IF (stopY <> TRUE OR YCounter > 0) THEN
 					IF (YPosMove = TRUE) THEN
 						IF (YPosMove = YNegMove) THEN
 							YPosMove := FALSE;
@@ -115,7 +146,7 @@ PROGRAM _CYCLIC
 					END_IF
 				END_IF
 				
-				IF (stopZ <> TRUE) THEN
+				IF (ZCounter >= 0) THEN
 					IF (ZPosMove = TRUE) THEN
 						IF (ZPosMove = ZNegMove) THEN
 							ZPosMove := FALSE;
@@ -130,168 +161,62 @@ PROGRAM _CYCLIC
 							ZNegMove := FALSE;
 						END_IF
 						Zdirection := FALSE;
-						Zstep := NOT Xstep;
-						ZCounter := XCounter - 1;
-					END_IF
-					count := count + 1;
-				END_IF
-			
-			(*IF XPosMove = TRUE THEN
-				XNegMove := FALSE;
-				Xdirection := FALSE;
-			ELSE
-				XNegMove := TRUE;
-				Xdirection := TRUE;
-			END_IF
-				
-			IF YPosMove = TRUE THEN
-				YNegMove := FALSE;
-				Ydirection := FALSE;
-			ELSE
-				YNegMove := TRUE;
-				Ydirection := TRUE;
-			END_IF
-				
-			IF YPosMove = TRUE THEN
-				YNegMove := FALSE;
-				Ydirection := FALSE;
-			ELSE
-				YNegMove := TRUE;
-				Ydirection := TRUE;
-			END_IF
-			
-			IF A_KILL_SWITCH <> TRUE THEN
-				IF XPosMove = TRUE THEN
-					Xstep := NOT Xstep;
-				END_IF
-				IF XPosMove = FALSE THEN
-					//Xstep := NOT Xstep;
-				END_IF
-				IF YPosMove = TRUE THEN
-					Ystep := NOT Ystep;
-				END_IF
-				IF YPosMove = FALSE THEN
-					//Ystep := NOT Ystep;
-				END_IF
-				IF ZPosMove = TRUE THEN
-					Zstep := NOT Zstep;
-				END_IF
-				IF ZPosMove = FALSE THEN
-					//Zstep := NOT Zstep;
-				END_IF
-			END_IF
-			
-			IF A_KILL_SWITCH <> TRUE THEN
-				Xstep := NOT Xstep;
-			END_IF*)
-			
-			(*Xenable := FALSE;
-			Yenable := FALSE;
-			Zenable := FALSE;*)
-			
-			(*IF (A_KILL_SWITCH <> TRUE) THEN
-				IF (XPosMove = TRUE) THEN
-					IF (stopX <> TRUE) THEN
-						IF (XPosMove = XNegMove) THEN
-							XPosMove := FALSE;
-						END_IF
-						Xdirection := FALSE;
-						Xstep := NOT Xstep;
-						XCounter := XCounter + 1;
-					END_IF
-				END_IF
-				
-				IF (XNegMove = TRUE) THEN
-					IF (stopX <> TRUE) THEN
-						IF (XPosMove = XNegMove) THEN
-							XNegMove := FALSE;
-						END_IF
-						Xdirection := TRUE;
-						Xstep := NOT Xstep;
-						XCounter := XCounter - 1;
-					END_IF
-				END_IF
-				
-				IF (YPosMove = TRUE) THEN
-					IF (stopY <> TRUE) THEN
-						IF (YPosMove = YNegMove) THEN
-							YNegMove := FALSE;
-						END_IF
-						Ydirection := FALSE;
-						Ystep := NOT Ystep;
-						YCounter := YCounter + 1;
-					END_IF
-				END_IF
-				
-				IF (YNegMove = TRUE) THEN
-					IF (stopY <> TRUE) THEN
-						IF (YPosMove = YNegMove) THEN
-							YNegMove := TRUE;
-						END_IF
-						Ydirection := TRUE;
-						Ystep := NOT Ystep;
-						YCounter := YCounter - 1;
-					END_IF
-				END_IF
-				
-				IF (ZPosMove = TRUE) THEN
-					IF (stopZ <> TRUE) THEN
-						IF (ZPosMove = ZNegMove) THEN
-							ZNegMove := TRUE;
-						END_IF
-						Zdirection := TRUE;
-						Zstep := NOT Zstep;
-						ZCounter := ZCounter + 1;
-					END_IF
-				END_IF
-				
-				IF (ZNegMove = TRUE) THEN
-					IF (stopZ <> TRUE) THEN
-						IF (ZPosMove = ZNegMove) THEN
-							ZNegMove := TRUE;
-						END_IF
-						Zdirection := FALSE;
 						Zstep := NOT Zstep;
 						ZCounter := ZCounter - 1;
 					END_IF
-				END_IF*)
+					count := count + 1;
+				END_IF
 			END_IF
 		
 		RESET: // ASSUMES XCALIB AND YCALIB AS CONTAINING MAX STEPS ON X AND Y AXIS AS IT USES THESE TO FIND ORIGO
 			IF (A_KILL_SWITCH <> TRUE) THEN
-				IF (stopX <> TRUE) THEN
+				ZCalib := 0;
+				IF (stopZ <> TRUE) THEN
+					Zdirection := FALSE;
+					Zstep := NOT Zstep;
+					ZCounter := ZCounter - 1;
+				ELSE
+					ZCounter := ZCalib;
+				END_IF
+				IF (stopX <> TRUE AND stopZ = TRUE) THEN
 					Xdirection := FALSE;
 					Xstep := NOT Xstep;
 					XCounter := XCounter + 1;
 				ELSE
 					XCounter := XCalib;
 				END_IF
-				IF (stopY <> TRUE) THEN
+				IF (stopY <> TRUE AND stopZ = TRUE) THEN
 					Ydirection := FALSE;
 					Ystep := NOT Ystep;
 					YCounter := YCounter + 1;
 				ELSE
 					YCounter := YCalib;
 				END_IF
-				IF (stopZ <> TRUE) THEN
-					Zdirection := FALSE;
-					Zstep := NOT Zstep;
-					ZCounter := ZCounter - 1;
-				END_IF
+				
 			END_IF
 			
 		CALIBRATE: // ONLY USE CALIBRATE IF ALL STOP SENSORS ARE ACTIVATED
-			IF (XCounter > 0) THEN
+			IF (XCounter < 3280) THEN
 				Xdirection := TRUE;
 				Xstep := NOT Xstep;
-				XCounter := XCounter - 1;
+				XCounter := XCounter + 1;
 			END_IF
-			IF (YCounter > 0) THEN
+			IF (YCounter > 12000) THENW
 				Ydirection := TRUE;
 				Ystep := NOT Ystep;
 				YCounter := YCounter - 1;
 			END_IF
-			
+			IF (stopB <> TRUE AND XCounter >= 3280 AND YCounter >= 12000) THEN
+				Zdirection := TRUE;
+				Zstep := NOT Zstep;
+				ZCounter := ZCounter + 1;
+			ELSIF (stopB = TRUE) THEN
+				ZCalib := ZCounter - 50;
+			ELSIF (ZCounter > ZCalib) THEN
+				Zdirection := FALSE;
+				Zstep := NOT Zstep;
+				ZCounter := ZCounter - 1;
+			END_IF
 	END_CASE
 					
 END_PROGRAM
