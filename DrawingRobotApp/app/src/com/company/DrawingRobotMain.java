@@ -15,7 +15,7 @@ public class DrawingRobotMain {
         int port = 12345;
 
         //  Initialize variables for image processing
-        String imagePath = "app/Assets/test.png";
+        String imagePath = "app/Assets/swarte_piet.png";
 
         int blackOrWhiteThreshold = 60;
 
@@ -63,7 +63,7 @@ public class DrawingRobotMain {
             } else {
                 dr.instructions = dr.instructions.concat(String.valueOf(dr.inst.get(i)));
             }
-            Thread.sleep(500);
+            Thread.sleep(150);
         }
         Thread.sleep(2500);
         rc.write("DONE");

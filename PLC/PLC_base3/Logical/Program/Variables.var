@@ -1,5 +1,6 @@
 (*CONVERSION*)
 VAR
+	yPrev : INT;
 	counter : UINT;
 	delim1 : STRING[80];
 	delim2 : STRING[80];
@@ -46,13 +47,14 @@ VAR
 	xNegMove : BOOL;
 	yNegMove : BOOL;
 	zNegMove : BOOL;
-	zPosMove : BOOL;
+	xPosMove : BOOL;
 	yPosMove : BOOL;
 	zPosMove : BOOL;
 	bStop : BOOL;
 	xStop : BOOL;
 	yStop : BOOL;
 	zStop : BOOL;
+	scale : INT;
 	start1 : BOOL;
 	timer : TON;
 	killswitch : BOOL;

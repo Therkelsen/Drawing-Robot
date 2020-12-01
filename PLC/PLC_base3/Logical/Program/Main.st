@@ -6,9 +6,9 @@ PROGRAM _INIT
 	delim1 := ' ';
 	delim2 := ',';
 	
-	Xenable := FALSE;
-	Yenable := FALSE;
-	Zenable := FALSE;
+	xEnable := FALSE;
+	yEnable := FALSE;
+	zEnable := FALSE;
 	
 	count := 0;
 	xCounter := 0;
@@ -17,6 +17,7 @@ PROGRAM _INIT
 	xCalib := 0; //17680
 	yCalib := 0; //13364
 	zCalib := 0;
+	yPrev := 0;
 	xNext := FALSE;
 	yNext := FALSE;
 	zNext := FALSE;
@@ -32,6 +33,7 @@ PROGRAM _INIT
 	xPosMove := FALSE;
 	yPosMove := FALSE;
 	zPosMove := FALSE;
+	scale := 25; // steps / px
 END_PROGRAM
 
 PROGRAM _CYCLIC 
@@ -44,20 +46,19 @@ PROGRAM _CYCLIC
 			counter := 0;
 			delim1 := ' ';
 			delim2 := ',';
-			
-			Xenable := FALSE;
-			Yenable := FALSE;
-			Zenable := FALSE;
-			
+	
+			xEnable := FALSE;
+			yEnable := FALSE;
+			zEnable := FALSE;
+	
 			count := 0;
-			Programsteps := 1;
-			StopMaskine := FALSE;
 			xCounter := 0;
 			yCounter := 0;
 			zCounter := 0;
 			xCalib := 0; //17680
 			yCalib := 0; //13364
 			zCalib := 0;
+			yPrev := 0;
 			xNext := FALSE;
 			yNext := FALSE;
 			zNext := FALSE;
@@ -73,6 +74,17 @@ PROGRAM _CYCLIC
 			xPosMove := FALSE;
 			yPosMove := FALSE;
 			zPosMove := FALSE;
+			readyToConvert := FALSE;
+			scale := 25;
+			
+			FOR count := 0 TO 249 DO
+				instructionsArray[count] := '';
+				xArray[count] := 0;
+				yArray[count] := 0;
+				zArray[count] := 0;
+			END_FOR;
+			
+			ROBOSTATE := READY;
 			
 		READY: // Does nothing, is meant to wait until finished receiving instructions
 			IF (readyToConvert = TRUE) THEN
@@ -80,9 +92,9 @@ PROGRAM _CYCLIC
 			END_IF
 			
 		CONVERT:
-			timer(IN := NOT timer.Q, PT := T#1000ms);
+			timer(IN := NOT timer.Q, PT := T#100ms);
 			IF (timer.Q = TRUE) THEN
-				IF (counter < (instSize + 1)) THEN
+				IF (counter < (instSize)) THEN
 					// Splits element on index counter of instructionsArray[] into two seperate strings
 					string1 := LEFT(instructionsArray[counter], FIND(instructionsArray[counter], delim2));
 					string2 := RIGHT(instructionsArray[counter], FIND(instructionsArray[counter], delim2));
@@ -100,18 +112,19 @@ PROGRAM _CYCLIC
 					yArray[counter] := STRING_TO_INT(MID(string1, D2 - D1 - 1, D1 + 1));
 					zArray[counter] := STRING_TO_INT(MID(string1, D3 - D2 - 1, D2 + 1));
 					
-					xArray[counter + 3] := STRING_TO_INT(LEFT(string2, D4 - 1));
-					yArray[counter + 3] := STRING_TO_INT(MID(string2, D5 - D4 - 1, D4 + 1));
-					zArray[counter + 3] := STRING_TO_INT(MID(string2, D6 - D5 - 1, D5 + 1));
-					counter := counter + 1;
+					xArray[counter + 1] := STRING_TO_INT(LEFT(string2, D4 - 1));
+					yArray[counter + 1] := STRING_TO_INT(MID(string2, D5 - D4 - 1, D4 + 1));
+					zArray[counter + 1] := STRING_TO_INT(MID(string2, D6 - D5 - 1, D5 + 1));
+					counter := counter + 2;
 				ELSE
-					ROBOSTATE := DRAW;
+					ROBOSTATE := RESET;
+					
 					counter := 0;
 				END_IF
 			END_IF
 			
 		MANUAL:
-			IF (killswitch <> TRUE) THEN
+			(*IF (killswitch <> TRUE) THEN
 				IF (xStop <> TRUE OR xCounter > 0) THEN
 					IF (xPosMove = TRUE) THEN
 						IF (xPosMove = xNegMove) THEN
@@ -171,54 +184,81 @@ PROGRAM _CYCLIC
 						zCounter := zCounter - 1;
 					END_IF
 				END_IF
-			END_IF
+			END_IF*)
 		
 		DRAW:
-			IF (killswitch <> TRUE) THEN
-				IF (xStop <> TRUE AND xNext <> TRUE) THEN
-					IF (xCounter < xArray[counter]) THEN
+			IF (killswitch <> TRUE OR counter < instSize) THEN
+				IF (xStop <> TRUE) THEN
+					IF (xArray[counter] * scale > xCounter) THEN
+						xNext := FALSE;
 						xDirection := TRUE;
 						xStep := NOT xStep;
 						xCounter := xCounter + 1;
-					ELSIF (xCounter > xArray[counter]) THEN
+					ELSIF (xArray[counter] * scale < xCounter) THEN
+						xNext := FALSE;
 						xDirection := FALSE;
 						xStep := NOT xStep;
-						xCounter := xCounter - 1;
-					ELSE
-						XNext := TRUE;
+						xCounter := xCounter - 1; 
+					ELSIF (xArray[counter] * scale = xCounter AND xNext = FALSE) THEN
+						ROBOSTATE := PENCILDOWN;
 					END_IF
 				END_IF
-				
-				IF (yStop <> TRUE AND yNext <> TRUE) THEN
-					IF (yCounter < yArray[counter]) THEN
+			END_IF
+		
+		DRAW2:
+			IF (killswitch <> TRUE) THEN
+				IF (xStop <> TRUE) THEN
+					IF (xArray[counter + 1] * scale > xCounter) THEN
+						xNext := FALSE;
+						xDirection := TRUE;
+						xStep := NOT xStep;
+						xCounter := xCounter + 1;
+					ELSIF (xArray[counter + 1] * scale < xCounter) THEN
+						xNext := FALSE;
+						xDirection := FALSE;
+						xStep := NOT xStep;
+						xCounter := xCounter - 1; 
+					ELSIF (xArray[counter + 1] * scale = xCounter AND xNext = FALSE) THEN
+						ROBOSTATE := PENCILUP;
+					END_IF
+				END_IF
+			END_IF
+			
+		NEXTLINE:
+			IF (killswitch <> TRUE) THEN
+				IF (yStop <> TRUE) THEN
+					IF (yCounter < (counter + 1) * scale) THEN
 						yDirection := TRUE;
 						yStep := NOT yStep;
 						yCounter := yCounter + 1;
-					ELSIF (yCounter > yArray[counter]) THEN
-						yDirection := FALSE;
-						yStep := NOT yStep;
-						yCounter := yCounter - 1;
-					ELSE
-						XNext := TRUE;
+					ELSIF (yCounter = (counter + 1) * scale) THEN
+						counter := counter + 1;
+						ROBOSTATE := DRAW;
 					END_IF
 				END_IF
 			END_IF
-
-		PENCIL: IF (killswitch <> TRUE) THEN
-					IF (xCounter >= 3280 AND xCounter <= 17680 AND yCounter >= 1364 AND yCounter <= 13364) THEN
-						IF (bStop <> TRUE AND zCounter < 0 AND zArray[counter] = TRUE) THEN
-							zDirection := TRUE;
-							zStep := NOT zStep;
-							zCounter := zCounter - 1;
-						ELSIF (bStop <> TRUE AND zCounter < 250 AND zArray[counter] = FALSE) THEN
-							zDirection := FALSE;
-							zStep := NOT zStep;
-							zCounter := zCounter + 1;
-						END_IF
-					END_IF
-				END_IF
+			
+		PENCILDOWN: 
+			IF (killswitch <> TRUE) THEN
+				IF (bStop <> TRUE) THEN
+					zDirection := TRUE;
+					zStep := NOT zStep;
+					zCounter := zCounter - 1;
+				ELSE
+					ROBOSTATE := DRAW2;
+				END_IF			
 			END_IF
-
+		PENCILUP: 
+			IF (killswitch <> TRUE) THEN
+				IF (zCounter < 500) THEN
+					zDirection := FALSE;
+					zStep := NOT zStep;
+					zCounter := zCounter + 1;
+				ELSE
+					ROBOSTATE := NEXTLINE;
+				END_IF			
+			END_IF
+			
 		RESET: // ASSUMES XCALIB AND YCALIB AS CONTAINING MAX STEPS ON X AND Y AXIS AS IT USES THESE TO FIND ORIGO
 			IF (killswitch <> TRUE) THEN
 				zCalib := 0;
@@ -244,6 +284,9 @@ PROGRAM _CYCLIC
 					yCounter := yCalib;
 				END_IF
 				
+				IF (xStop = TRUE AND yStop = TRUE AND zStop = TRUE) THEN
+					ROBOSTATE := CALIBRATE;
+				END_IF
 			END_IF
 			
 		CALIBRATE: // ONLY USE CALIBRATE IF ALL STOP SENSORS ARE ACTIVATED
@@ -258,21 +301,23 @@ PROGRAM _CYCLIC
 				yCounter := yCounter + 1;
 			END_IF
 			IF (xCounter >= 3280 AND xCounter <= 17680 AND yCounter >= 1364 AND yCounter <= 13364) THEN
-				IF (stopB <> TRUE AND zPosMove = FALSE) THEN
+				IF (bStop <> TRUE AND zPosMove = FALSE) THEN
 					zDirection := TRUE;
 					zStep := NOT zStep;
 					zCounter := zCounter + 1;
 				ELSIF (bStop = TRUE AND zPosMove = FALSE) THEN
-					zPosMove = TRUE;
-					zCounter = 0;
+					zPosMove := TRUE;
+					zCounter := 0;
 				ELSIF (zPosMove = TRUE) THEN
-					IF (zCounter < 250) THEN
+					IF (zCounter < 500) THEN
 						zDirection := FALSE;
 						zStep := NOT zStep;
 						zCounter := zCounter + 1;
 					ELSE
-						zPosMove = FALSE
-						ROBOSTATE = DRAW;
+						zPosMove := FALSE;
+						xCounter := 0;
+						yCounter := 0;
+						ROBOSTATE := MANUAL;
 					END_IF
 				END_IF
 			END_IF
