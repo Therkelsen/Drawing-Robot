@@ -5,8 +5,8 @@ VAR
 	readyForData : BOOL;
 	receivedData : BOOL;
 	readyToConvert : BOOL;
-	instSize : USINT;
-	instructionsArray : ARRAY[0..249] OF STRING[200];
+	instSize : DINT;
+	instructionsArray : ARRAY[0..999] OF STRING[25];
 	xArray : ARRAY[0..100] OF INT;
 	yArray : ARRAY[0..100] OF INT;
 	zArray : ARRAY[0..100] OF INT;

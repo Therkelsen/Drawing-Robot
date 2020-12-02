@@ -25,7 +25,7 @@ VAR
 	xCalib : DINT;
 	yCalib : DINT;
 	zCalib : DINT;
-	count : UINT;
+	count : DINT;
 	sharpener : {REDUND_UNREPLICABLE} BOOL;
 	xEnable : {REDUND_UNREPLICABLE} BOOL;
 	yEnable : {REDUND_UNREPLICABLE} BOOL;
@@ -54,8 +54,9 @@ VAR
 	xStop : BOOL;
 	yStop : BOOL;
 	zStop : BOOL;
-	scale : INT;
+	scale : DINT;
 	start1 : BOOL;
 	timer : TON;
 	killswitch : BOOL;
+	hasBeenSharpened : BOOL;
 END_VAR

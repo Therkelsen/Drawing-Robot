@@ -10,9 +10,10 @@ PROGRAM _INIT
 	receivedData := FALSE;
 	moreData := FALSE;
 	receiveData := '';
-	FOR count := 0 TO 249 DO
+	FOR count := 0 TO 999 DO
 		instructionsArray[count] := '';
-		xArray[count] := 0;		yArray[count] := 0;
+		xArray[count] := 0;		
+		yArray[count] := 0;
 		zArray[count] := 0;
 	END_FOR;
 	count := 0;
@@ -124,8 +125,11 @@ PROGRAM _CYCLIC
 			receivedData := FALSE;
 			moreData := FALSE;
 			receiveData := '';
-			FOR count := 0 TO 4 DO
+			FOR count := 0 TO 999 DO
 				instructionsArray[count] := '';
+				xArray[count] := 0;		
+				yArray[count] := 0;
+				zArray[count] := 0;
 			END_FOR;
 			count := 0;
 			tcpst := TCPSTATE_RECEIVE;

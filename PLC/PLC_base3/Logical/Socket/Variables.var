@@ -12,5 +12,5 @@ VAR
 	timer : TON;
 	firstData : BOOL;
 	moreData : BOOL;
-	count : USINT;
+	count : DINT;
 END_VAR
