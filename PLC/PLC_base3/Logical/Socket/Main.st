@@ -10,10 +10,9 @@ PROGRAM _INIT
 	receivedData := FALSE;
 	moreData := FALSE;
 	receiveData := '';
-	FOR count := 0 TO 4 DO
+	FOR count := 0 TO 249 DO
 		instructionsArray[count] := '';
-		xArray[count] := 0;
-		yArray[count] := 0;
+		xArray[count] := 0;		yArray[count] := 0;
 		zArray[count] := 0;
 	END_FOR;
 	count := 0;
@@ -67,6 +66,7 @@ PROGRAM _CYCLIC
 							instSize := count;
 							readyToConvert := TRUE;
 						END_IF
+						
 					END_IF
 						
 					// Important: set variables that is changed by higher priority tasks
@@ -104,7 +104,7 @@ PROGRAM _CYCLIC
 			receivedData := FALSE;
 			moreData := FALSE;
 			receiveData := '';
-			FOR count := 0 TO 4 DO
+			FOR count := 0 TO 249 DO
 				instructionsArray[count] := '';
 			END_FOR;
 			count := 0;
@@ -133,7 +133,7 @@ PROGRAM _CYCLIC
 	
 	
 	// Double buffer part of code
-	timer(IN := NOT timer.Q, PT := T#500ms);
+	timer(IN := NOT timer.Q, PT := T#100ms);
 	
 	IF (receivedData) THEN
 		readyForData := FALSE;

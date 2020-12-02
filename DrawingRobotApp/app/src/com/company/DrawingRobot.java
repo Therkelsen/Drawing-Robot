@@ -22,7 +22,7 @@ public class DrawingRobot {
 
     //  Initialize variables for storing/sending instructions
     ArrayList<String> inst = new ArrayList<>();
-    String instructions;
+    String instructions = "";
 
     public DrawingRobot(String path, int threshold){
         this.image = new Picture(path);
