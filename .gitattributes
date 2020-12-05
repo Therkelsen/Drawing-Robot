@@ -2,4 +2,4 @@
 * text=auto
 *.md linguist-vendored=false
 *.fun linguist-vendored=false
-*.st linguist-language=C++
+*.st linguist-language=Pascal
