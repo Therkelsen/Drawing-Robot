@@ -1,5 +1,4 @@
-
-package com.company;
+package src;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;

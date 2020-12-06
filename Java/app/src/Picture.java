@@ -1,15 +1,14 @@
-/*
+package src;/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
 //package dk.sdu.mmmi.rd1.edgedetect;
-package com.company;
 
 /******************************************************************************
- *  Compilation:  javac Picture.java
- *  Execution:    java Picture imagename
+ *  Compilation:  javac src.Picture.java
+ *  Execution:    java src.Picture imagename
  *  Dependencies: none
  *
  *  Data type for manipulating individual pixels of an image. The original
@@ -17,7 +16,7 @@ package com.company;
  *  user can create a blank image of a given size. Includes methods for
  *  displaying the image in a window on the screen or saving to a file.
  *
- *  % java Picture mandrill.jpg
+ *  % java src.Picture mandrill.jpg
  *
  *  Remarks
  *  -------

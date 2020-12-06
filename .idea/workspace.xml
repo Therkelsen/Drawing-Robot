@@ -20,16 +20,93 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b781b80-1517-4886-b7d9-4d55bd8c61ce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Drawing-Robot.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/.idea/DrawingRobotApp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/Assets/Assets.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/DrawingRobotApp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Drawing-Robot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Drawing-Robot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/src/com/company/DrawingRobot.java" beforeDir="false" afterPath="$PROJECT_DIR$/DrawingRobotApp/app/src/com/company/DrawingRobot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/src/com/company/DrawingRobotMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/DrawingRobotApp/app/src/com/company/DrawingRobotMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/.idea/DrawingRobotApp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/.idea/discord.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/.idea/libraries/Assets.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/.idea/discord.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Assets.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Christian&amp;Peter.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Christian&amp;Peter/Global.typ" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Christian&amp;Peter/Global.var" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Christian&amp;Peter/Master/IEC.prg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Christian&amp;Peter/Master/Main.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Christian&amp;Peter/Master/Types.typ" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Christian&amp;Peter/Master/Variables.var" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Christian&amp;Peter/Package.pkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Christian&amp;Peter/Reset/Cyclic.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Christian&amp;Peter/Reset/Exit.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Christian&amp;Peter/Reset/IEC.prg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Christian&amp;Peter/Reset/Init.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Christian&amp;Peter/Reset/Types.typ" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Christian&amp;Peter/Reset/Variables.var" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/EdgeDetector.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Global.var" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/HEER.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Lektion10 PLC Programmer.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/PLC Drawing Robot math.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Projektlokale oversigt E20 - 1. semester Robotteknologi diplom.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/Projektoplæg.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/RobotComm.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/SDU_BLACK_RGB_png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/ST330  Stepper Motor Driver Board User Manual.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/danny.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/danny_fullsize.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/drawingrobot.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/lab1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/lab2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/shapes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/swarte_piet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/Assets/triangle_bw.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/DrawingRobotApp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/out/production/DrawingRobotApp/com/company/DrawingRobot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/out/production/DrawingRobotApp/com/company/DrawingRobotMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/out/production/DrawingRobotApp/com/company/EdgeDetector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/out/production/DrawingRobotApp/com/company/Luminance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/out/production/DrawingRobotApp/com/company/Picture.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/out/production/DrawingRobotApp/com/company/RobotClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/out/production/DrawingRobotApp/com/company/StringTokenizer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/src/com/company/DrawingRobot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/src/com/company/DrawingRobotMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/src/com/company/EdgeDetector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/src/com/company/Luminance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/src/com/company/Picture.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/src/com/company/RobotClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/app/src/com/company/StringTokenizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/out/production/app/com/company/DrawingRobot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/out/production/app/com/company/DrawingRobotMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/out/production/app/com/company/EdgeDetector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/out/production/app/com/company/Luminance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/out/production/app/com/company/Picture.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/out/production/app/com/company/RobotClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrawingRobotApp/out/production/app/com/company/StringTokenizer.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +126,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
@@ -60,11 +140,19 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/Java/app" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
@@ -136,19 +224,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="522" y="63" width="1040" height="860" key="SettingsEditor" timestamp="1606737928135">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="522" y="63" width="1040" height="860" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606737928135" />
-    <state x="342" y="140" key="new project wizard" timestamp="1606297058553">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="342" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1606297058553" />
-    <state x="682" y="356" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1606296960977">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="682" y="356" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606296960977" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

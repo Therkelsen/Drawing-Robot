@@ -1,19 +1,18 @@
-/*
+package src;/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 //package dk.sdu.mmmi.rd1.edgedetect;
-package com.company;
 
 // ******************************************************************************
-// *  Compilation:  javac Luminance.java
-// *  Execution:    java Luminance r1 g1 b1 r2 g2 b2
+// *  Compilation:  javac src.Luminance.java
+// *  Execution:    java src.Luminance r1 g1 b1 r2 g2 b2
 // *
 // *  Library for dealing with monochrome luminance. 
 // *  Uses the NTSC formula Y = 0.299*r + 0.587*g + 0.114*b.
 // *
-// *  % java Luminance 0 0 0 0 0 255
+// *  % java src.Luminance 0 0 0 0 0 255
 // *
 // ******************************************************************************/
 

@@ -1,6 +1,5 @@
-
+package src;
 //package dk.sdu.mmmi.rd1.edgedetect;
-package com.company;
 
 public class StringTokenizer {
 
