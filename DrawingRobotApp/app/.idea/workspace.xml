@@ -49,10 +49,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+<<<<<<< Updated upstream:DrawingRobotApp/app/.idea/workspace.xml
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+>>>>>>> Stashed changes:DrawingRobotApp/.idea/workspace.xml
   </component>
   <component name="RunManager">
     <configuration name="DrawingRobotMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -98,6 +103,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< Updated upstream:DrawingRobotApp/app/.idea/workspace.xml
     <state x="414" y="174" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606297622627">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -123,6 +129,37 @@
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606305898557" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606298714766">
+=======
+    <state x="839" y="418" key="#Custom_Plugin_Repositories" timestamp="1607296399755">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="839" y="418" key="#Custom_Plugin_Repositories/0.0.1920.1040@0.0.1920.1040" timestamp="1607296399755" />
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606940083668">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606940083668" />
+    <state width="1877" height="187" key="GridCell.Tab.0.bottom" timestamp="1607269484868">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="187" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607269484868" />
+    <state width="1877" height="187" key="GridCell.Tab.0.center" timestamp="1607269484868">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="187" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607269484868" />
+    <state width="1877" height="187" key="GridCell.Tab.0.left" timestamp="1607269484868">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="187" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607269484868" />
+    <state width="1877" height="187" key="GridCell.Tab.0.right" timestamp="1607269484868">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="187" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607269484868" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1607296694418">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607296694418" />
+    <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606661889854">
+>>>>>>> Stashed changes:DrawingRobotApp/.idea/workspace.xml
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606298714766" />

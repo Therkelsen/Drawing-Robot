@@ -8,6 +8,7 @@ VAR
 	TcpSend1 : TcpSend;
 	TcpServer1 : TcpServer;
 	tcpst : TCPSTATE;
+	resetstate : RESETSTATE;
 	testUA : INT;
 	timer : TON;
 	firstData : BOOL;

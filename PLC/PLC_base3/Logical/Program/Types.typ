@@ -1,3 +1,4 @@
+
 TYPE
 	ROBOSTATE2 : 
 		(
@@ -15,6 +16,7 @@ TYPE
 		PENCILDOWN,
 		PENCILUP,
 		SHARPEN,
-		STOP
+		STOP,
+		CHECKLINE
 		);
 END_TYPE

@@ -98,24 +98,37 @@ PROGRAM _CYCLIC
 				IF (counter < (instSize)) THEN
 					// Splits element on index counter of instructionsArray[] into two seperate strings
 					string1 := LEFT(instructionsArray[counter], FIND(instructionsArray[counter], delim2));
-					string2 := RIGHT(instructionsArray[counter], FIND(instructionsArray[counter], delim2));
+					string2 := RIGHT(instructionsArray[counter], (LEN(instructionsArray[counter]) - FIND(instructionsArray[counter], delim2)));
 					
 					// Finds numerical positions of all delimiters " " and "," in both strings
-					D1 := FIND(string1, delim1);
-					D2 := FIND(string1, delim1) + D1;
-					D3 := FIND(string1, delim2);
-					D4 := FIND(string2, delim1);
-					D5 := FIND(string2, delim1) + D4;
-					D6 := FIND(string2, delim2);
-					
 					// Isolates coordinates into individual integers
-					xArray[counter] := STRING_TO_INT(LEFT(string1, D1 - 1));
-					yArray[counter] := STRING_TO_INT(MID(string1, D2 - D1 - 1, D1 + 1));
-					zArray[counter] := STRING_TO_INT(MID(string1, D3 - D2 - 1, D2 + 1));
+					D1 := FIND(string1, delim1);
+					xString[counter] := LEFT(string1, D1 - 1);
+					xArray[counter] := STRING_TO_INT(xString[counter]);
+					string1 := DELETE(string1, D1, 1);
 					
-					xArray[counter + 1] := STRING_TO_INT(LEFT(string2, D4 - 1));
-					yArray[counter + 1] := STRING_TO_INT(MID(string2, D5 - D4 - 1, D4 + 1));
-					zArray[counter + 1] := STRING_TO_INT(MID(string2, D6 - D5 - 1, D5 + 1));
+					D2 := FIND(string1, delim1);
+					yString[counter] := LEFT(string1, D2 - 1);
+					yArray[counter] := STRING_TO_INT(yString[counter]);
+					string1 := DELETE(string1, D2, 1);
+					
+					D3 := FIND(string1, delim2);
+					zString[counter] := LEFT(string1, D3 - 1);
+					zArray[counter] := STRING_TO_INT(zString[counter]);
+					
+					D4 := FIND(string2, delim1);
+					xString[counter + 1] := LEFT(string2, D4 - 1);
+					xArray[counter + 1] := STRING_TO_INT(xString[counter + 1]);
+					string2 := DELETE(string2, D1, 1);
+					
+					D5 := FIND(string2, delim1);
+					yString[counter + 1] := LEFT(string2, D5 - 1);
+					yArray[counter + 1] := STRING_TO_INT(yString[counter + 1]);
+					string2 := DELETE(string2, D2, 1);
+					
+					D6 := FIND(string2, delim2);
+					zString[counter + 1] := LEFT(string2, D6 - 1);
+					zArray[counter + 1] := STRING_TO_INT(zString[counter + 1]);
 					counter := counter + 2;
 				ELSE
 					ROBOSTATE := RESET;
@@ -188,7 +201,7 @@ PROGRAM _CYCLIC
 			END_IF
 		
 		DRAW:
-			IF (killswitch <> TRUE OR counter < instSize) THEN
+			IF (killswitch <> TRUE) OR (counter < instSize) THEN
 				IF (xStop <> TRUE) THEN
 					IF (xArray[counter] * scale > xCounter) THEN
 						xNext := FALSE;
@@ -200,43 +213,8 @@ PROGRAM _CYCLIC
 						xDirection := FALSE;
 						xStep := NOT xStep;
 						xCounter := xCounter - 1; 
-					ELSIF (xArray[counter] * scale = xCounter AND xNext = FALSE) THEN
+					ELSIF (xArray[counter] * scale = xCounter) THEN
 						ROBOSTATE := PENCILDOWN;
-					END_IF
-				END_IF
-			END_IF
-		
-		DRAW2:
-			IF (killswitch <> TRUE) THEN
-				IF (xStop <> TRUE) THEN
-					IF (xArray[counter + 1] * scale > xCounter) THEN
-						xNext := FALSE;
-						xDirection := TRUE;
-						xStep := NOT xStep;
-						xCounter := xCounter + 1;
-					ELSIF (xArray[counter + 1] * scale < xCounter) THEN
-						xNext := FALSE;
-						xDirection := FALSE;
-						xStep := NOT xStep;
-						xCounter := xCounter - 1; 
-					ELSIF (xArray[counter + 1] * scale = xCounter AND xNext = FALSE) THEN
-						ROBOSTATE := PENCILUP;
-					END_IF
-				END_IF
-			END_IF
-			
-		NEXTLINE:
-			IF (killswitch <> TRUE) THEN
-				IF (yStop <> TRUE) THEN
-					IF (yArray[counter + 1] <> yArray[counter] AND (counter MOD(50)) <> 0 AND hasBeenSharpened = TRUE) THEN
-						yDirection := TRUE;
-						yStep := NOT yStep;
-						yCounter := yCounter + 1;
-					ELSIF (yArray[counter + 1] = yArray[counter]) THEN
-						ROBOSTATE := DRAW;
-					ELSIF ((counter MOD(50)) = 0 AND hasBeenSharpened = TRUE) THEN
-						hasBeenSharpened := FALSE;
-						ROBOSTATE := SHARPEN;
 					END_IF
 				END_IF
 			END_IF
@@ -251,17 +229,62 @@ PROGRAM _CYCLIC
 					ROBOSTATE := DRAW2;
 				END_IF			
 			END_IF
+			
+		DRAW2:
+			IF (killswitch <> TRUE) THEN
+				IF (xStop <> TRUE) THEN
+					IF (xArray[counter + 1] * scale > xCounter) THEN
+						xDirection := TRUE;
+						xStep := NOT xStep;
+						xCounter := xCounter + 1;
+					ELSIF (xArray[counter + 1] * scale < xCounter) THEN
+						xDirection := FALSE;
+						xStep := NOT xStep;
+						xCounter := xCounter - 1; 
+					ELSIF (xArray[counter + 1] * scale = xCounter) THEN
+						ROBOSTATE := PENCILUP;
+					END_IF
+				END_IF
+			END_IF
+			
 		PENCILUP: 
 			IF (killswitch <> TRUE) THEN
 				IF (zCounter < 500) THEN
 					zDirection := FALSE;
 					zStep := NOT zStep;
 					zCounter := zCounter + 1;
-				ELSE
+				ELSIF (zCounter = 500) THEN
 					counter := counter + 1;
 					ROBOSTATE := NEXTLINE;
-				END_IF			
+				END_IF
 			END_IF
+		
+		CHECKLINE:
+			IF (killswitch <> TRUE) THEN
+				IF (yArray[counter + 1] = yArray[counter]) THEN
+					ROBOSTATE := DRAW;
+				ELSIF (yArray[counter + 1] <> yArray[counter]) THEN
+					ROBOSTATE := NEXTLINE;
+				END_IF
+			END_IF
+			
+		NEXTLINE:
+			IF (killswitch <> TRUE) THEN
+				IF (yStop <> TRUE) THEN
+					IF (yCounter = ((counter + 1) * scale)) THEN
+						IF (hasBeenSharpened = FALSE) AND (counter MOD(50) = 0) THEN
+							ROBOSTATE := SHARPEN;
+						ELSE
+							ROBOSTATE := DRAW;
+						END_IF
+					ELSIF (yCounter < ((counter + 1) * scale)) THEN
+						yDirection := TRUE;
+						yStep := NOT yStep;
+						yCounter := yCounter + 1;
+					END_IF
+				END_IF
+			END_IF
+			
 		
 		SHARPEN:
 			IF (killswitch <> TRUE) THEN

@@ -1,11 +1,15 @@
 (*CONVERSION*)
 VAR
 	yPrev : INT;
-	counter : UINT;
-	delim1 : STRING[80];
-	delim2 : STRING[80];
-	string1 : STRING[80];
-	string2 : STRING[80];
+	counter : DINT;
+	delim1 : STRING[1];
+	delim2 : STRING[1];
+	delim3 : STRING[1];
+	string1 : STRING[25];
+	string2 : STRING[25];
+	xString : ARRAY[0..999] OF STRING[15];
+	yString : ARRAY[0..999] OF STRING[15];
+	zString : ARRAY[0..999] OF STRING[15];
 	D1 : INT;
 	D2 : INT;
 	D3 : INT;

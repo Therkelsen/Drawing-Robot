@@ -21,6 +21,40 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
+	
+	CASE resetstate OF
+		RUN:
+			
+		RESET:
+			data1 := '';
+			data2 := '';
+			activeData := 2;
+			readyForData := TRUE;
+			firstData := TRUE;
+			receivedData := FALSE;
+			moreData := FALSE;
+			receiveData := '';
+			FOR count := 0 TO 999 DO
+				instructionsArray[count] := '';
+				xArray[count] := 0;		
+				yArray[count] := 0;
+				zArray[count] := 0;
+			END_FOR;
+			count := 0;
+			
+			TcpOpen1.enable := TRUE;
+			TcpOpen1.port := 12345;
+			TcpOpen1.options := tcpOPT_REUSEADDR;
+			TcpOpen1();
+			
+			TcpServer1.enable := TRUE;
+			TcpServer1.ident := TcpOpen1.ident;
+			TcpServer1();
+			
+			resetstate := RUN;
+		
+	END_CASE
+			
 	CASE tcpst OF
 		TCPSTATE_SOCKET_OPEN: // Open socket for connection
 			TcpOpen1.enable := TRUE;
@@ -75,6 +109,7 @@ PROGRAM _CYCLIC
 					readyForData := FALSE;
 					receivedData := TRUE;
 					count := count + 1;
+					instSize := count;
 				END_IF
 			END_IF
 			IF (TcpSend1.status = ERR_OK) THEN
@@ -132,9 +167,7 @@ PROGRAM _CYCLIC
 				zArray[count] := 0;
 			END_FOR;
 			count := 0;
-			tcpst := TCPSTATE_RECEIVE;
 	END_CASE
-	
 	
 	// Double buffer part of code
 	timer(IN := NOT timer.Q, PT := T#100ms);

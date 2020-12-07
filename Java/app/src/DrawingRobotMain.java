@@ -15,7 +15,11 @@ public class DrawingRobotMain {
         int port = 12345;
 
         //  Initialize variables for image processing
+<<<<<<< Updated upstream:Java/app/src/DrawingRobotMain.java
         String imagePath = "app/Assets/test.png";
+=======
+        String imagePath = "app/Assets/double_trouble.png";
+>>>>>>> Stashed changes:DrawingRobotApp/app/src/com/company/DrawingRobotMain.java
 
         int blackOrWhiteThreshold = 60;
 
@@ -33,7 +37,7 @@ public class DrawingRobotMain {
         System.out.println("Starting image processing");
         // For every column in every row, where every other row iterates backwards
         for (int row = 0; row < dr.image.height(); row++) {
-            if (row % 2 == 0) {
+            if (row % 2 != 0) {
                 for (int col = 0; col < dr.image.width(); col++) {
                     dr.convertImage(col, row);
                     dr.processImage(col, row);

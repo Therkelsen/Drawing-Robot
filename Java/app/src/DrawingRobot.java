@@ -54,7 +54,7 @@ public class DrawingRobot {
             if (draw == 1) {
                 s = (col + 1) + " " + (row + 1) + " " + draw + ",";
             } else {
-                s = col + " " + (row + 1) + " " + draw + ",";
+                s = (col + 1) + " " + (row + 1) + " " + draw + ",";
             }
             inst.add(s);
         }
