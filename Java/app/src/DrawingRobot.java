@@ -1,3 +1,4 @@
+
 package src;//  Importing external classes needed
 
 import java.awt.Color;
@@ -32,7 +33,7 @@ public class DrawingRobot {
         image.set(col, row, Luminance.toGray(image.get(col, row)));
         grayVal = image.get(col, row).getRed();
 
-        if (draw == 1) {
+        if (grayVal < threshold) {
             image.set(col, row, gray);
         } else {
             image.set(col, row, white);

@@ -15,13 +15,9 @@ public class DrawingRobotMain {
         int port = 12345;
 
         //  Initialize variables for image processing
-<<<<<<< Updated upstream:Java/app/src/DrawingRobotMain.java
-        String imagePath = "app/Assets/test.png";
-=======
-        String imagePath = "app/Assets/double_trouble.png";
->>>>>>> Stashed changes:DrawingRobotApp/app/src/com/company/DrawingRobotMain.java
+        String imagePath = "Java/Assets/danny_fullsize.jpg";
 
-        int blackOrWhiteThreshold = 60;
+        int blackOrWhiteThreshold = 50;
 
         System.out.println("Connecting to Drawing Robot");
 
@@ -67,7 +63,7 @@ public class DrawingRobotMain {
             } else {
                 dr.instructions = dr.instructions.concat(String.valueOf(dr.inst.get(i)));
             }
-            Thread.sleep(500);
+            Thread.sleep(250);
         }
         Thread.sleep(2500);
         rc.write("DONE");
