@@ -1,0 +1,16 @@
+VAR_CONFIG
+	::Program:zStop AT %IX."X1a".DigitalInput01;
+	::Program:yStop AT %IX."X1a".DigitalInput02;
+	::Program:xStop AT %IX."X1a".DigitalInput03;
+	::Program:bStop AT %IX."X1a".DigitalInput04;
+	::Program:xEnable AT %QX."X3a".DigitalOutput01;
+	::Program:yEnable AT %QX."X3a".DigitalOutput02;
+	::Program:zEnable AT %QX."X3a".DigitalOutput03;
+	::Program:xDirection AT %QX."X3a".DigitalOutput04;
+	::Program:yDirection AT %QX."X3a".DigitalOutput05;
+	::Program:zDirection AT %QX."X3a".DigitalOutput06;
+	::Program:sharpener AT %QX."X3a".DigitalOutput08;
+	::Program:xStep AT %QX."X3a".DigitalOutput09;
+	::Program:yStep AT %QX."X3a".DigitalOutput10;
+	::Program:zStep AT %QX."X3a".DigitalOutput11;
+END_VAR

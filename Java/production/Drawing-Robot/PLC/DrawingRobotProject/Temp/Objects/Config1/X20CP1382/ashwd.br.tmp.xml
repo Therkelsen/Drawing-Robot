@@ -1,0 +1,1206 @@
+<?xml version="1.0"?>
+<?hwc2hwd version="1.1"?>
+<HWD Version="2.0" xmlns="http://br-automation.com/AR/IO/HWD">
+  <Hardware ID="X1" Modno="-1">
+    <Parameter ID="NeededBus" Value="X20CPLOCALIO" />
+    <Parameter ID="AutoPlug" Value="1" Type="UDINT" />
+    <Resource ID="IO">
+      <Parameter ID="Classcode" Value="0x2000000d" Type="UDINT" />
+      <Parameter ID="AutoPlug" Value="1" Type="UDINT" />
+      <Parameter ID="InitScript" Value="&#xD;&#xA;	write(X1CfO_AI1_Filter, 0x00&#xD;&#xA;	| X1AI1_InputFilter==&quot;level 2&quot; ? 0x01 : 0x00&#xD;&#xA;	| X1AI1_InputFilter==&quot;level 4&quot; ? 0x02 : 0x00&#xD;&#xA;	| X1AI1_InputFilter==&quot;level 8&quot; ? 0x03 : 0x00&#xD;&#xA;	| X1AI1_InputFilter==&quot;level 16&quot; ? 0x04 : 0x00&#xD;&#xA;	| X1AI1_InputFilter==&quot;level 32&quot; ? 0x05 : 0x00&#xD;&#xA;	| X1AI1_InputFilter==&quot;level 64&quot; ? 0x06 : 0x00&#xD;&#xA;	| X1AI1_InputFilter==&quot;level 128&quot; ? 0x07 : 0x00&#xD;&#xA;	| X1AI1_InputLimitation==&quot;16383&quot; ? 0x10 : 0x00&#xD;&#xA;	| X1AI1_InputLimitation==&quot;8191&quot; ? 0x20 : 0x00&#xD;&#xA;	| X1AI1_InputLimitation==&quot;4095&quot; ? 0x30 : 0x00&#xD;&#xA;	| X1AI1_InputLimitation==&quot;2047&quot; ? 0x40 : 0x00&#xD;&#xA;	| X1AI1_InputLimitation==&quot;1023&quot; ? 0x50 : 0x00&#xD;&#xA;	| X1AI1_InputLimitation==&quot;511&quot; ? 0x60 : 0x00&#xD;&#xA;	| X1AI1_InputLimitation==&quot;255&quot; ? 0x70 : 0x00);&#xD;&#xA;	write(X1CfO_AI2_Filter, 0x00&#xD;&#xA;	| X1AI2_InputFilter==&quot;level 2&quot; ? 0x01 : 0x00&#xD;&#xA;	| X1AI2_InputFilter==&quot;level 4&quot; ? 0x02 : 0x00&#xD;&#xA;	| X1AI2_InputFilter==&quot;level 8&quot; ? 0x03 : 0x00&#xD;&#xA;	| X1AI2_InputFilter==&quot;level 16&quot; ? 0x04 : 0x00&#xD;&#xA;	| X1AI2_InputFilter==&quot;level 32&quot; ? 0x05 : 0x00&#xD;&#xA;	| X1AI2_InputFilter==&quot;level 64&quot; ? 0x06 : 0x00&#xD;&#xA;	| X1AI2_InputFilter==&quot;level 128&quot; ? 0x07 : 0x00&#xD;&#xA;	| X1AI2_InputLimitation==&quot;16383&quot; ? 0x10 : 0x00&#xD;&#xA;	| X1AI2_InputLimitation==&quot;8191&quot; ? 0x20 : 0x00&#xD;&#xA;	| X1AI2_InputLimitation==&quot;4095&quot; ? 0x30 : 0x00&#xD;&#xA;	| X1AI2_InputLimitation==&quot;2047&quot; ? 0x40 : 0x00&#xD;&#xA;	| X1AI2_InputLimitation==&quot;1023&quot; ? 0x50 : 0x00&#xD;&#xA;	| X1AI2_InputLimitation==&quot;511&quot; ? 0x60 : 0x00&#xD;&#xA;	| X1AI2_InputLimitation==&quot;255&quot; ? 0x70 : 0x00);&#xD;&#xA;	write(X1CfO_AI_Mode, 0x00&#xD;&#xA;	| X1AI_ChannelType01==&quot;-10V to +10V&quot; ? 0x01 : 0x00&#xD;&#xA;	| X1AI_ChannelType01==&quot;0 to 20mA&quot; ? 0x02 : 0x00&#xD;&#xA;	| X1AI_ChannelType01==&quot;4 to 20mA&quot; ? 0x03 : 0x00&#xD;&#xA;	| X1AI_ChannelType01==&quot;PT1000&quot; ? 0x04 : 0x00&#xD;&#xA;	| X1AI_ChannelType01==&quot;Resistor&quot; ? 0x05 : 0x00&#xD;&#xA;	| X1AI_ChannelType02==&quot;-10V to +10V&quot; ? 0x10 : 0x00&#xD;&#xA;	| X1AI_ChannelType02==&quot;0 to 20mA&quot; ? 0x20 : 0x00&#xD;&#xA;	| X1AI_ChannelType02==&quot;4 to 20mA&quot; ? 0x30 : 0x00);&#xD;&#xA;	if ( X1AI_ChannelType01==&quot;-10V to +10V&quot; )&#xD;&#xA;	{&#xD;&#xA;		write(X1CfO_AI1_LowerLim, X1AI1_LowerLimit_10V);&#xD;&#xA;		write(X1CfO_AI1_UpperLim, X1AI1_UpperLimit_10V);&#xD;&#xA;	}&#xD;&#xA;	if ( X1AI_ChannelType01==&quot;0 to 20mA&quot; )&#xD;&#xA;	{&#xD;&#xA;		write(X1CfO_AI1_LowerLim, X1AI1_LowerLimit_020mA);&#xD;&#xA;		write(X1CfO_AI1_UpperLim, X1AI1_UpperLimit_020mA);&#xD;&#xA;	}&#xD;&#xA;	if ( X1AI_ChannelType01==&quot;4 to 20mA&quot; )&#xD;&#xA;	{&#xD;&#xA;		write(X1CfO_AI1_LowerLim, X1AI1_LowerLimit_420mA);&#xD;&#xA;		write(X1CfO_AI1_UpperLim, X1AI1_UpperLimit_420mA);&#xD;&#xA;	}&#xD;&#xA;	if ( X1AI_ChannelType01==&quot;PT1000&quot; )&#xD;&#xA;	{&#xD;&#xA;		write(X1CfO_AI1_LowerLim, X1AI1_LowerLimit_PT);&#xD;&#xA;		write(X1CfO_AI1_UpperLim, X1AI1_UpperLimit_PT);&#xD;&#xA;	}&#xD;&#xA;	if ( X1AI_ChannelType01==&quot;Resistor&quot; )&#xD;&#xA;	{&#xD;&#xA;		write(X1CfO_AI1_LowerLim, X1AI1_LowerLimit_Res);&#xD;&#xA;		write(X1CfO_AI1_UpperLim, X1AI1_UpperLimit_Res);&#xD;&#xA;	}&#xD;&#xA;	if ( X1AI_ChannelType02==&quot;-10V to +10V&quot; )&#xD;&#xA;	{&#xD;&#xA;		write(X1CfO_AI2_LowerLim, X1AI2_LowerLimit_10V);&#xD;&#xA;		write(X1CfO_AI2_UpperLim, X1AI2_UpperLimit_10V);&#xD;&#xA;	}&#xD;&#xA;	if ( X1AI_ChannelType02==&quot;0 to 20mA&quot; )&#xD;&#xA;	{&#xD;&#xA;		write(X1CfO_AI2_LowerLim, X1AI2_LowerLimit_020mA);&#xD;&#xA;		write(X1CfO_AI2_UpperLim, X1AI2_UpperLimit_020mA);&#xD;&#xA;	}&#xD;&#xA;	if ( X1AI_ChannelType02==&quot;4 to 20mA&quot; )&#xD;&#xA;	{&#xD;&#xA;		write(X1CfO_AI2_LowerLim, X1AI2_LowerLimit_420mA);&#xD;&#xA;		write(X1CfO_AI2_UpperLim, X1AI2_UpperLimit_420mA);&#xD;&#xA;	}&#xD;&#xA;	write(X1CfO_DI_Filter, X1DI_InputFilter);&#xD;&#xA;" />
+      <Channel ID="X1DigitalInput01">
+        <Parameter ID="Name" Value="DigitalInput01" />
+        <Parameter ID="Address" Value="0x0000" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="0" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X1DigitalInput02">
+        <Parameter ID="Name" Value="DigitalInput02" />
+        <Parameter ID="Address" Value="0x0000" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="1" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X1DigitalInput03">
+        <Parameter ID="Name" Value="DigitalInput03" />
+        <Parameter ID="Address" Value="0x0000" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="2" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X1DigitalInput04">
+        <Parameter ID="Name" Value="DigitalInput04" />
+        <Parameter ID="Address" Value="0x0000" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="3" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X1AnalogInput01_10V">
+        <Filter Value="X1AI_ChannelType01='-10V to +10V'" />
+        <Parameter ID="Name" Value="AnalogInput01" />
+        <Parameter ID="Address" Value="0x0040" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X1AnalogInput01_020mA">
+        <Filter Value="X1AI_ChannelType01='0 to 20mA'" />
+        <Parameter ID="Name" Value="AnalogInput01" />
+        <Parameter ID="Address" Value="0x0040" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X1AnalogInput01_420mA">
+        <Filter Value="X1AI_ChannelType01='4 to 20mA'" />
+        <Parameter ID="Name" Value="AnalogInput01" />
+        <Parameter ID="Address" Value="0x0040" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X1AnalogInput01_RTD">
+        <Filter Value="X1AI_ChannelType01='PT1000'" />
+        <Parameter ID="Name" Value="AnalogInput01" />
+        <Parameter ID="Address" Value="0x0040" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X1AnalogInput01_Resistor">
+        <Filter Value="X1AI_ChannelType01='Resistor'" />
+        <Parameter ID="Name" Value="AnalogInput01" />
+        <Parameter ID="Address" Value="0x0040" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="UINT" />
+      </Channel>
+      <Channel ID="X1AnalogInput02_10V">
+        <Filter Value="X1AI_ChannelType02='-10V to +10V'" />
+        <Parameter ID="Name" Value="AnalogInput02" />
+        <Parameter ID="Address" Value="0x0042" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X1AnalogInput02_020mA">
+        <Filter Value="X1AI_ChannelType02='0 to 20mA'" />
+        <Parameter ID="Name" Value="AnalogInput02" />
+        <Parameter ID="Address" Value="0x0042" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X1AnalogInput02_420mA">
+        <Filter Value="X1AI_ChannelType02='4 to 20mA'" />
+        <Parameter ID="Name" Value="AnalogInput02" />
+        <Parameter ID="Address" Value="0x0042" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X1StatusInput01">
+        <Filter Value="NOT (X1AI_ChannelType01='off') OR NOT (X1AI_ChannelType02='off')" />
+        <Parameter ID="Name" Value="StatusInput01" />
+        <Parameter ID="Address" Value="0x0050" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X1CfO_DI_Filter">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x0800" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X1CfO_AI_Mode">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x0850" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X1CfO_AI1_Filter">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x0840" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X1CfO_AI1_LowerLim">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x0844" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X1CfO_AI1_UpperLim">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x0846" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X1CfO_AI2_Filter">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x0848" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X1CfO_AI2_LowerLim">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x084c" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X1CfO_AI2_UpperLim">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x084e" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+    </Resource>
+  </Hardware>
+  <Hardware ID="X2" Modno="-1">
+    <Parameter ID="NeededBus" Value="X20CPLOCALIO" />
+    <Parameter ID="AutoPlug" Value="1" Type="UDINT" />
+    <Resource ID="IO">
+      <Parameter ID="Classcode" Value="0x2000000d" Type="UDINT" />
+      <Parameter ID="AutoPlug" Value="1" Type="UDINT" />
+      <Parameter ID="InitScript" Value="&#xD;&#xA;	write(X2CfO_DI_Filter, X2DI_InputFilter);&#xD;&#xA;	if ( X2EdgeDetectEnable==&quot;on&quot; )&#xD;&#xA;	{&#xD;&#xA;		if (X2EdgeDetectUnit01Master==255)&#xD;&#xA;		{&#xD;&#xA;			write (X2CfO_EdgeDetectUnit01Mode, 0x00);&#xD;&#xA;		}&#xD;&#xA;		else if ( X2EdgeDetectUnit01Slave==255)&#xD;&#xA;		{&#xD;&#xA;			write (X2CfO_EdgeDetectUnit01Mode, 0x80);&#xD;&#xA;			write (X2CfO_EdgeDetectUnit01Master, X2EdgeDetectUnit01Master);&#xD;&#xA;		}&#xD;&#xA;		else&#xD;&#xA;		{&#xD;&#xA;			write (X2CfO_EdgeDetectUnit01Mode, 0xC0);&#xD;&#xA;			write (X2CfO_EdgeDetectUnit01Master, X2EdgeDetectUnit01Master);&#xD;&#xA;			write (X2CfO_EdgeDetectUnit01Slave, X2EdgeDetectUnit01Slave);&#xD;&#xA;		}&#xD;&#xA;		if (X2EdgeDetectUnit02Master==255)&#xD;&#xA;		{&#xD;&#xA;			write (X2CfO_EdgeDetectUnit02Mode, 0x00);&#xD;&#xA;		}&#xD;&#xA;		else if ( X2EdgeDetectUnit02Slave==255)&#xD;&#xA;		{&#xD;&#xA;			write (X2CfO_EdgeDetectUnit02Mode, 0x80);&#xD;&#xA;			write (X2CfO_EdgeDetectUnit02Master, X2EdgeDetectUnit02Master);&#xD;&#xA;		}&#xD;&#xA;		else&#xD;&#xA;		{&#xD;&#xA;			write (X2CfO_EdgeDetectUnit02Mode, 0xC0);&#xD;&#xA;			write (X2CfO_EdgeDetectUnit02Master, X2EdgeDetectUnit02Master);&#xD;&#xA;			write (X2CfO_EdgeDetectUnit02Slave, X2EdgeDetectUnit02Slave);&#xD;&#xA;		}&#xD;&#xA;	}&#xD;&#xA;	if (X2CounterFunction==&quot;off&quot;)&#xD;&#xA;	{&#xD;&#xA;	}&#xD;&#xA;	else&#xD;&#xA;	{&#xD;&#xA;		write(X2CfO_CounterMode, 0x00&#xD;&#xA;		| X2CounterFunction==&quot;Edge&quot; ? 0x00 : 0x00&#xD;&#xA;		| X2CounterFunction==&quot;AB&quot; ? 0x01 : 0x00&#xD;&#xA;		| X2CounterFunction==&quot;DF&quot; ? 0x02 : 0x00&#xD;&#xA;		| X2CounterFunction==&quot;ABR&quot; ? 0x03 : 0x00);&#xD;&#xA;		write(X2CfO_Latch01Mode, 0x00&#xD;&#xA;		| X2Latch01Mode==&quot;continuous&quot; ? 0x01 : 0x00);&#xD;&#xA;		write(X2CfO_Latch02Mode, 0x00&#xD;&#xA;		| X2Latch02Mode==&quot;continuous&quot; ? 0x01 : 0x00);&#xD;&#xA;		write(X2CfO_Latch01Comparator, 0x00&#xD;&#xA;		| X2Counter01Cmp01==&quot;low&quot; ? 0x10 : 0x00&#xD;&#xA;		| X2Counter01Cmp01==&quot;high&quot; ? 0x01 : 0x00&#xD;&#xA;		| X2Counter01Cmp02==&quot;low&quot; ? 0x20 : 0x00&#xD;&#xA;		| X2Counter01Cmp02==&quot;high&quot; ? 0x02 : 0x00&#xD;&#xA;		| X2Counter01Cmp03==&quot;low&quot; ? 0x40 : 0x00&#xD;&#xA;		| X2Counter01Cmp03==&quot;high&quot; ? 0x04 : 0x00&#xD;&#xA;		| X2Counter01Cmp04==&quot;low&quot; ? 0x80 : 0x00&#xD;&#xA;		| X2Counter01Cmp04==&quot;high&quot; ? 0x08 : 0x00);&#xD;&#xA;		write(X2CfO_Latch02Comparator, 0x00&#xD;&#xA;		| X2Counter02Cmp01==&quot;low&quot; ? 0x10 : 0x00&#xD;&#xA;		| X2Counter02Cmp01==&quot;high&quot; ? 0x01 : 0x00&#xD;&#xA;		| X2Counter02Cmp02==&quot;low&quot; ? 0x20 : 0x00&#xD;&#xA;		| X2Counter02Cmp02==&quot;high&quot; ? 0x02 : 0x00&#xD;&#xA;		| X2Counter02Cmp03==&quot;low&quot; ? 0x40 : 0x00&#xD;&#xA;		| X2Counter02Cmp03==&quot;high&quot; ? 0x04 : 0x00&#xD;&#xA;		| X2Counter02Cmp04==&quot;low&quot; ? 0x80 : 0x00&#xD;&#xA;		| X2Counter02Cmp04==&quot;high&quot; ? 0x08 : 0x00);&#xD;&#xA;	}&#xD;&#xA;" />
+      <Channel ID="X2DigitalInput01">
+        <Parameter ID="Name" Value="DigitalInput01" />
+        <Parameter ID="Address" Value="0x1000" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="0" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2DigitalInput02">
+        <Parameter ID="Name" Value="DigitalInput02" />
+        <Parameter ID="Address" Value="0x1000" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="1" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2DigitalInput03">
+        <Parameter ID="Name" Value="DigitalInput03" />
+        <Parameter ID="Address" Value="0x1000" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="2" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2DigitalInput04">
+        <Parameter ID="Name" Value="DigitalInput04" />
+        <Parameter ID="Address" Value="0x1000" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="3" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2DigitalInput05">
+        <Parameter ID="Name" Value="DigitalInput05" />
+        <Parameter ID="Address" Value="0x1000" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="4" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2DigitalInput06">
+        <Parameter ID="Name" Value="DigitalInput06" />
+        <Parameter ID="Address" Value="0x1000" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="5" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2DigitalInput07">
+        <Parameter ID="Name" Value="DigitalInput07" />
+        <Parameter ID="Address" Value="0x1000" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="6" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2DigitalInput08">
+        <Parameter ID="Name" Value="DigitalInput08" />
+        <Parameter ID="Address" Value="0x1000" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="7" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2DigitalInput09">
+        <Parameter ID="Name" Value="DigitalInput09" />
+        <Parameter ID="Address" Value="0x1001" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="0" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2DigitalInput10">
+        <Parameter ID="Name" Value="DigitalInput10" />
+        <Parameter ID="Address" Value="0x1001" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="1" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2DigitalInput11">
+        <Parameter ID="Name" Value="DigitalInput11" />
+        <Parameter ID="Address" Value="0x1001" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="2" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2DigitalInput12">
+        <Parameter ID="Name" Value="DigitalInput12" />
+        <Parameter ID="Address" Value="0x1001" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="3" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2DigitalInput13">
+        <Parameter ID="Name" Value="DigitalInput13" />
+        <Parameter ID="Address" Value="0x1001" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="4" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2DigitalInput14">
+        <Parameter ID="Name" Value="DigitalInput14" />
+        <Parameter ID="Address" Value="0x1001" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="5" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2EdgeDetect01Mastertime_32bit">
+        <Filter Value="X2EdgeDetectEnable='on' AND X2EdgeDetectUnit01EnableMaster='32bit' AND NOT (X2EdgeDetectUnit01Master='255')" />
+        <Parameter ID="Name" Value="EdgeDetect01Mastertime" />
+        <Parameter ID="Address" Value="0x1400" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X2EdgeDetect01Difference_32bit">
+        <Filter Value="X2EdgeDetectEnable='on' AND X2EdgeDetectUnit01EnableDifference='32bit' AND NOT (X2EdgeDetectUnit01Master='255')" />
+        <Parameter ID="Name" Value="EdgeDetect01Difference" />
+        <Parameter ID="Address" Value="0x1404" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X2EdgeDetect01Mastercount_16bit">
+        <Filter Value="X2EdgeDetectEnable='on' AND X2EdgeDetectUnit01EnableMCount='16bit' AND NOT (X2EdgeDetectUnit01Master='255')" />
+        <Parameter ID="Name" Value="EdgeDetect01Mastercount" />
+        <Parameter ID="Address" Value="0x1408" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X2EdgeDetect02Mastertime_32bit">
+        <Filter Value="X2EdgeDetectEnable='on' AND X2EdgeDetectUnit02EnableMaster='32bit' AND NOT (X2EdgeDetectUnit02Master='255')" />
+        <Parameter ID="Name" Value="EdgeDetect02Mastertime" />
+        <Parameter ID="Address" Value="0x1410" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X2EdgeDetect02Difference_32bit">
+        <Filter Value="X2EdgeDetectEnable='on' AND X2EdgeDetectUnit02EnableDifference='32bit' AND NOT (X2EdgeDetectUnit02Master='255')" />
+        <Parameter ID="Name" Value="EdgeDetect02Difference" />
+        <Parameter ID="Address" Value="0x1414" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X2EdgeDetect02Mastercount_16bit">
+        <Filter Value="X2EdgeDetectEnable='on' AND X2EdgeDetectUnit02EnableMCount='16bit' AND NOT (X2EdgeDetectUnit02Master='255')" />
+        <Parameter ID="Name" Value="EdgeDetect02Mastercount" />
+        <Parameter ID="Address" Value="0x1418" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X2Counter01Reset">
+        <Filter Value="NOT (X2CounterFunction='off')" />
+        <Parameter ID="Name" Value="Counter01Reset" />
+        <Parameter ID="Address" Value="0x1120" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="0" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2Latch01Enable">
+        <Filter Value="X2Latch01Mode='single' OR X2Latch01Mode='continuous'" />
+        <Parameter ID="Name" Value="Latch01Enable" />
+        <Parameter ID="Address" Value="0x1120" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="1" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2Counter01Value_32BitAB01">
+        <Filter Value="X2CounterFunction='AB' AND X2CounterStd01='32Bit'" />
+        <Parameter ID="Name" Value="Counter01Value" />
+        <Parameter ID="Address" Value="0x1100" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X2Counter01Value_32BitE01">
+        <Filter Value="X2CounterFunction='Edge' AND X2CounterStd01='32Bit'" />
+        <Parameter ID="Name" Value="Counter01Value" />
+        <Parameter ID="Address" Value="0x1100" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X2Counter01Value_32BitDF">
+        <Filter Value="X2CounterFunction='DF' AND X2CounterStd01='32Bit'" />
+        <Parameter ID="Name" Value="Counter01Value" />
+        <Parameter ID="Address" Value="0x1100" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X2Counter01Value_32BitABR">
+        <Filter Value="X2CounterFunction='ABR' AND X2CounterStd01='32Bit'" />
+        <Parameter ID="Name" Value="Counter01Value" />
+        <Parameter ID="Address" Value="0x1100" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X2Counter01Latch_32Bit">
+        <Filter Value="(X2Latch01Mode='single' OR X2Latch01Mode='continuous') AND NOT (X2CounterFunction='AB')" />
+        <Parameter ID="Name" Value="Counter01Latch" />
+        <Parameter ID="Address" Value="0x1104" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X2Counter01TimeChanged32Bit">
+        <Filter Value="X2CounterTimeInfo='32Bit' AND X2CounterStd01='32Bit'" />
+        <Parameter ID="Name" Value="Counter01TimeChanged" />
+        <Parameter ID="Address" Value="0x1108" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X2Counter01TimeValid32Bit">
+        <Filter Value="X2CounterTimeInfo='32Bit'" />
+        <Parameter ID="Name" Value="Counter01TimeValid" />
+        <Parameter ID="Address" Value="0x110c" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X2Latch01Count">
+        <Filter Value="X2Latch01Mode='single' OR X2Latch01Mode='continuous'" />
+        <Parameter ID="Name" Value="Latch01Count" />
+        <Parameter ID="Address" Value="0x1110" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="SINT" />
+      </Channel>
+      <Channel ID="X2Counter02Reset">
+        <Filter Value="X2CounterFunction='AB' OR X2CounterFunction='Edge'" />
+        <Parameter ID="Name" Value="Counter02Reset" />
+        <Parameter ID="Address" Value="0x1160" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="0" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2Latch02Enable">
+        <Filter Value="X2Latch02Mode='single' OR X2Latch02Mode='continuous'" />
+        <Parameter ID="Name" Value="Latch02Enable" />
+        <Parameter ID="Address" Value="0x1160" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="1" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X2Counter02Value_32BitAB02">
+        <Filter Value="X2CounterFunction='AB' AND X2CounterStd02='32Bit'" />
+        <Parameter ID="Name" Value="Counter02Value" />
+        <Parameter ID="Address" Value="0x1140" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X2Counter02Value_32BitE02">
+        <Filter Value="X2CounterFunction='Edge' AND X2CounterStd02='32Bit'" />
+        <Parameter ID="Name" Value="Counter02Value" />
+        <Parameter ID="Address" Value="0x1140" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X2Counter02Latch_32Bit">
+        <Filter Value="(X2Latch02Mode='single' OR X2Latch02Mode='continuous') AND X2CounterFunction='Edge'" />
+        <Parameter ID="Name" Value="Counter02Latch" />
+        <Parameter ID="Address" Value="0x1144" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X2Counter02TimeChanged32Bit">
+        <Filter Value="X2CounterTimeInfo='32Bit' AND X2CounterStd02='32Bit' AND (X2CounterFunction='Edge' OR X2CounterFunction='AB')" />
+        <Parameter ID="Name" Value="Counter02TimeChanged" />
+        <Parameter ID="Address" Value="0x1148" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X2Counter02TimeValid32Bit">
+        <Filter Value="X2CounterTimeInfo='32Bit' AND (X2CounterFunction='Edge' OR X2CounterFunction='AB')" />
+        <Parameter ID="Name" Value="Counter02TimeValid" />
+        <Parameter ID="Address" Value="0x114c" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X2Latch02Count">
+        <Filter Value="X2Latch02Mode='single' OR X2Latch02Mode='continuous'" />
+        <Parameter ID="Name" Value="Latch02Count" />
+        <Parameter ID="Address" Value="0x1150" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="SINT" />
+      </Channel>
+      <Channel ID="X2CfO_EdgeDetectUnit01Mode">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x1c00" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X2CfO_EdgeDetectUnit01Master">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x1c01" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X2CfO_EdgeDetectUnit01Slave">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x1c02" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X2CfO_EdgeDetectUnit02Mode">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x1c10" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X2CfO_EdgeDetectUnit02Master">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x1c11" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X2CfO_EdgeDetectUnit02Slave">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x1c12" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X2CfO_DI_Filter">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x1800" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X2CfO_CounterMode">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x1980" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X2CfO_Latch01Mode">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x1900" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X2CfO_Latch01Comparator">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x1901" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X2CfO_Latch02Mode">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x1910" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X2CfO_Latch02Comparator">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x1911" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+    </Resource>
+  </Hardware>
+  <Hardware ID="X3" Modno="-1">
+    <Parameter ID="NeededBus" Value="X20CPLOCALIO" />
+    <Parameter ID="AutoPlug" Value="1" Type="UDINT" />
+    <Resource ID="IO">
+      <Parameter ID="Classcode" Value="0x2000000d" Type="UDINT" />
+      <Parameter ID="AutoPlug" Value="1" Type="UDINT" />
+      <Parameter ID="InitScript" Value="&#xD;&#xA;	write(X3CfO_DI_Filter, X3DI_InputFilter);&#xD;&#xA;	write(X3CfO_PhyIOConfigCh01, 0x00);&#xD;&#xA;	write(X3CfO_PhyIOConfigCh02, 0x00);&#xD;&#xA;	write(X3CfO_PhyIOConfigCh03, 0x00);&#xD;&#xA;	write(X3CfO_PhyIOConfigCh04, 0x00);&#xD;&#xA;	write(X3CfO_PhyIOConfigCh05, 0x00&#xD;&#xA;	| X3Channel05Config==&quot;input&quot; ? 0x03 : 0x00);&#xD;&#xA;	write(X3CfO_PhyIOConfigCh06, 0x00&#xD;&#xA;	| X3Channel06Config==&quot;input&quot; ? 0x03 : 0x00);&#xD;&#xA;	write(X3CfO_PhyIOConfigCh07, 0x00&#xD;&#xA;	| X3Channel07Config==&quot;input&quot; ? 0x03 : 0x00);&#xD;&#xA;	write(X3CfO_PhyIOConfigCh08, 0x00&#xD;&#xA;	| X3Channel08Config==&quot;input&quot; ? 0x03 : 0x00);&#xD;&#xA;	write(X3CfO_PhyIOConfigCh09, 0x00&#xD;&#xA;	| X3Channel09Source==&quot;PWMout&quot; ? 0x10 : 0x00&#xD;&#xA;	| X3Channel09Source==&quot;DFEmulation&quot; ? 0x30 : 0x00);&#xD;&#xA;	write(X3CfO_PhyIOConfigCh10, 0x00&#xD;&#xA;	| X3Channel10Source==&quot;PWMout&quot; ? 0x10 : 0x00&#xD;&#xA;	| X3Channel10Source==&quot;DFEmulation&quot; ? 0x30 : 0x00);&#xD;&#xA;	write(X3CfO_PhyIOConfigCh11, 0x00&#xD;&#xA;	| X3Channel11Source==&quot;PWMout&quot; ? 0x10 : 0x00&#xD;&#xA;	| X3Channel11Source==&quot;DFEmulation&quot; ? 0x30 : 0x00);&#xD;&#xA;	write(X3CfO_PhyIOConfigCh12, 0x00&#xD;&#xA;	| X3Channel12Source==&quot;PWMout&quot; ? 0x10 : 0x00&#xD;&#xA;	| X3Channel12Source==&quot;DFEmulation&quot; ? 0x30 : 0x00);&#xD;&#xA;	if ( X3Move01Function==&quot;PULS&quot; )&#xD;&#xA;	{&#xD;&#xA;		write(X3CfO_Mov01Mode, 0x01);&#xD;&#xA;		write(X3CfO_Mov01SpeedLimit, X3SpeedLimit01Puls);&#xD;&#xA;	}&#xD;&#xA;	if ( X3Move01Function==&quot;EDGE&quot; )&#xD;&#xA;	{&#xD;&#xA;		write(X3CfO_Mov01Mode, 0x00);&#xD;&#xA;		write(X3CfO_Mov01SpeedLimit, X3SpeedLimit01Edge);&#xD;&#xA;	}&#xD;&#xA;	if ( X3Move02Function==&quot;PULS&quot; )&#xD;&#xA;	{&#xD;&#xA;		write(X3CfO_Mov02Mode, 0x01);&#xD;&#xA;		write(X3CfO_Mov02SpeedLimit, X3SpeedLimit02Puls);&#xD;&#xA;	}&#xD;&#xA;	if ( X3Move02Function==&quot;EDGE&quot; )&#xD;&#xA;	{&#xD;&#xA;		write(X3CfO_Mov02Mode, 0x00);&#xD;&#xA;		write(X3CfO_Mov02SpeedLimit, X3SpeedLimit02Edge);&#xD;&#xA;	}&#xD;&#xA;" />
+      <Channel ID="X3DigitalInput05">
+        <Filter Value="X3Channel05Config='input'" />
+        <Parameter ID="Name" Value="DigitalInput05" />
+        <Parameter ID="Address" Value="0x2000" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="0" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3DigitalInput06">
+        <Filter Value="X3Channel06Config='input'" />
+        <Parameter ID="Name" Value="DigitalInput06" />
+        <Parameter ID="Address" Value="0x2000" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="1" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3DigitalInput07">
+        <Filter Value="X3Channel07Config='input'" />
+        <Parameter ID="Name" Value="DigitalInput07" />
+        <Parameter ID="Address" Value="0x2000" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="2" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3DigitalInput08">
+        <Filter Value="X3Channel08Config='input'" />
+        <Parameter ID="Name" Value="DigitalInput08" />
+        <Parameter ID="Address" Value="0x2000" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="3" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3DigitalOutput01">
+        <Filter Value="X3Channel01Source='DirectIO'" />
+        <Parameter ID="Name" Value="DigitalOutput01" />
+        <Parameter ID="Address" Value="0x2010" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="0" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3DigitalOutput02">
+        <Filter Value="X3Channel02Source='DirectIO'" />
+        <Parameter ID="Name" Value="DigitalOutput02" />
+        <Parameter ID="Address" Value="0x2010" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="1" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3DigitalOutput03">
+        <Filter Value="X3Channel03Source='DirectIO'" />
+        <Parameter ID="Name" Value="DigitalOutput03" />
+        <Parameter ID="Address" Value="0x2010" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="2" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3DigitalOutput04">
+        <Filter Value="X3Channel04Source='DirectIO'" />
+        <Parameter ID="Name" Value="DigitalOutput04" />
+        <Parameter ID="Address" Value="0x2010" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="3" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3DigitalOutput05">
+        <Filter Value="X3Channel05Config='outputPushPull' AND X3Channel05Source='DirectIO'" />
+        <Parameter ID="Name" Value="DigitalOutput05" />
+        <Parameter ID="Address" Value="0x2010" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="4" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3DigitalOutput06">
+        <Filter Value="X3Channel06Config='outputPushPull' AND X3Channel06Source='DirectIO'" />
+        <Parameter ID="Name" Value="DigitalOutput06" />
+        <Parameter ID="Address" Value="0x2010" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="5" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3DigitalOutput07">
+        <Filter Value="X3Channel07Config='outputPushPull' AND X3Channel07Source='DirectIO'" />
+        <Parameter ID="Name" Value="DigitalOutput07" />
+        <Parameter ID="Address" Value="0x2010" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="6" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3DigitalOutput08">
+        <Filter Value="X3Channel08Config='outputPushPull' AND X3Channel08Source='DirectIO'" />
+        <Parameter ID="Name" Value="DigitalOutput08" />
+        <Parameter ID="Address" Value="0x2010" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="7" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3DigitalOutput09">
+        <Filter Value="X3Channel09Source='DirectIO'" />
+        <Parameter ID="Name" Value="DigitalOutput09" />
+        <Parameter ID="Address" Value="0x2011" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="0" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3DigitalOutput10">
+        <Filter Value="X3Channel10Source='DirectIO'" />
+        <Parameter ID="Name" Value="DigitalOutput10" />
+        <Parameter ID="Address" Value="0x2011" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="1" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3DigitalOutput11">
+        <Filter Value="X3Channel11Source='DirectIO'" />
+        <Parameter ID="Name" Value="DigitalOutput11" />
+        <Parameter ID="Address" Value="0x2011" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="2" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3DigitalOutput12">
+        <Filter Value="X3Channel12Source='DirectIO'" />
+        <Parameter ID="Name" Value="DigitalOutput12" />
+        <Parameter ID="Address" Value="0x2011" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="3" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3StatusDigitalOutput01">
+        <Filter Value="X3StatusInfo='on' AND X3Channel01Source='DirectIO'" />
+        <Parameter ID="Name" Value="StatusDigitalOutput01" />
+        <Parameter ID="Address" Value="0x2001" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="0" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3StatusDigitalOutput02">
+        <Filter Value="X3StatusInfo='on' AND X3Channel02Source='DirectIO'" />
+        <Parameter ID="Name" Value="StatusDigitalOutput02" />
+        <Parameter ID="Address" Value="0x2001" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="1" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3StatusDigitalOutput03">
+        <Filter Value="X3StatusInfo='on' AND X3Channel03Source='DirectIO'" />
+        <Parameter ID="Name" Value="StatusDigitalOutput03" />
+        <Parameter ID="Address" Value="0x2001" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="2" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3StatusDigitalOutput04">
+        <Filter Value="X3StatusInfo='on' AND X3Channel04Source='DirectIO'" />
+        <Parameter ID="Name" Value="StatusDigitalOutput04" />
+        <Parameter ID="Address" Value="0x2001" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="3" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3StatusDigitalOutput05">
+        <Filter Value="X3StatusInfo='on' AND X3Channel05Config='outputPushPull' AND X3Channel05Source='DirectIO'" />
+        <Parameter ID="Name" Value="StatusDigitalOutput05" />
+        <Parameter ID="Address" Value="0x2001" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="4" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3StatusDigitalOutput06">
+        <Filter Value="X3StatusInfo='on' AND X3Channel06Config='outputPushPull' AND X3Channel06Source='DirectIO'" />
+        <Parameter ID="Name" Value="StatusDigitalOutput06" />
+        <Parameter ID="Address" Value="0x2001" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="5" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3StatusDigitalOutput07">
+        <Filter Value="X3StatusInfo='on' AND X3Channel07Config='outputPushPull' AND X3Channel07Source='DirectIO'" />
+        <Parameter ID="Name" Value="StatusDigitalOutput07" />
+        <Parameter ID="Address" Value="0x2001" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="6" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3StatusDigitalOutput08">
+        <Filter Value="X3StatusInfo='on' AND X3Channel08Config='outputPushPull' AND X3Channel08Source='DirectIO'" />
+        <Parameter ID="Name" Value="StatusDigitalOutput08" />
+        <Parameter ID="Address" Value="0x2001" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="7" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3StatusDigitalOutput09">
+        <Filter Value="X3StatusInfo='on' AND X3Channel09Source='DirectIO'" />
+        <Parameter ID="Name" Value="StatusDigitalOutput09" />
+        <Parameter ID="Address" Value="0x2002" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="0" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3StatusDigitalOutput10">
+        <Filter Value="X3StatusInfo='on' AND X3Channel10Source='DirectIO'" />
+        <Parameter ID="Name" Value="StatusDigitalOutput10" />
+        <Parameter ID="Address" Value="0x2002" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="1" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3StatusDigitalOutput11">
+        <Filter Value="X3StatusInfo='on' AND X3Channel11Source='DirectIO'" />
+        <Parameter ID="Name" Value="StatusDigitalOutput11" />
+        <Parameter ID="Address" Value="0x2002" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="2" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3StatusDigitalOutput12">
+        <Filter Value="X3StatusInfo='on' AND X3Channel12Source='DirectIO'" />
+        <Parameter ID="Name" Value="StatusDigitalOutput12" />
+        <Parameter ID="Address" Value="0x2002" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="3" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3PWMPeriod09">
+        <Filter Value="X3Channel09Source='PWMout'" />
+        <Parameter ID="Name" Value="PWMPeriod09" />
+        <Parameter ID="Address" Value="0x1300" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="UINT" />
+      </Channel>
+      <Channel ID="X3PWMOutput09">
+        <Filter Value="X3Channel09Source='PWMout'" />
+        <Parameter ID="Name" Value="PWMOutput09" />
+        <Parameter ID="Address" Value="0x1302" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X3PWMPeriod10">
+        <Filter Value="X3Channel10Source='PWMout'" />
+        <Parameter ID="Name" Value="PWMPeriod10" />
+        <Parameter ID="Address" Value="0x1310" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="UINT" />
+      </Channel>
+      <Channel ID="X3PWMOutput10">
+        <Filter Value="X3Channel10Source='PWMout'" />
+        <Parameter ID="Name" Value="PWMOutput10" />
+        <Parameter ID="Address" Value="0x1312" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X3PWMPeriod11">
+        <Filter Value="X3Channel11Source='PWMout'" />
+        <Parameter ID="Name" Value="PWMPeriod11" />
+        <Parameter ID="Address" Value="0x1320" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="UINT" />
+      </Channel>
+      <Channel ID="X3PWMOutput11">
+        <Filter Value="X3Channel11Source='PWMout'" />
+        <Parameter ID="Name" Value="PWMOutput11" />
+        <Parameter ID="Address" Value="0x1322" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X3PWMPeriod12">
+        <Filter Value="X3Channel12Source='PWMout'" />
+        <Parameter ID="Name" Value="PWMPeriod12" />
+        <Parameter ID="Address" Value="0x1330" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="UINT" />
+      </Channel>
+      <Channel ID="X3PWMOutput12">
+        <Filter Value="X3Channel12Source='PWMout'" />
+        <Parameter ID="Name" Value="PWMOutput12" />
+        <Parameter ID="Address" Value="0x1332" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X3Mov01SpeedEnable">
+        <Filter Value="X3Move01Function='PULS' OR X3Move01Function='EDGE'" />
+        <Parameter ID="Name" Value="Mov01Enable" />
+        <Parameter ID="Address" Value="0x2200" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="1" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3Mov01Speed32Bit">
+        <Filter Value="X3Move01Function='PULS' OR X3Move01Function='EDGE'" />
+        <Parameter ID="Name" Value="Mov01Speed" />
+        <Parameter ID="Address" Value="0x2202" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X3Mov01SpeedPosFeedback32Bit">
+        <Filter Value="X3Move01Function='PULS' OR X3Move01Function='EDGE'" />
+        <Parameter ID="Name" Value="Mov01Position" />
+        <Parameter ID="Address" Value="0x2204" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X3Mov02SpeedEnable">
+        <Filter Value="X3Move02Function='PULS' OR X3Move02Function='EDGE'" />
+        <Parameter ID="Name" Value="Mov02Enable" />
+        <Parameter ID="Address" Value="0x2210" Type="UDINT" />
+        <Parameter ID="BitOffset" Value="2" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3Mov02Speed32Bit">
+        <Filter Value="X3Move02Function='PULS' OR X3Move02Function='EDGE'" />
+        <Parameter ID="Name" Value="Mov02Speed" />
+        <Parameter ID="Address" Value="0x2212" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="INT" />
+      </Channel>
+      <Channel ID="X3Mov02SpeedPosFeedback32Bit">
+        <Filter Value="X3Move02Function='PULS' OR X3Move02Function='EDGE'" />
+        <Parameter ID="Name" Value="Mov02Position" />
+        <Parameter ID="Address" Value="0x2214" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+      </Channel>
+      <Channel ID="X3StatusInput01">
+        <Parameter ID="Name" Value="StatusInput01" />
+        <Parameter ID="Address" Value="0x2004" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="BOOL" />
+      </Channel>
+      <Channel ID="X3CfO_DI_Filter">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x2800" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X3CfO_Mov01Mode">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x2a00" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X3CfO_Mov01SpeedLimit">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x2a04" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="UDINT" />
+      </Channel>
+      <Channel ID="X3CfO_Mov02Mode">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x2a10" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X3CfO_Mov02SpeedLimit">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x2a14" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="UDINT" />
+      </Channel>
+      <Channel ID="X3CfO_PhyIOConfigCh01">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x2f00" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X3CfO_PhyIOConfigCh02">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x2f01" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X3CfO_PhyIOConfigCh03">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x2f02" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X3CfO_PhyIOConfigCh04">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x2f03" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X3CfO_PhyIOConfigCh05">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x2f04" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X3CfO_PhyIOConfigCh06">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x2f05" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X3CfO_PhyIOConfigCh07">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x2f06" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X3CfO_PhyIOConfigCh08">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x2f07" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X3CfO_PhyIOConfigCh09">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x2f08" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X3CfO_PhyIOConfigCh10">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x2f09" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X3CfO_PhyIOConfigCh11">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x2f0a" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+      <Channel ID="X3CfO_PhyIOConfigCh12">
+        <Filter Value="IS_RUNTIME='1'" />
+        <Parameter ID="Ext" Value="/NOTCYCLIC" />
+        <Parameter ID="Address" Value="0x2f0b" Type="UDINT" />
+        <Parameter ID="Direction" Value="OUT" />
+        <Parameter ID="Type" Value="USINT" />
+      </Channel>
+    </Resource>
+  </Hardware>
+  <Hardware Family="10" ID="X20CP1382" Modno="55995" UseType="1">
+    <Parameter ID="Transparent" Value="1" Type="UDINT" />
+    <Parameter ID="HwcCpuSlot" Value="0" Type="UDINT" />
+    <Parameter ID="HwcCpuStation" Value="0" Type="UDINT" />
+    <Parameter ID="HwcShortName" Value="CP1382" />
+    <Resource ID="IO">
+      <Parameter ID="Transparent" Value="1" Type="UDINT" />
+      <Parameter ID="Classcode" Value="0x20000022" Type="UDINT" />
+      <Parameter ID="ARIOMaster" Value="1" Type="UDINT" />
+      <Channel ID="SerialNumber">
+        <Parameter ID="Ext" Value="/HW" />
+        <Parameter ID="Address" Value="0" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="UDINT" />
+        <Parameter ID="ChannelType" Value="SerialNumber" />
+        <Parameter ID="Name" Value="SerialNumber" />
+      </Channel>
+      <Channel ID="ModuleID">
+        <Parameter ID="Ext" Value="/HW" />
+        <Parameter ID="Address" Value="1" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="UINT" />
+        <Parameter ID="ChannelType" Value="ModuleID" />
+      </Channel>
+      <Channel ID="HardwareVariant">
+        <Parameter ID="Ext" Value="/HW" />
+        <Parameter ID="Address" Value="15" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="UINT" />
+        <Parameter ID="ChannelType" Value="HardwareVariant" />
+      </Channel>
+      <Channel ID="FirmwareVersion">
+        <Parameter ID="Ext" Value="/HW" />
+        <Parameter ID="Address" Value="16" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="UINT" />
+        <Parameter ID="ChannelType" Value="FirmwareVersion" />
+      </Channel>
+      <Channel ID="TemperatureCPU_UINT">
+        <Filter Value="TemperatureCPUType='UINT'" />
+        <Parameter ID="Name" Value="TemperatureCPU" />
+        <Parameter ID="Ext" Value="/HW" />
+        <Parameter ID="Address" Value="5" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="UINT" />
+        <Parameter ID="ChannelType" Value="Temp" />
+        <Parameter ID="Ordinal" Value="2" Type="UDINT" />
+      </Channel>
+      <Channel ID="TemperatureCPU_INT">
+        <Filter Value="TemperatureCPUType='INT'" />
+        <Parameter ID="Name" Value="TemperatureCPU" />
+        <Parameter ID="Ext" Value="/HW" />
+        <Parameter ID="Address" Value="5" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="INT" />
+        <Parameter ID="ChannelType" Value="Temp" />
+        <Parameter ID="Ordinal" Value="2" Type="UDINT" />
+      </Channel>
+      <Channel ID="TemperatureENV_UINT">
+        <Filter Value="TemperatureENVType='UINT'" />
+        <Parameter ID="Name" Value="TemperatureENV" />
+        <Parameter ID="Ext" Value="/HW" />
+        <Parameter ID="Address" Value="4" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="UINT" />
+        <Parameter ID="ChannelType" Value="Temp" />
+        <Parameter ID="Ordinal" Value="1" Type="UDINT" />
+      </Channel>
+      <Channel ID="TemperatureENV_INT">
+        <Filter Value="TemperatureENVType='INT'" />
+        <Parameter ID="Name" Value="TemperatureENV" />
+        <Parameter ID="Ext" Value="/HW" />
+        <Parameter ID="Address" Value="4" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="INT" />
+        <Parameter ID="ChannelType" Value="Temp" />
+        <Parameter ID="Ordinal" Value="1" Type="UDINT" />
+      </Channel>
+      <Channel ID="SystemTime">
+        <Parameter ID="Ext" Value="/HW" />
+        <Parameter ID="Address" Value="9" Type="UDINT" />
+        <Parameter ID="Direction" Value="IN" />
+        <Parameter ID="Type" Value="DINT" />
+        <Parameter ID="ChannelType" Value="SystemTime" />
+      </Channel>
+    </Resource>
+    <Resource ID="PCI">
+      <Parameter ID="Transparent" Value="1" Type="UDINT" />
+      <Parameter ID="Classcode" Value="0x20000000" Type="UDINT" />
+      <Parameter ID="OfferedBus" Value="X20PCI" />
+      <Parameter ID="BusPrefix" Value="SS" />
+      <Parameter ID="BusMinSlot" Value="1" Type="UDINT" />
+      <Parameter ID="BusMaxSlot" Value="1" Type="UDINT" />
+      <Parameter ID="PciDmaFastEnable" Value="1" Type="UDINT" />
+      <Resource ID="BUS-0">
+        <Parameter ID="Transparent" Value="1" Type="UDINT" />
+        <Parameter ID="BusAddress" Value="0x0" Type="UDINT" />
+        <Parameter ID="PCIFuncNo" Value="0" Type="UDINT" />
+        <Parameter ID="VendorId" Value="0x17f3" Type="UDINT" />
+        <Parameter ID="DeviceId" Value="0x6025" Type="UDINT" />
+      </Resource>
+      <Resource ID="IF1">
+        <Parameter ID="IoBase0" Value="0x3f8" Type="UDINT" />
+        <Parameter ID="Interrupt" Value="4" Type="UDINT" />
+        <Parameter ID="Classcode" Value="0x02000700" Type="UDINT" />
+      </Resource>
+      <Resource ID="IF2">
+        <Parameter ID="BusAddress" Value="0x8" Type="UDINT" />
+        <Parameter ID="PCIFuncNo" Value="0" Type="UDINT" />
+        <Parameter ID="VendorId" Value="0x17f3" Type="UDINT" />
+        <Parameter ID="DeviceId" Value="0x6040" Type="UDINT" />
+        <Parameter ID="MemEnable" Value="0" Type="UDINT" />
+        <Parameter ID="NodeDetectionMethod" Value="5" Type="UDINT" />
+        <Parameter ID="OfferedBus" Value="ETHERNET" />
+      </Resource>
+      <Resource ID="SRAM">
+        <Parameter ID="BusAddress" Value="0x10" Type="UDINT" />
+        <Parameter ID="PCIFuncNo" Value="1" Type="UDINT" />
+        <Parameter ID="Transparent" Value="1" Type="UDINT" />
+        <Parameter ID="VendorId" Value="0x17f3" Type="UDINT" />
+        <Parameter ID="DeviceId" Value="0x1710" Type="UDINT" />
+        <Parameter ID="Classcode" Value="0x00000500" Type="UDINT" />
+        <Parameter ID="MemLen0" Value="32768" Type="UDINT" />
+      </Resource>
+      <Resource ID="FPGA">
+        <Parameter ID="Transparent" Value="1" Type="UDINT" />
+        <Parameter ID="BusAddress" Value="0x0" Type="UDINT" />
+        <Parameter ID="VendorId" Value="0x1677" Type="UDINT" />
+        <Parameter ID="DeviceId" Value="0xdabb" Type="UDINT" />
+        <Resource ID="IF6">
+          <Parameter ID="BusAddress" Value="0x0" Type="UDINT" />
+          <Parameter ID="PCIFuncNo" Value="0" Type="UDINT" />
+          <Parameter ID="VendorId" Value="0x1677" Type="UDINT" />
+          <Parameter ID="DeviceId" Value="0xdabb" Type="UDINT" />
+          <Parameter ID="OfferedBus" Value="X2XIF" />
+          <Parameter ID="InterfaceType" Value="X2X" />
+          <Parameter ID="MemEnable" Value="0" Type="UDINT" />
+          <Parameter ID="MemEnableIfArio" Value="1" Type="UDINT" />
+          <Parameter ID="MemLen0" Value="0xC000" Type="UDINT" />
+          <Parameter ID="IOSuffix" Value="X2X.BUS" />
+        </Resource>
+        <Resource ID="FPGA-UPDATE">
+          <Parameter ID="Transparent" Value="1" Type="UDINT" />
+          <Parameter ID="BusAddress" Value="0x0" Type="UDINT" />
+          <Parameter ID="PCIFuncNo" Value="1" Type="UDINT" />
+          <Parameter ID="VendorId" Value="0x1677" Type="UDINT" />
+          <Parameter ID="DeviceId" Value="0xdabb" Type="UDINT" />
+          <Parameter ID="FwLoadMethod" Value="19" Type="UDINT" />
+        </Resource>
+        <Resource ID="IF3">
+          <Parameter ID="BusAddress" Value="0x0" Type="UDINT" />
+          <Parameter ID="PCIFuncNo" Value="2" Type="UDINT" />
+          <Parameter ID="VendorId" Value="0x1677" Type="UDINT" />
+          <Parameter ID="DeviceId" Value="0xdabb" Type="UDINT" />
+          <Parameter ID="FirmwareFile" Value="55995a0.epl" />
+          <Parameter ID="OfferedBus" Value="P2IF" />
+          <Parameter ID="InterfaceType" Value="POWERLINK" />
+          <Parameter ID="MemEnable" Value="0" Type="UDINT" />
+          <Parameter ID="MemEnableIfArio" Value="1" Type="UDINT" />
+          <Parameter ID="IOSuffix" Value=":PLK.BUS" />
+          <Resource ID="ETH">
+            <Parameter ID="Transparent" Value="1" Type="UDINT" />
+            <Parameter ID="Classcode" Value="0x00000200" Type="UDINT" />
+            <Parameter ID="AutoPlug" Value="1" Type="UDINT" />
+            <Parameter ID="OfferedBus" Value="ETHERNET" />
+          </Resource>
+          <Channel ID="LinkOk">
+            <Parameter ID="Ext" Value="/INFO" />
+            <Parameter ID="Address" Value="0x8000001A" Type="UDINT" />
+            <Parameter ID="BitOffset" Value="0" Type="UDINT" />
+            <Parameter ID="Direction" Value="IN" />
+            <Parameter ID="Type" Value="BOOL" />
+          </Channel>
+          <Channel ID="LinkOk">
+            <Parameter ID="Ext" Value="/INFO" />
+            <Parameter ID="Address" Value="0x8000001A" Type="UDINT" />
+            <Parameter ID="BitOffset" Value="0" Type="UDINT" />
+            <Parameter ID="Direction" Value="IN" />
+            <Parameter ID="Type" Value="BOOL" />
+          </Channel>
+          <Channel ID="OutputDMAMargin">
+            <Filter Value="(NOT (Operation='EthOnly'))" />
+            <Parameter ID="Ext" Value="/INFO" />
+            <Parameter ID="Address" Value="0x8000000C" Type="UDINT" />
+            <Parameter ID="Direction" Value="IN" />
+            <Parameter ID="Type" Value="DINT" />
+          </Channel>
+        </Resource>
+        <Resource ID="IF7">
+          <Parameter ID="BusAddress" Value="0x0" Type="UDINT" />
+          <Parameter ID="PCIFuncNo" Type="UDINT" Value="3" />
+          <Parameter ID="VendorId" Value="0x1677" Type="UDINT" />
+          <Parameter ID="DeviceId" Value="0xdabb" Type="UDINT" />
+          <Parameter ID="OfferedBus" Value="CAN" />
+        </Resource>
+        <Resource ID="X">
+          <!-- Driver for local io -->
+          <Parameter ID="Classcode" Value="0x200000ff" Type="UDINT" />
+          <Parameter ID="DDriverName" Value="DdxxIoX20CP138x" Type="STRING" />
+          <!-- Needed? -->
+          <Parameter ID="AutoPlug" Value="1" Type="UDINT" />
+          <Parameter ID="ARIOMaster" Value="1" Type="UDINT" />
+          <Parameter ID="Transparent" Value="1" Type="UDINT" />
+          <Parameter ID="BusAddress" Value="0x0" Type="UDINT" />
+          <Parameter ID="PCIFuncNo" Value="4" Type="UDINT" />
+          <Parameter ID="VendorId" Value="0x1677" Type="UDINT" />
+          <Parameter ID="DeviceId" Value="0xdabb" Type="UDINT" />
+          <Parameter ID="OfferedBus" Value="X20CPLOCALIO" />
+          <Parameter ID="BusPrefix" Value="X" />
+          <Parameter ID="BusMinSlot" Value="1" Type="UDINT" />
+          <Parameter ID="BusMaxSlot" Value="3" Type="UDINT" />
+          <Slot ID="X1">
+          </Slot>
+          <Slot ID="X2">
+          </Slot>
+          <Slot ID="X3">
+          </Slot>
+        </Resource>
+      </Resource>
+      <Slot ID="SS1">
+        <Parameter ID="BusAddress" Value="0x08" Type="UDINT" />
+        <Parameter ID="BusAddressAlternative" Value="0x00" Type="UDINT" />
+      </Slot>
+    </Resource>
+  </Hardware>
+</HWD>
