@@ -5,7 +5,7 @@
 # dRobTek Group 8 - Semester project 1
 <br>
 
-![Drawing Robot GIF](https://giphy.com/gifs/gvpd5qcshzTOIiSzkZ)
+![Drawing Robot GIF](https://media.giphy.com/media/gvpd5qcshzTOIiSzkZ/giphy.gif)
 <br>
 
 ## Introduction
