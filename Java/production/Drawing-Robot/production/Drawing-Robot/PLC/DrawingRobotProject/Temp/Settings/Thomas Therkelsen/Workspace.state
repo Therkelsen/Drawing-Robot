@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio Version=4.8.2.72?>
 <State Top="0" Left="0" Width="0" Height="0" WindowState="Normal" xmlns="http://br-automation.co.at/AS/State">
-  <TextEdit ID="C:\Users\Thomas Therkelsen\Documents\GitHub\Drawing-Robot\PLC\DrawingRobotProject\Logical\Program\Main.st" CaretLine="229" CaretColumn="24" FirstVisibleLine="211">
+  <TextEdit ID="C:\Users\Thomas Therkelsen\Documents\GitHub\Drawing-Robot\PLC\DrawingRobotProject\Logical\Socket\Main.st" CaretLine="1" CaretColumn="1" FirstVisibleLine="1">
     <Bookmarks />
   </TextEdit>
-  <TextEdit ID="C:\Users\Thomas Therkelsen\Documents\GitHub\Drawing-Robot\PLC\DrawingRobotProject\Logical\Socket\Main.st" CaretLine="1" CaretColumn="1" FirstVisibleLine="1">
+  <TextEdit ID="C:\Users\Thomas Therkelsen\Documents\GitHub\Drawing-Robot\PLC\DrawingRobotProject\Logical\Program\Main.st" CaretLine="241" CaretColumn="20" FirstVisibleLine="220">
     <Bookmarks />
   </TextEdit>
   <TextEdit ID="C:\Users\Thomas Therkelsen\Documents\GitHub\Drawing-Robot\PLC\DrawingRobotProject\Logical\Program\Types.typ" CaretLine="3" CaretColumn="15" FirstVisibleLine="1">

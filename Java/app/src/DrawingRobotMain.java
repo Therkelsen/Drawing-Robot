@@ -15,33 +15,33 @@ public class DrawingRobotMain {
         int port = 12345;
 
         //  Initialize variables for image processing
-        String imagePath = "Java/Assets/danny.jpg";
+        String imagePath = "Java/Assets/dickbutt.png";
 
-        int blackOrWhiteThreshold = 50;
+        int blackOrWhiteThreshold = 70;
 
         System.out.println("Connecting to Drawing Robot");
 
         //  Create objects for socket connection and image processing
         //  then connect to socket
-        RobotClient rc = new RobotClient(ip, port);
-        DrawingRobot dr = new DrawingRobot(imagePath, blackOrWhiteThreshold);
-        rc.connect();
+        RobotClient robcom = new RobotClient(ip, port);
+        ImageProcessing imgpro = new ImageProcessing(imagePath, blackOrWhiteThreshold);
+        robcom.connect();
 
-        System.out.println("Is connected: " + rc.isConnected());
+        System.out.println("Is connected: " + robcom.isConnected());
         System.out.println();
 
         System.out.println("Starting image processing");
         // For every column in every row, where every other row iterates backwards
-        for (int row = 0; row < dr.image.height(); row++) {
+        for (int row = 0; row < imgpro.image.height(); row++) {
             if (row % 2 != 0) {
-                for (int col = 0; col < dr.image.width(); col++) {
-                    dr.convertImage(col, row);
-                    dr.processImage(col, row);
+                for (int col = 0; col < imgpro.image.width(); col++) {
+                    imgpro.convertImage(col, row);
+                    imgpro.processImage(col, row);
                 }
             } else {
-                for (int col = dr.image.width() - 1; col >= 0; col--) {
-                    dr.convertImage(col, row);
-                    dr.processImage(col, row);
+                for (int col = imgpro.image.width() - 1; col >= 0; col--) {
+                    imgpro.convertImage(col, row);
+                    imgpro.processImage(col, row);
                 }
             }
 
@@ -49,25 +49,25 @@ public class DrawingRobotMain {
         System.out.println("Image processing done");
         System.out.println("Transferring instructions: ");
         Thread.sleep(2500);
-        //rc.write("Number of pairs of coordinate sets: " + dr.inst.size());
-        int x = 0;
-        for (int i = 0; i < dr.inst.size(); i++) {
+        //robcom.write("Number of pairs of coordinate sets: " + imgpro.inst.size());
+        int x = 1;
+        for (int i = 0; i < imgpro.inst.size(); i++) {
             if (i % 2 != 0) {
-                System.out.print("Sending data [" + x + "] of [" + dr.inst.size()/2 + "] | [" + String.format("%.2f", ((float)x/(float)dr.inst.size()/2*100)) + "%] done | Data: ");
-                dr.instructions = dr.instructions.concat(String.valueOf(dr.inst.get(i)));
-                rc.write(dr.instructions);
-                System.out.println(dr.instructions);
-                dr.instructions = "";
+                System.out.print("Sending data [" + x + "] of [" + imgpro.inst.size()/2 + "] | [" + String.format("%.2f", (2*((float)x/(float)imgpro.inst.size()*100))) + "%] done | Data: ");
+                imgpro.instructions = imgpro.instructions.concat(String.valueOf(imgpro.inst.get(i)));
+                robcom.write(imgpro.instructions);
+                System.out.println(imgpro.instructions);
+                imgpro.instructions = "";
                 x++;
 
             } else {
-                dr.instructions = dr.instructions.concat(String.valueOf(dr.inst.get(i)));
+                imgpro.instructions = imgpro.instructions.concat(String.valueOf(imgpro.inst.get(i)));
             }
             Thread.sleep(250);
         }
         Thread.sleep(2500);
-        rc.write("DONE");
-        dr.print(ip, port, x);
+        robcom.write("DONE");
+        imgpro.print(ip, port, x);
         System.exit(0);
     }
 }

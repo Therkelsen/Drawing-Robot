@@ -1,39 +1,40 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=Program 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=3020 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index=8 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                               ROBOSTATE                                     DINT    0 "                                                              12"    0    4    1   10    1    0 e,0,INIT
+                               ROBOSTATE                                     DINT    0 "                                                               8"    0    4    1   10    1    0 e,0,INIT
 
                               killswitch                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
                           readyToConvert                                     BOOL    0 "                                                            TRUE"    0    1    1    2    0    0         
                         hasBeenSharpened                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
+                               sharpener                                     BOOL    3 "                                                           FALSE"    0    1    1    2    1    0         
                                    count                                     DINT    0 "                                                               0"    0    4    1   10    1    0         
-                                 counter                                     DINT    0 "                                                             241"    0    4    1   10    1    0         
-                                instSize                                     DINT    0 "                                                            1000"    0    4    1   10    0    0         
+                                 counter                                     DINT    0 "                                                             961"    0    4    1   10    1    0         
+                                instSize                                     DINT    0 "                                                             611"    0    4    1   10    0    0         
                                   xArray                             INT[0..1999]    0 "                                                               *"    0    3 2000    0    0    0         
-                               xArray[0]                                      INT    0 "                                                             183"    1    3    1   10    0    0         
-                               xArray[1]                                      INT    0 "                                                             167"    1    3    1   10    0    0         
-                               xArray[2]                                      INT    0 "                                                             160"    1    3    1   10    0    0         
-                               xArray[3]                                      INT    0 "                                                             151"    1    3    1   10    0    0         
-                               xArray[4]                                      INT    0 "                                                             122"    1    3    1   10    0    0         
-                               xArray[5]                                      INT    0 "                                                              77"    1    3    1   10    0    0         
-                               xArray[6]                                      INT    0 "                                                              75"    1    3    1   10    0    0         
-                               xArray[7]                                      INT    0 "                                                              62"    1    3    1   10    0    0         
-                               xArray[8]                                      INT    0 "                                                              59"    1    3    1   10    0    0         
-                               xArray[9]                                      INT    0 "                                                              55"    1    3    1   10    0    0         
-                              xArray[10]                                      INT    0 "                                                              15"    1    3    1   10    0    0         
-                              xArray[11]                                      INT    0 "                                                              16"    1    3    1   10    0    0         
-                              xArray[12]                                      INT    0 "                                                              56"    1    3    1   10    0    0         
-                              xArray[13]                                      INT    0 "                                                             124"    1    3    1   10    0    0         
-                              xArray[14]                                      INT    0 "                                                             152"    1    3    1   10    0    0         
-                              xArray[15]                                      INT    0 "                                                             161"    1    3    1   10    0    0         
-                              xArray[16]                                      INT    0 "                                                             167"    1    3    1   10    0    0         
-                              xArray[17]                                      INT    0 "                                                             185"    1    3    1   10    0    0         
-                              xArray[18]                                      INT    0 "                                                             184"    1    3    1   10    0    0         
-                              xArray[19]                                      INT    0 "                                                             166"    1    3    1   10    0    0         
-                              xArray[20]                                      INT    0 "                                                             160"    1    3    1   10    0    0         
-                              xArray[21]                                      INT    0 "                                                             150"    1    3    1   10    0    0         
-                              xArray[22]                                      INT    0 "                                                             126"    1    3    1   10    0    0         
-                              xArray[23]                                      INT    0 "                                                              53"    1    3    1   10    0    0         
+                               xArray[0]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                               xArray[1]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                               xArray[2]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                               xArray[3]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                               xArray[4]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                               xArray[5]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                               xArray[6]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                               xArray[7]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                               xArray[8]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                               xArray[9]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                              xArray[10]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                              xArray[11]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                              xArray[12]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                              xArray[13]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                              xArray[14]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                              xArray[15]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                              xArray[16]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                              xArray[17]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                              xArray[18]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                              xArray[19]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                              xArray[20]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                              xArray[21]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                              xArray[22]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                              xArray[23]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                               xArray[24]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                               xArray[25]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                               xArray[26]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
@@ -1011,94 +1012,94 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                              xArray[998]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                              xArray[999]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                                   yArray                             INT[0..1999]    0 "                                                               *"    0    3 2000    0    0    0         
-                               yArray[0]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                               yArray[1]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                               yArray[2]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                               yArray[3]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                               yArray[4]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                               yArray[5]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                               yArray[6]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                               yArray[7]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                               yArray[8]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                               yArray[9]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[10]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[11]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[12]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[13]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[14]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[15]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[16]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[17]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[18]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[19]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[20]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[21]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[22]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[23]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[24]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[25]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[26]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[27]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[28]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[29]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[30]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[31]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[32]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[33]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[34]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[35]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[36]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[37]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[38]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[39]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[40]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[41]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[42]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[43]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[44]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[45]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[46]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[47]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[48]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[49]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[50]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[51]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[52]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[53]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[54]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[55]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[56]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[57]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[58]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[59]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[60]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[61]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[62]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[63]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[64]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[65]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[66]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[67]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[68]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[69]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[70]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[71]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[72]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[73]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[74]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[75]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[76]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[77]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[78]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[79]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[80]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[81]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[82]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[83]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[84]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[85]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[86]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                              yArray[87]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                               yArray[0]                                      INT    0 "                                                               9"    1    3    1   10    0    0         
+                               yArray[1]                                      INT    0 "                                                               9"    1    3    1   10    0    0         
+                               yArray[2]                                      INT    0 "                                                               9"    1    3    1   10    0    0         
+                               yArray[3]                                      INT    0 "                                                               9"    1    3    1   10    0    0         
+                               yArray[4]                                      INT    0 "                                                              10"    1    3    1   10    0    0         
+                               yArray[5]                                      INT    0 "                                                              10"    1    3    1   10    0    0         
+                               yArray[6]                                      INT    0 "                                                              10"    1    3    1   10    0    0         
+                               yArray[7]                                      INT    0 "                                                              10"    1    3    1   10    0    0         
+                               yArray[8]                                      INT    0 "                                                              10"    1    3    1   10    0    0         
+                               yArray[9]                                      INT    0 "                                                              10"    1    3    1   10    0    0         
+                              yArray[10]                                      INT    0 "                                                              11"    1    3    1   10    0    0         
+                              yArray[11]                                      INT    0 "                                                              11"    1    3    1   10    0    0         
+                              yArray[12]                                      INT    0 "                                                              11"    1    3    1   10    0    0         
+                              yArray[13]                                      INT    0 "                                                              11"    1    3    1   10    0    0         
+                              yArray[14]                                      INT    0 "                                                              11"    1    3    1   10    0    0         
+                              yArray[15]                                      INT    0 "                                                              11"    1    3    1   10    0    0         
+                              yArray[16]                                      INT    0 "                                                              11"    1    3    1   10    0    0         
+                              yArray[17]                                      INT    0 "                                                              11"    1    3    1   10    0    0         
+                              yArray[18]                                      INT    0 "                                                              12"    1    3    1   10    0    0         
+                              yArray[19]                                      INT    0 "                                                              12"    1    3    1   10    0    0         
+                              yArray[20]                                      INT    0 "                                                              12"    1    3    1   10    0    0         
+                              yArray[21]                                      INT    0 "                                                              12"    1    3    1   10    0    0         
+                              yArray[22]                                      INT    0 "                                                              12"    1    3    1   10    0    0         
+                              yArray[23]                                      INT    0 "                                                              12"    1    3    1   10    0    0         
+                              yArray[24]                                      INT    0 "                                                              12"    1    3    1   10    0    0         
+                              yArray[25]                                      INT    0 "                                                              12"    1    3    1   10    0    0         
+                              yArray[26]                                      INT    0 "                                                              12"    1    3    1   10    0    0         
+                              yArray[27]                                      INT    0 "                                                              12"    1    3    1   10    0    0         
+                              yArray[28]                                      INT    0 "                                                              12"    1    3    1   10    0    0         
+                              yArray[29]                                      INT    0 "                                                              12"    1    3    1   10    0    0         
+                              yArray[30]                                      INT    0 "                                                              13"    1    3    1   10    0    0         
+                              yArray[31]                                      INT    0 "                                                              13"    1    3    1   10    0    0         
+                              yArray[32]                                      INT    0 "                                                              13"    1    3    1   10    0    0         
+                              yArray[33]                                      INT    0 "                                                              13"    1    3    1   10    0    0         
+                              yArray[34]                                      INT    0 "                                                              13"    1    3    1   10    0    0         
+                              yArray[35]                                      INT    0 "                                                              13"    1    3    1   10    0    0         
+                              yArray[36]                                      INT    0 "                                                              13"    1    3    1   10    0    0         
+                              yArray[37]                                      INT    0 "                                                              13"    1    3    1   10    0    0         
+                              yArray[38]                                      INT    0 "                                                              13"    1    3    1   10    0    0         
+                              yArray[39]                                      INT    0 "                                                              13"    1    3    1   10    0    0         
+                              yArray[40]                                      INT    0 "                                                              13"    1    3    1   10    0    0         
+                              yArray[41]                                      INT    0 "                                                              13"    1    3    1   10    0    0         
+                              yArray[42]                                      INT    0 "                                                              13"    1    3    1   10    0    0         
+                              yArray[43]                                      INT    0 "                                                              13"    1    3    1   10    0    0         
+                              yArray[44]                                      INT    0 "                                                              14"    1    3    1   10    0    0         
+                              yArray[45]                                      INT    0 "                                                              14"    1    3    1   10    0    0         
+                              yArray[46]                                      INT    0 "                                                              14"    1    3    1   10    0    0         
+                              yArray[47]                                      INT    0 "                                                              14"    1    3    1   10    0    0         
+                              yArray[48]                                      INT    0 "                                                              14"    1    3    1   10    0    0         
+                              yArray[49]                                      INT    0 "                                                              14"    1    3    1   10    0    0         
+                              yArray[50]                                      INT    0 "                                                              15"    1    3    1   10    0    0         
+                              yArray[51]                                      INT    0 "                                                              15"    1    3    1   10    0    0         
+                              yArray[52]                                      INT    0 "                                                              15"    1    3    1   10    0    0         
+                              yArray[53]                                      INT    0 "                                                              15"    1    3    1   10    0    0         
+                              yArray[54]                                      INT    0 "                                                              15"    1    3    1   10    0    0         
+                              yArray[55]                                      INT    0 "                                                              15"    1    3    1   10    0    0         
+                              yArray[56]                                      INT    0 "                                                              16"    1    3    1   10    0    0         
+                              yArray[57]                                      INT    0 "                                                              16"    1    3    1   10    0    0         
+                              yArray[58]                                      INT    0 "                                                              16"    1    3    1   10    0    0         
+                              yArray[59]                                      INT    0 "                                                              16"    1    3    1   10    0    0         
+                              yArray[60]                                      INT    0 "                                                              16"    1    3    1   10    0    0         
+                              yArray[61]                                      INT    0 "                                                              16"    1    3    1   10    0    0         
+                              yArray[62]                                      INT    0 "                                                              17"    1    3    1   10    0    0         
+                              yArray[63]                                      INT    0 "                                                              17"    1    3    1   10    0    0         
+                              yArray[64]                                      INT    0 "                                                              17"    1    3    1   10    0    0         
+                              yArray[65]                                      INT    0 "                                                              17"    1    3    1   10    0    0         
+                              yArray[66]                                      INT    0 "                                                              17"    1    3    1   10    0    0         
+                              yArray[67]                                      INT    0 "                                                              17"    1    3    1   10    0    0         
+                              yArray[68]                                      INT    0 "                                                              18"    1    3    1   10    0    0         
+                              yArray[69]                                      INT    0 "                                                              18"    1    3    1   10    0    0         
+                              yArray[70]                                      INT    0 "                                                              18"    1    3    1   10    0    0         
+                              yArray[71]                                      INT    0 "                                                              18"    1    3    1   10    0    0         
+                              yArray[72]                                      INT    0 "                                                              18"    1    3    1   10    0    0         
+                              yArray[73]                                      INT    0 "                                                              18"    1    3    1   10    0    0         
+                              yArray[74]                                      INT    0 "                                                              18"    1    3    1   10    0    0         
+                              yArray[75]                                      INT    0 "                                                              18"    1    3    1   10    0    0         
+                              yArray[76]                                      INT    0 "                                                              18"    1    3    1   10    0    0         
+                              yArray[77]                                      INT    0 "                                                              18"    1    3    1   10    0    0         
+                              yArray[78]                                      INT    0 "                                                              19"    1    3    1   10    0    0         
+                              yArray[79]                                      INT    0 "                                                              19"    1    3    1   10    0    0         
+                              yArray[80]                                      INT    0 "                                                              19"    1    3    1   10    0    0         
+                              yArray[81]                                      INT    0 "                                                              19"    1    3    1   10    0    0         
+                              yArray[82]                                      INT    0 "                                                              19"    1    3    1   10    0    0         
+                              yArray[83]                                      INT    0 "                                                              19"    1    3    1   10    0    0         
+                              yArray[84]                                      INT    0 "                                                              19"    1    3    1   10    0    0         
+                              yArray[85]                                      INT    0 "                                                              19"    1    3    1   10    0    0         
+                              yArray[86]                                      INT    0 "                                                              20"    1    3    1   10    0    0         
+                              yArray[87]                                      INT    0 "                                                              20"    1    3    1   10    0    0         
                               yArray[88]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                               yArray[89]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                               yArray[90]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
@@ -1941,42 +1942,42 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                              yArray[927]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                              yArray[928]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                              yArray[929]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[930]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[931]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[932]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[933]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[934]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[935]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[936]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[937]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[938]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[939]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[940]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[941]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[942]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[943]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[944]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[945]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[946]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[947]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[948]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[949]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[950]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[951]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[952]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[953]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[954]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[955]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[956]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[957]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[958]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[959]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[960]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[961]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[962]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[963]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[964]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[965]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                             yArray[930]                                      INT    0 "                                                              71"    1    3    1   10    0    0         
+                             yArray[931]                                      INT    0 "                                                              71"    1    3    1   10    0    0         
+                             yArray[932]                                      INT    0 "                                                              71"    1    3    1   10    0    0         
+                             yArray[933]                                      INT    0 "                                                              72"    1    3    1   10    0    0         
+                             yArray[934]                                      INT    0 "                                                              72"    1    3    1   10    0    0         
+                             yArray[935]                                      INT    0 "                                                              72"    1    3    1   10    0    0         
+                             yArray[936]                                      INT    0 "                                                              72"    1    3    1   10    0    0         
+                             yArray[937]                                      INT    0 "                                                              72"    1    3    1   10    0    0         
+                             yArray[938]                                      INT    0 "                                                              72"    1    3    1   10    0    0         
+                             yArray[939]                                      INT    0 "                                                              72"    1    3    1   10    0    0         
+                             yArray[940]                                      INT    0 "                                                              72"    1    3    1   10    0    0         
+                             yArray[941]                                      INT    0 "                                                              72"    1    3    1   10    0    0         
+                             yArray[942]                                      INT    0 "                                                              72"    1    3    1   10    0    0         
+                             yArray[943]                                      INT    0 "                                                              72"    1    3    1   10    0    0         
+                             yArray[944]                                      INT    0 "                                                              72"    1    3    1   10    0    0         
+                             yArray[945]                                      INT    0 "                                                              72"    1    3    1   10    0    0         
+                             yArray[946]                                      INT    0 "                                                              72"    1    3    1   10    0    0         
+                             yArray[947]                                      INT    0 "                                                              72"    1    3    1   10    0    0         
+                             yArray[948]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
+                             yArray[949]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
+                             yArray[950]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
+                             yArray[951]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
+                             yArray[952]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
+                             yArray[953]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
+                             yArray[954]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
+                             yArray[955]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
+                             yArray[956]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
+                             yArray[957]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
+                             yArray[958]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
+                             yArray[959]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
+                             yArray[960]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
+                             yArray[961]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
+                             yArray[962]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
+                             yArray[963]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
+                             yArray[964]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
+                             yArray[965]                                      INT    0 "                                                              73"    1    3    1   10    0    0         
                              yArray[966]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                              yArray[967]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                              yArray[968]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
@@ -1992,25 +1993,25 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                              yArray[978]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                              yArray[979]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                              yArray[980]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[981]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[982]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[983]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[984]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[985]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[986]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[987]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[988]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[989]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[990]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[991]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[992]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[993]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[994]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[995]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[996]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[997]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[998]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                             yArray[999]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
+                             yArray[981]                                      INT    0 "                                                              74"    1    3    1   10    0    0         
+                             yArray[982]                                      INT    0 "                                                              74"    1    3    1   10    0    0         
+                             yArray[983]                                      INT    0 "                                                              74"    1    3    1   10    0    0         
+                             yArray[984]                                      INT    0 "                                                              74"    1    3    1   10    0    0         
+                             yArray[985]                                      INT    0 "                                                              74"    1    3    1   10    0    0         
+                             yArray[986]                                      INT    0 "                                                              74"    1    3    1   10    0    0         
+                             yArray[987]                                      INT    0 "                                                              74"    1    3    1   10    0    0         
+                             yArray[988]                                      INT    0 "                                                              74"    1    3    1   10    0    0         
+                             yArray[989]                                      INT    0 "                                                              74"    1    3    1   10    0    0         
+                             yArray[990]                                      INT    0 "                                                              74"    1    3    1   10    0    0         
+                             yArray[991]                                      INT    0 "                                                              74"    1    3    1   10    0    0         
+                             yArray[992]                                      INT    0 "                                                              75"    1    3    1   10    0    0         
+                             yArray[993]                                      INT    0 "                                                              75"    1    3    1   10    0    0         
+                             yArray[994]                                      INT    0 "                                                              75"    1    3    1   10    0    0         
+                             yArray[995]                                      INT    0 "                                                              75"    1    3    1   10    0    0         
+                             yArray[996]                                      INT    0 "                                                              75"    1    3    1   10    0    0         
+                             yArray[997]                                      INT    0 "                                                              75"    1    3    1   10    0    0         
+                             yArray[998]                                      INT    0 "                                                              75"    1    3    1   10    0    0         
+                             yArray[999]                                      INT    0 "                                                              75"    1    3    1   10    0    0         
                                   zArray                             INT[0..1999]    0 "                                                               *"    0    3 2000    0    0    0         
                                zArray[0]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                                zArray[1]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
@@ -3012,25 +3013,25 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                              zArray[997]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                              zArray[998]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
                              zArray[999]                                      INT    0 "                                                               *"    1    3    1   10    0    0         
-                                xCounter                                     DINT    0 "                                                            2900"    0    4    1   10    1    0         
-                                yCounter                                     DINT    0 "                                                             600"    0    4    1   10    1    0         
-                                zCounter                                     DINT    0 "                                                             232"    0    4    1   10    1    0         
+                                xCounter                                     DINT    0 "                                                            4046"    0    4    1   10    1    0         
+                                yCounter                                     DINT    0 "                                                            5400"    0    4    1   10    1    0         
+                                zCounter                                     DINT    0 "                                                               0"    0    4    1   10    1    0         
                                    xStop                                     BOOL    1 "                                                           FALSE"    0    1    1    2    1    0         
                                    yStop                                     BOOL    1 "                                                           FALSE"    0    1    1    2    1    0         
                                    zStop                                     BOOL    1 "                                                           FALSE"    0    1    1    2    1    0         
-                                   bStop                                     BOOL    1 "                                                           FALSE"    0    1    1    2    1    0         
+                                   bStop                                     BOOL    1 "                                                            TRUE"    0    1    1    2    1    0         
                                  xEnable                                     BOOL    3 "                                                           FALSE"    0    1    1    2    1    0         
                                  yEnable                                     BOOL    3 "                                                           FALSE"    0    1    1    2    1    0         
-                                 zEnable                                     BOOL    4 "                                                           FALSE"    0    1    1    2    1    0         
-                              xDirection                                     BOOL    3 "                                                            TRUE"    0    1    1    2    1    0         
+                                 zEnable                                     BOOL    3 "                                                           FALSE"    0    1    1    2    1    0         
+                              xDirection                                     BOOL    3 "                                                           FALSE"    0    1    1    2    1    0         
                               yDirection                                     BOOL    3 "                                                            TRUE"    0    1    1    2    1    0         
-                              zDirection                                     BOOL    3 "                                                           FALSE"    0    1    1    2    1    0         
+                              zDirection                                     BOOL    3 "                                                            TRUE"    0    1    1    2    1    0         
                                 xPosMove                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
                                 xNegMove                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
                                 yPosMove                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
                                 yNegMove                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
                                 zPosMove                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
                                 zNegMove                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
-                                   xStep                                     BOOL    3 "                                                           FALSE"    0    1    1    2    1    0         
-                                   yStep                                     BOOL    3 "                                                            TRUE"    0    1    1    2    1    0         
-                                   zStep                                     BOOL    3 "                                                           FALSE"    0    1    1    2    1    0         
+                                   xStep                                     BOOL    3 "                                                            TRUE"    0    1    1    2    1    0         
+                                   yStep                                     BOOL    3 "                                                           FALSE"    0    1    1    2    1    0         
+                                   zStep                                     BOOL    0 "                                                               *"    0    1    1    2    1    0         

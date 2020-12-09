@@ -34,7 +34,7 @@ PROGRAM _INIT
 	yPosMove := FALSE;
 	zPosMove := FALSE;
 	hasBeenSharpened := FALSE;
-	scale := 25; // steps / px
+	scale := 75; // steps / px
 END_PROGRAM
 
 PROGRAM _CYCLIC 
@@ -76,7 +76,7 @@ PROGRAM _CYCLIC
 			yPosMove := FALSE;
 			zPosMove := FALSE;
 			readyToConvert := FALSE;
-			scale := 25;
+			scale := 35;
 			
 			FOR count := 0 TO 999 DO
 				instructionsArray[count] := '';
@@ -140,7 +140,6 @@ PROGRAM _CYCLIC
 				ELSE
 					counter := 0;
 					count := 0;
-					imgSize := instSize * 2;
 					ROBOSTATE := RESET;
 				END_IF	
 			END_IF
@@ -264,11 +263,11 @@ PROGRAM _CYCLIC
 			
 		PENCILUP: 
 			IF (killswitch <> TRUE) THEN
-				IF (zCounter < 300) THEN
+				IF (zCounter < 500) THEN
 					zDirection := FALSE;
 					zStep := NOT zStep;
 					zCounter := zCounter + 1;
-				ELSIF (zCounter = 300 OR zStop = TRUE) THEN
+				ELSIF (zCounter = 500 OR zStop = TRUE) THEN
 					counter := counter + 1;
 					ROBOSTATE := CHECKLINE;
 				END_IF
@@ -277,7 +276,7 @@ PROGRAM _CYCLIC
 		CHECKLINE:
 			IF (killswitch <> TRUE) THEN
 				IF (yArray[counter + 2] = yArray[counter]) THEN
-					IF (hasBeenSharpened = FALSE) AND (counter MOD(100) = 0) THEN
+					IF (hasBeenSharpened = FALSE) AND (yArray[counter] MOD(25) = 0) THEN
 						ROBOSTATE := SHARPEN;
 					ELSE
 						ROBOSTATE := DRAW;
@@ -290,7 +289,7 @@ PROGRAM _CYCLIC
 		NEXTLINE:
 			IF (killswitch <> TRUE) THEN
 				IF (yStop <> TRUE) THEN
-					IF (yCounter = (yArray[counter + 1] * scale)) THEN
+					IF (yCounter = (yArray[counter + 1] * scale) OR ((yArray[counter + 1] * scale = 0 AND counter > 1) THEN
 						ROBOSTATE := DRAW;
 					ELSIF (yCounter < (yArray[counter + 1] * scale)) THEN
 						yDirection := TRUE;
@@ -343,17 +342,18 @@ PROGRAM _CYCLIC
 					zStep := NOT zStep;
 					zCounter := zCounter - 1;
 				ELSIF ((xArray[counter] * scale = xCounter) AND (bStop = TRUE) AND (hasBeenSharpened = TRUE)) THEN
+					hasBeenSharpened := FALSE;
 					ROBOSTATE := DRAW;
 				END_IF
 			END_IF
 		
 		STOP:
 			IF (killswitch <> TRUE) THEN
-				IF (zCounter < 500) THEN
+				IF (zCounter < 2000) THEN
 					zDirection := FALSE;
 					zStep := NOT zStep;
 					zCounter := zCounter + 1;
-				ELSIF (zCounter = 500) THEN
+				ELSIF (zCounter = 2000) THEN
 				END_IF
 			END_IF
 		

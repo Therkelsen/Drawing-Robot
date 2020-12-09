@@ -90,6 +90,7 @@ PROGRAM _CYCLIC
 							instructionsArray[count] := data2;
 						ELSE
 							instSize := count;
+							imgSize := instSize * 2;
 							readyToConvert := TRUE;
 						END_IF
 					ELSE
@@ -99,6 +100,7 @@ PROGRAM _CYCLIC
 							instructionsArray[count] := data1;
 						ELSE
 							instSize := count;
+							imgSize := instSize * 2;
 							readyToConvert := TRUE;
 						END_IF
 						

@@ -16,7 +16,7 @@
     Path="C:\Users\Thomas Therkelsen\Documents\GitHub\Drawing-Robot\PLC\DrawingRobotProject\Logical\Global.var"
     LogicalPath="Global.var"
     Type="File"
-    LastWriteTime="132519192462668757"
+    LastWriteTime="132519868007519889"
     Private="false" />
   <Object
     Path="C:\Users\Thomas Therkelsen\Documents\GitHub\Drawing-Robot\PLC\DrawingRobotProject\Logical\Libraries\Package.pkg"
@@ -193,19 +193,19 @@
     Path="C:\Users\Thomas Therkelsen\Documents\GitHub\Drawing-Robot\PLC\DrawingRobotProject\Logical\Program\Main.st"
     LogicalPath="Program.Main.st"
     Type="File"
-    LastWriteTime="132519828642595624"
+    LastWriteTime="132520029321123155"
     Private="false" />
   <Object
     Path="C:\Users\Thomas Therkelsen\Documents\GitHub\Drawing-Robot\PLC\DrawingRobotProject\Logical\Program\Types.typ"
     LogicalPath="Program.Types.typ"
     Type="File"
-    LastWriteTime="132519185148170888"
+    LastWriteTime="132519860477286494"
     Private="true" />
   <Object
     Path="C:\Users\Thomas Therkelsen\Documents\GitHub\Drawing-Robot\PLC\DrawingRobotProject\Logical\Program\Variables.var"
     LogicalPath="Program.Variables.var"
     Type="File"
-    LastWriteTime="132519192175264317"
+    LastWriteTime="132519860477286494"
     Private="true" />
   <Object
     Path="C:\Users\Thomas Therkelsen\Documents\GitHub\Drawing-Robot\PLC\DrawingRobotProject\Logical\Socket\IEC.prg"
@@ -216,7 +216,7 @@
     Path="C:\Users\Thomas Therkelsen\Documents\GitHub\Drawing-Robot\PLC\DrawingRobotProject\Logical\Socket\Main.st"
     LogicalPath="Socket.Main.st"
     Type="File"
-    LastWriteTime="132519177308291407"
+    LastWriteTime="132519894391719345"
     Private="false" />
   <Object
     Path="C:\Users\Thomas Therkelsen\Documents\GitHub\Drawing-Robot\PLC\DrawingRobotProject\Logical\Socket\Types.typ"
@@ -239,7 +239,7 @@
     Path="C:\Users\Thomas Therkelsen\Documents\GitHub\Drawing-Robot\PLC\DrawingRobotProject\Physical\Config1\Hardware.hw"
     LogicalPath="Config1.Hardware.hw"
     Type="File"
-    LastWriteTime="132519043942557710"
+    LastWriteTime="132519876607594454"
     Private="false" />
   <Object
     Path="C:\Users\Thomas Therkelsen\Documents\GitHub\Drawing-Robot\PLC\DrawingRobotProject\Physical\Config1\Hardware.hwl"
@@ -256,7 +256,7 @@
     Path="C:\Users\Thomas Therkelsen\Documents\GitHub\Drawing-Robot\PLC\DrawingRobotProject\Physical\Config1\X20CP1382\Cpu.sw"
     LogicalPath="Config1.X20CP1382.Cpu.sw"
     Type="File"
-    LastWriteTime="132519050674072580"
+    LastWriteTime="132519890868666961"
     Private="false" />
   <Object
     Path="C:\Users\Thomas Therkelsen\Documents\GitHub\Drawing-Robot\PLC\DrawingRobotProject\Physical\Config1\X20CP1382\Cpu.per"
