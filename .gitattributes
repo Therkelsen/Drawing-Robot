@@ -2,4 +2,5 @@
 * text=auto
 *.md linguist-vendored=false
 *.fun linguist-vendored=false
+*.h linguist-vendored=false
 *.st linguist-language=Pascal
