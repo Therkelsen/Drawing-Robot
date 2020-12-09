@@ -33,7 +33,7 @@
     <Prerequisite ID="$(AS_PROJECT_PATH)\physical\config1\hardware.hw" LastWriteTime="2020-12-08 12.33.14" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\physical\config1\x20cp1382\cpu.sw" LastWriteTime="2020-12-08 12.44.26" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\channelconfiguration.xml" LastWriteTime="2020-12-08 10.52.28" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\variables.var" LastWriteTime="2020-12-08 14.15.18" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\variables.var" LastWriteTime="2020-12-08 16.40.16" />
     <CommandLine Parameter="&quot;$(AS_PROJECT_PATH)\Physical\Config1\X20CP1382\IoMap.iom&quot; &quot;$(AS_PROJECT_PATH)\Physical\Config1\X20CP1382\PvMap.vvm&quot;  -m &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\ConfigInfo.cfi&quot; -g &quot;$(AS_PROJECT_PATH)\Temp\Objects\Declarations.lst&quot; -x &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\ChannelConfiguration.xml&quot; -v V1.00.0 -f &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382&quot; -iomap -o &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\iomap.br&quot; -T SG4 -B B4.82 -P &quot;$(AS_PROJECT_PATH)&quot; -s &quot;Config1.X20CP1382&quot;" />
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\tcdata\tcdata.imx">
@@ -62,12 +62,12 @@
     <CommandLine Parameter="&quot;$(AS_PROJECT_PATH)\Physical\Config1\X20CP1382\AccessAndSecurity\Firewall\Rules.firewallRules&quot;  -o &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\FWRules.br&quot; -zip -B B4.82 -z n.d -P &quot;$(AS_PROJECT_PATH)&quot; -c &quot;Config1&quot; " />
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\program.br">
-    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\program\program.ox" LastWriteTime="2020-12-08 15.29.28" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\program\program.ox" LastWriteTime="2020-12-09 10.21.08" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\physical\config1\x20cp1382\cpu.per" LastWriteTime="2020-12-08 10.46.22" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\standard\standard.fun" LastWriteTime="2020-12-08 10.51.12" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\variables.var" LastWriteTime="2020-12-08 14.15.18" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 10.47.26" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\types.typ" LastWriteTime="2020-12-08 10.49.20" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\variables.var" LastWriteTime="2020-12-08 16.40.16" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 16.40.46" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\types.typ" LastWriteTime="2020-12-08 16.28.34" />
     <CommandLine Parameter="&quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Program\Program.ox&quot;  -o &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Program.br&quot; -v V1.00.0 -f &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\NT.ofs&quot; -offsetLT &quot;$(AS_PROJECT_PATH)\Binaries\Config1\X20CP1382\LT.ofs&quot; -T SG4 -M IA32 -B B4.82 -G V4.1.2  -extConstants -d &quot;runtime: V* - V*,asieccon: V* - V*&quot; -r Cyclic2 -p 2 -s &quot;Program&quot; -L &quot;AsBrStr: V*, AsIecCon: V*, AsTCP: V*, astime: V*, operator: V*, runtime: V*, standard: V*&quot; -P &quot;$(AS_PROJECT_PATH)&quot; " />
     <AdditionalBuildTrigger Key="VolatileMemory" Value="65535" />
     <AdditionalBuildTrigger Key="PermanentAnalogMemory" Value="0" />
@@ -75,50 +75,50 @@
     <AdditionalBuildTrigger Key="RemanentMemory" Value="0" />
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\program\program.ox">
-    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\program\a.out" LastWriteTime="2020-12-08 15.29.28" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\program\a.out" LastWriteTime="2020-12-09 10.21.08" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\standard\standard.fun" LastWriteTime="2020-12-08 10.51.12" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\variables.var" LastWriteTime="2020-12-08 14.15.18" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 10.47.26" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\types.typ" LastWriteTime="2020-12-08 10.49.20" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\variables.var" LastWriteTime="2020-12-08 16.40.16" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 16.40.46" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\types.typ" LastWriteTime="2020-12-08 16.28.34" />
     <CommandLine Parameter="&quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Program\a.out&quot;  -o &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Program\Program.ox&quot; -T SG4 -r Cyclic2 -G V4.1.2  -B B4.82 " />
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\program\a.out">
-    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\program\main.st.o" LastWriteTime="2020-12-08 15.29.28" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\program\_bur_pvdef.st.o" LastWriteTime="2020-12-08 15.29.28" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\program\main.st.o" LastWriteTime="2020-12-09 10.21.08" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\program\_bur_pvdef.st.o" LastWriteTime="2020-12-09 10.21.08" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\standard\standard.fun" LastWriteTime="2020-12-08 10.51.12" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\variables.var" LastWriteTime="2020-12-08 14.15.18" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 10.47.26" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\types.typ" LastWriteTime="2020-12-08 10.49.20" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\variables.var" LastWriteTime="2020-12-08 16.40.16" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 16.40.46" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\types.typ" LastWriteTime="2020-12-08 16.28.34" />
     <CommandLine Parameter=" -link &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Program\Main.st.o&quot; &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Program\_bur_pvdef.st.o&quot;  -o &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Program\a.out&quot; -G V4.1.2  -T SG4 -M IA32 &quot;-Wl,C:\BrAutomation\AS\System\B0482\SG4\Ia32\libAsIecCon.a&quot; &quot;-Wl,C:\BrAutomation\AS\System\B0482\SG4\Ia32\libAsTCP.a&quot; &quot;-Wl,C:\BrAutomation\AS\System\B0482\SG4\Ia32\libastime.a&quot; &quot;-Wl,C:\BrAutomation\AS\System\B0482\SG4\Ia32\libAsBrStr.a&quot; &quot;-Wl,C:\BrAutomation\AS\System\B0482\SG4\Ia32\libstandard.a&quot; &quot;-Wl,C:\BrAutomation\AS\System\B0482\SG4\Ia32\libruntime.a&quot; &quot;-Wl,C:\BrAutomation\AS\System\B0482\SG4\Ia32\liboperator.a&quot; -specs=I386specs_brelf -nostdlib" />
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\program\main.st.o">
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\main.st" LastWriteTime="2020-12-08 15.29.24" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\main.st" LastWriteTime="2020-12-09 10.21.04" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\standard\standard.fun" LastWriteTime="2020-12-08 10.51.12" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\variables.var" LastWriteTime="2020-12-08 14.15.18" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 10.47.26" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\types.typ" LastWriteTime="2020-12-08 10.49.20" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\variables.var" LastWriteTime="2020-12-08 16.40.16" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 16.40.46" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\types.typ" LastWriteTime="2020-12-08 16.28.34" />
     <CommandLine Parameter="&quot;$(AS_PROJECT_PATH)\Logical\Program\Main.st&quot;  -o &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Program\Main.st.o&quot; -T SG4 -M IA32 -B B4.82 -G V4.1.2  -s &quot;Program&quot; -t &quot;$(AS_PROJECT_PATH)\Temp&quot; -pointers -extComments -extBitAccess -extConstants -D _SG4 -l &quot;$(AS_PROJECT_PATH)\Logical\Program\Types.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Program\Variables.var&quot; -g &quot;$(AS_PROJECT_PATH)\Logical\Global.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\operator\operator.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\runtime\runtime.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\astime\astime.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsIecCon\AsIecCon.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\standard\standard.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsTCP\AsTCP.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsBrStr\AsBrStr.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\operator\operator.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\runtime\runtime.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\astime\astime.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsIecCon\AsIecCon.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\standard\standard.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsTCP\AsTCP.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsBrStr\AsBrStr.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Global.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\operator\operator.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\runtime\runtime.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\astime\astime.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsIecCon\AsIecCon.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\standard\standard.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsTCP\AsTCP.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsBrStr\AsBrStr.var&quot; -P &quot;$(AS_PROJECT_PATH)&quot; " />
     <AdditionalBuildTrigger Key="IecDeclarationsInAnsiC" Value="False" />
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\program\_bur_pvdef.st.o">
     <Prerequisite ID="c:\brautomation\as48\as\gnuinst\v4.1.2\i386-elf\include\bur\_bur_pvdef.st" LastWriteTime="2020-04-07 09.33.28" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\program\main.st.o" LastWriteTime="2020-12-08 15.29.28" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\program\main.st.o" LastWriteTime="2020-12-09 10.21.08" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\standard\standard.fun" LastWriteTime="2020-12-08 10.51.12" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\variables.var" LastWriteTime="2020-12-08 14.15.18" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 10.47.26" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\types.typ" LastWriteTime="2020-12-08 10.49.20" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\variables.var" LastWriteTime="2020-12-08 16.40.16" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 16.40.46" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\program\types.typ" LastWriteTime="2020-12-08 16.28.34" />
     <CommandLine Parameter="&quot;C:\BrAutomation\AS48\AS\GnuInst\V4.1.2\i386-elf\include\bur\_bur_pvdef.st&quot;  -o &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Program\_bur_pvdef.st.o&quot; -S &quot;Main.st&quot;  -T SG4 -M IA32 -B B4.82 -G V4.1.2  -s &quot;Program&quot; -t &quot;$(AS_PROJECT_PATH)\Temp&quot; -pointers -extComments -extBitAccess -extConstants -D _SG4 -l &quot;$(AS_PROJECT_PATH)\Logical\Program\Types.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Program\Variables.var&quot; -g &quot;$(AS_PROJECT_PATH)\Logical\Global.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\operator\operator.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\runtime\runtime.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\astime\astime.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsIecCon\AsIecCon.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\standard\standard.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsTCP\AsTCP.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsBrStr\AsBrStr.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\operator\operator.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\runtime\runtime.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\astime\astime.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsIecCon\AsIecCon.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\standard\standard.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsTCP\AsTCP.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsBrStr\AsBrStr.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Global.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\operator\operator.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\runtime\runtime.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\astime\astime.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsIecCon\AsIecCon.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\standard\standard.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsTCP\AsTCP.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsBrStr\AsBrStr.var&quot; -P &quot;$(AS_PROJECT_PATH)&quot; " />
     <AdditionalBuildTrigger Key="IecDeclarationsInAnsiC" Value="False" />
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\socket.br">
-    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\socket\socket.ox" LastWriteTime="2020-12-08 15.08.42" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\socket\socket.ox" LastWriteTime="2020-12-08 16.40.52" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\physical\config1\x20cp1382\cpu.per" LastWriteTime="2020-12-08 10.46.22" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\standard\standard.fun" LastWriteTime="2020-12-08 10.51.12" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\astcp\astcp.fun" LastWriteTime="2020-12-08 10.51.42" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\asbrstr\asbrstr.fun" LastWriteTime="2020-12-08 10.52.04" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\variables.var" LastWriteTime="2020-12-08 10.50.46" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 10.47.26" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\types.typ" LastWriteTime="2020-12-08 10.50.40" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\variables.var" LastWriteTime="2020-12-08 16.15.30" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 16.40.46" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\types.typ" LastWriteTime="2020-12-08 16.15.30" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\runtime\runtime.var" LastWriteTime="2020-12-08 10.46.22" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\astcp\astcp.var" LastWriteTime="2020-12-08 10.51.42" />
     <CommandLine Parameter="&quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Socket\Socket.ox&quot;  -o &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Socket.br&quot; -v V1.00.0 -f &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\NT.ofs&quot; -offsetLT &quot;$(AS_PROJECT_PATH)\Binaries\Config1\X20CP1382\LT.ofs&quot; -T SG4 -M IA32 -B B4.82 -G V4.1.2  -extConstants -d &quot;runtime: V* - V*,asieccon: V* - V*&quot; -r Cyclic4 -p 2 -s &quot;Socket&quot; -L &quot;AsBrStr: V*, AsIecCon: V*, AsTCP: V*, astime: V*, operator: V*, runtime: V*, standard: V*&quot; -P &quot;$(AS_PROJECT_PATH)&quot; " />
@@ -128,38 +128,38 @@
     <AdditionalBuildTrigger Key="RemanentMemory" Value="0" />
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\socket\socket.ox">
-    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\socket\a.out" LastWriteTime="2020-12-08 15.08.42" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\socket\a.out" LastWriteTime="2020-12-08 16.40.50" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\standard\standard.fun" LastWriteTime="2020-12-08 10.51.12" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\astcp\astcp.fun" LastWriteTime="2020-12-08 10.51.42" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\asbrstr\asbrstr.fun" LastWriteTime="2020-12-08 10.52.04" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\variables.var" LastWriteTime="2020-12-08 10.50.46" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 10.47.26" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\types.typ" LastWriteTime="2020-12-08 10.50.40" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\variables.var" LastWriteTime="2020-12-08 16.15.30" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 16.40.46" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\types.typ" LastWriteTime="2020-12-08 16.15.30" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\runtime\runtime.var" LastWriteTime="2020-12-08 10.46.22" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\astcp\astcp.var" LastWriteTime="2020-12-08 10.51.42" />
     <CommandLine Parameter="&quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Socket\a.out&quot;  -o &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Socket\Socket.ox&quot; -T SG4 -r Cyclic4 -G V4.1.2  -B B4.82 " />
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\socket\a.out">
-    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\socket\main.st.o" LastWriteTime="2020-12-08 15.08.42" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\socket\_bur_pvdef.st.o" LastWriteTime="2020-12-08 15.08.42" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\socket\main.st.o" LastWriteTime="2020-12-08 16.40.50" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\socket\_bur_pvdef.st.o" LastWriteTime="2020-12-08 16.40.50" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\standard\standard.fun" LastWriteTime="2020-12-08 10.51.12" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\astcp\astcp.fun" LastWriteTime="2020-12-08 10.51.42" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\asbrstr\asbrstr.fun" LastWriteTime="2020-12-08 10.52.04" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\variables.var" LastWriteTime="2020-12-08 10.50.46" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 10.47.26" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\types.typ" LastWriteTime="2020-12-08 10.50.40" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\variables.var" LastWriteTime="2020-12-08 16.15.30" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 16.40.46" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\types.typ" LastWriteTime="2020-12-08 16.15.30" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\runtime\runtime.var" LastWriteTime="2020-12-08 10.46.22" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\astcp\astcp.var" LastWriteTime="2020-12-08 10.51.42" />
     <CommandLine Parameter=" -link &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Socket\Main.st.o&quot; &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Socket\_bur_pvdef.st.o&quot;  -o &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Socket\a.out&quot; -G V4.1.2  -T SG4 -M IA32 &quot;-Wl,C:\BrAutomation\AS\System\B0482\SG4\Ia32\libAsIecCon.a&quot; &quot;-Wl,C:\BrAutomation\AS\System\B0482\SG4\Ia32\libAsTCP.a&quot; &quot;-Wl,C:\BrAutomation\AS\System\B0482\SG4\Ia32\libastime.a&quot; &quot;-Wl,C:\BrAutomation\AS\System\B0482\SG4\Ia32\libAsBrStr.a&quot; &quot;-Wl,C:\BrAutomation\AS\System\B0482\SG4\Ia32\libstandard.a&quot; &quot;-Wl,C:\BrAutomation\AS\System\B0482\SG4\Ia32\libruntime.a&quot; &quot;-Wl,C:\BrAutomation\AS\System\B0482\SG4\Ia32\liboperator.a&quot; -specs=I386specs_brelf -nostdlib" />
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\socket\main.st.o">
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\main.st" LastWriteTime="2020-12-08 15.08.36" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\main.st" LastWriteTime="2020-12-08 16.15.30" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\standard\standard.fun" LastWriteTime="2020-12-08 10.51.12" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\astcp\astcp.fun" LastWriteTime="2020-12-08 10.51.42" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\asbrstr\asbrstr.fun" LastWriteTime="2020-12-08 10.52.04" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\variables.var" LastWriteTime="2020-12-08 10.50.46" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 10.47.26" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\types.typ" LastWriteTime="2020-12-08 10.50.40" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\variables.var" LastWriteTime="2020-12-08 16.15.30" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 16.40.46" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\types.typ" LastWriteTime="2020-12-08 16.15.30" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\runtime\runtime.var" LastWriteTime="2020-12-08 10.46.22" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\astcp\astcp.var" LastWriteTime="2020-12-08 10.51.42" />
     <CommandLine Parameter="&quot;$(AS_PROJECT_PATH)\Logical\Socket\Main.st&quot;  -o &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Socket\Main.st.o&quot; -T SG4 -M IA32 -B B4.82 -G V4.1.2  -s &quot;Socket&quot; -t &quot;$(AS_PROJECT_PATH)\Temp&quot; -pointers -extComments -extBitAccess -extConstants -D _SG4 -l &quot;$(AS_PROJECT_PATH)\Logical\Socket\Types.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Socket\Variables.var&quot; -g &quot;$(AS_PROJECT_PATH)\Logical\Global.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\operator\operator.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\runtime\runtime.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\astime\astime.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsIecCon\AsIecCon.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\standard\standard.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsTCP\AsTCP.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsBrStr\AsBrStr.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\operator\operator.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\runtime\runtime.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\astime\astime.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsIecCon\AsIecCon.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\standard\standard.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsTCP\AsTCP.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsBrStr\AsBrStr.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Global.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\operator\operator.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\runtime\runtime.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\astime\astime.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsIecCon\AsIecCon.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\standard\standard.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsTCP\AsTCP.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsBrStr\AsBrStr.var&quot; -P &quot;$(AS_PROJECT_PATH)&quot; " />
@@ -167,13 +167,13 @@
   </Rule>
   <Rule ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\socket\_bur_pvdef.st.o">
     <Prerequisite ID="c:\brautomation\as48\as\gnuinst\v4.1.2\i386-elf\include\bur\_bur_pvdef.st" LastWriteTime="2020-04-07 09.33.28" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\socket\main.st.o" LastWriteTime="2020-12-08 15.08.42" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\socket\main.st.o" LastWriteTime="2020-12-08 16.40.50" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\standard\standard.fun" LastWriteTime="2020-12-08 10.51.12" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\astcp\astcp.fun" LastWriteTime="2020-12-08 10.51.42" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\asbrstr\asbrstr.fun" LastWriteTime="2020-12-08 10.52.04" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\variables.var" LastWriteTime="2020-12-08 10.50.46" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 10.47.26" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\types.typ" LastWriteTime="2020-12-08 10.50.40" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\variables.var" LastWriteTime="2020-12-08 16.15.30" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\global.var" LastWriteTime="2020-12-08 16.40.46" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\logical\socket\types.typ" LastWriteTime="2020-12-08 16.15.30" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\runtime\runtime.var" LastWriteTime="2020-12-08 10.46.22" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\logical\libraries\astcp\astcp.var" LastWriteTime="2020-12-08 10.51.42" />
     <CommandLine Parameter="&quot;C:\BrAutomation\AS48\AS\GnuInst\V4.1.2\i386-elf\include\bur\_bur_pvdef.st&quot;  -o &quot;$(AS_PROJECT_PATH)\Temp\Objects\Config1\X20CP1382\Socket\_bur_pvdef.st.o&quot; -S &quot;Main.st&quot;  -T SG4 -M IA32 -B B4.82 -G V4.1.2  -s &quot;Socket&quot; -t &quot;$(AS_PROJECT_PATH)\Temp&quot; -pointers -extComments -extBitAccess -extConstants -D _SG4 -l &quot;$(AS_PROJECT_PATH)\Logical\Socket\Types.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Socket\Variables.var&quot; -g &quot;$(AS_PROJECT_PATH)\Logical\Global.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\operator\operator.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\runtime\runtime.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\astime\astime.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsIecCon\AsIecCon.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\standard\standard.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsTCP\AsTCP.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsBrStr\AsBrStr.typ&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\operator\operator.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\runtime\runtime.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\astime\astime.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsIecCon\AsIecCon.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\standard\standard.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsTCP\AsTCP.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsBrStr\AsBrStr.fun&quot; &quot;$(AS_PROJECT_PATH)\Logical\Global.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\operator\operator.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\runtime\runtime.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\astime\astime.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsIecCon\AsIecCon.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\standard\standard.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsTCP\AsTCP.var&quot; &quot;$(AS_PROJECT_PATH)\Logical\Libraries\AsBrStr\AsBrStr.var&quot; -P &quot;$(AS_PROJECT_PATH)&quot; " />
@@ -210,8 +210,8 @@
     <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\role.br" LastWriteTime="2020-12-08 10.52.28" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\user.br" LastWriteTime="2020-12-08 10.52.28" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\fwrules.br" LastWriteTime="2020-12-08 10.52.28" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\program.br" LastWriteTime="2020-12-08 15.29.28" />
-    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\socket.br" LastWriteTime="2020-12-08 15.08.42" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\program.br" LastWriteTime="2020-12-09 10.21.08" />
+    <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\socket.br" LastWriteTime="2020-12-08 16.40.52" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\standard.br" LastWriteTime="2020-05-28 13.05.02" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\astcp.br" LastWriteTime="2020-05-28 13.04.50" />
     <Prerequisite ID="$(AS_PROJECT_PATH)\temp\objects\config1\x20cp1382\runtime.br" LastWriteTime="2020-05-28 13.05.02" />

@@ -9,9 +9,9 @@ VAR
 	string2 : STRING[25];
 	string3 : STRING[25];
 	string4 : STRING[25];
-	xString : ARRAY[0..999] OF STRING[15];
-	yString : ARRAY[0..999] OF STRING[15];
-	zString : ARRAY[0..999] OF STRING[15];
+	xString : ARRAY[0..1999] OF STRING[13];
+	yString : ARRAY[0..1999] OF STRING[13];
+	zString : ARRAY[0..1999] OF STRING[13];
 	D1 : INT;
 	D2 : INT;
 	D3 : INT;
@@ -27,7 +27,7 @@ VAR
 END_VAR
 (*MOVEMENT*)
 VAR
-	ROBOSTATE : ROBOSTATE2;
+	ROBOSTATE : ROBOTSTATE;
 	xCalib : DINT;
 	yCalib : DINT;
 	zCalib : DINT;

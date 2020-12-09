@@ -7,7 +7,7 @@ VAR
 	readyToConvert : BOOL;
 	instSize : DINT;
 	instructionsArray : ARRAY[0..999] OF STRING[25];
-	xArray : ARRAY[0..999] OF INT;
-	yArray : ARRAY[0..999] OF INT;
-	zArray : ARRAY[0..999] OF INT;
+	xArray : ARRAY[0..1999] OF INT;
+	yArray : ARRAY[0..1999] OF INT;
+	zArray : ARRAY[0..1999] OF INT;
 END_VAR

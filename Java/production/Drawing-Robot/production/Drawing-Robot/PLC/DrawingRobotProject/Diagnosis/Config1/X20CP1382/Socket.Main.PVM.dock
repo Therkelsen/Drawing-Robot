@@ -4,36 +4,36 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=250 Type=0 Scope=0 Force=0 Index
                                    tcpst                                     DINT    0 "                                                               2"    0    4    1   10    1    0 e,0,TCPS
 
                                    timer                                      TON    0 "                                                               *"    0   24    1    0    1    1         
-                                      IN                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
+                                      IN                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
                                       PT                                     TIME    0 "                                                         T#100ms"    1   12    1    1    0    0         
-                                       Q                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                                      ET                                     TIME    0 "                                                           T#0ms"    1   12    1    1    0    0         
-                               StartTime                                     TIME    0 "                                             T#04h_06m_04s_030ms"    1   12    1    1    0    0         
-                                       M                                     BOOL    0 "                                                           FALSE"    1    1    1    2    0    0         
-                                 Restart                                    UDINT    0 "                                                               2"    1    7    1   10    0    0         
+                                       Q                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                                      ET                                     TIME    0 "                                                         T#100ms"    1   12    1    1    0    0         
+                               StartTime                                     TIME    0 "                                             T#01h_51m_54s_130ms"    1   12    1    1    0    0         
+                                       M                                     BOOL    0 "                                                            TRUE"    1    1    1    2    0    0         
+                                 Restart                                    UDINT    0 "                                                               4"    1    7    1   10    0    0         
                             readyForData                                     BOOL    0 "                                                            TRUE"    0    1    1    2    0    0         
                                firstData                                     BOOL    0 "                                                            TRUE"    0    1    1    2    1    0         
                                 moreData                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
                             receivedData                                     BOOL    0 "                                                           FALSE"    0    1    1    2    0    0         
-                              activeData                                    USINT    0 "                                                               2"    0    5    1   10    0    0         
-                             receiveData                               STRING[80]    0 "                                          'DONE285 1,169 285 0,'"    0    9   81    1    1    0         
-                                   data1                             STRING[1000]    0 "                                                          'DONE'"    0    9 1001    1    0    0         
-                                   data2                             STRING[1000]    0 "                                          '174 283 1,168 283 0,'"    0    9 1001    1    0    0         
-                                   count                                     DINT    0 "                                                             282"    0    4    1   10    1    0         
-                                instSize                                     DINT    0 "                                                             282"    0    4    1   10    0    0         
+                              activeData                                    USINT    0 "                                                               1"    0    5    1   10    0    0         
+                             receiveData                               STRING[80]    0 "                                          'DONE180 1,239 180 0,'"    0    9   81    1    1    0         
+                                   data1                             STRING[1000]    0 "                                          '113 180 1,118 180 0,'"    0    9 1001    1    0    0         
+                                   data2                             STRING[1000]    0 "                                                          'DONE'"    0    9 1001    1    0    0         
+                                   count                                     DINT    0 "                                                            1000"    0    4    1   10    1    0         
+                                instSize                                     DINT    0 "                                                            1000"    0    4    1   10    0    0         
                        instructionsArray                       STRING[25][0..999]    0 "                                                               *"    0    9   26    0    0    1         
-                    instructionsArray[0]                               STRING[25]    0 "                                            '100 54 1,102 54 0,'"    1    9   26    1    0    0         
-                    instructionsArray[1]                               STRING[25]    0 "                                            '241 54 1,243 54 0,'"    1    9   26    1    0    0         
-                    instructionsArray[2]                               STRING[25]    0 "                                            '244 55 1,238 55 0,'"    1    9   26    1    0    0         
-                    instructionsArray[3]                               STRING[25]    0 "                                             '103 55 1,97 55 0,'"    1    9   26    1    0    0         
-                    instructionsArray[4]                               STRING[25]    0 "                                             '99 56 1,105 56 0,'"    1    9   26    1    0    0         
-                    instructionsArray[5]                               STRING[25]    0 "                                            '238 56 1,244 56 0,'"    1    9   26    1    0    0         
-                    instructionsArray[6]                               STRING[25]    0 "                                            '244 57 1,235 57 0,'"    1    9   26    1    0    0         
-                    instructionsArray[7]                               STRING[25]    0 "                                             '106 57 1,97 57 0,'"    1    9   26    1    0    0         
-                    instructionsArray[8]                               STRING[25]    0 "                                             '99 58 1,108 58 0,'"    1    9   26    1    0    0         
-                    instructionsArray[9]                               STRING[25]    0 "                                            '235 58 1,244 58 0,'"    1    9   26    1    0    0         
-                   instructionsArray[10]                               STRING[25]    0 "                                            '243 59 1,232 59 0,'"    1    9   26    1    0    0         
-                   instructionsArray[11]                               STRING[25]    0 "                                             '109 59 1,98 59 0,'"    1    9   26    1    0    0         
+                    instructionsArray[0]                               STRING[25]    0 "                                              '183 1 1,167 1 0,'"    1    9   26    1    0    0         
+                    instructionsArray[1]                               STRING[25]    0 "                                              '160 1 1,151 1 0,'"    1    9   26    1    0    0         
+                    instructionsArray[2]                               STRING[25]    0 "                                               '122 1 1,77 1 0,'"    1    9   26    1    0    0         
+                    instructionsArray[3]                               STRING[25]    0 "                                                '75 1 1,62 1 0,'"    1    9   26    1    0    0         
+                    instructionsArray[4]                               STRING[25]    0 "                                                '59 1 1,55 1 0,'"    1    9   26    1    0    0         
+                    instructionsArray[5]                               STRING[25]    0 "                                                '15 1 1,16 2 0,'"    1    9   26    1    0    0         
+                    instructionsArray[6]                               STRING[25]    0 "                                               '56 2 1,124 2 0,'"    1    9   26    1    0    0         
+                    instructionsArray[7]                               STRING[25]    0 "                                              '152 2 1,161 2 0,'"    1    9   26    1    0    0         
+                    instructionsArray[8]                               STRING[25]    0 "                                              '167 2 1,185 2 0,'"    1    9   26    1    0    0         
+                    instructionsArray[9]                               STRING[25]    0 "                                              '184 3 1,166 3 0,'"    1    9   26    1    0    0         
+                   instructionsArray[10]                               STRING[25]    0 "                                              '160 3 1,150 3 0,'"    1    9   26    1    0    0         
+                   instructionsArray[11]                               STRING[25]    0 "                                               '126 3 1,53 3 0,'"    1    9   26    1    0    0         
                    instructionsArray[12]                               STRING[25]    0 "                                                               *"    1    9   26    1    0    0         
                    instructionsArray[13]                               STRING[25]    0 "                                                               *"    1    9   26    1    0    0         
                    instructionsArray[14]                               STRING[25]    0 "                                                               *"    1    9   26    1    0    0         

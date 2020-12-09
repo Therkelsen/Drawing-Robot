@@ -143,203 +143,6 @@ PROGRAM _CYCLIC
 					ROBOSTATE := RESET;
 				END_IF	
 			END_IF
-			
-		MANUAL:
-			IF (killswitch <> TRUE) THEN
-				IF (xStop <> TRUE OR xCounter > 0) THEN
-					IF (xPosMove = TRUE) THEN
-						IF (xPosMove = xNegMove) THEN
-							xPosMove := FALSE;
-						END_IF
-						xDirection := TRUE;
-						xStep := NOT xStep;
-						xCounter := xCounter + 1;
-					END_IF
-				
-					IF (xNegMove = TRUE) THEN
-						IF (xPosMove = xNegMove) THEN
-							xNegMove := FALSE;
-						END_IF
-						xDirection := FALSE;
-						xStep := NOT xStep;
-						xCounter := xCounter - 1;
-					END_IF
-				END_IF
-				
-				IF (yStop <> TRUE OR yCounter > 0) THEN
-					IF (yPosMove = TRUE) THEN
-						IF (yPosMove = yNegMove) THEN
-							yPosMove := FALSE;
-						END_IF
-						yDirection := TRUE;
-						yStep := NOT yStep;
-						yCounter := yCounter + 1;
-					END_IF
-				
-					IF (yNegMove = TRUE) THEN
-						IF (yPosMove = yNegMove) THEN
-							yNegMove := FALSE;
-						END_IF
-						yDirection := FALSE;
-						yStep := NOT yStep;
-						yCounter := yCounter - 1;
-					END_IF
-				END_IF
-				
-				IF (zCounter >= 0 AND zCounter <= 7500) THEN
-					IF (zPosMove = TRUE) THEN
-						IF (zPosMove = zNegMove) THEN
-							zPosMove := FALSE;
-						END_IF
-						zDirection := TRUE;
-						zStep := NOT zStep;
-						zCounter := zCounter - 1;
-					END_IF
-				
-					IF (zNegMove = TRUE) THEN
-						IF (zPosMove = zNegMove) THEN
-							zNegMove := FALSE;
-						END_IF
-						zDirection := FALSE;
-						zStep := NOT zStep;
-						zCounter := zCounter + 1;
-					END_IF
-				END_IF
-			END_IF
-		
-		DRAW:
-			IF (killswitch <> TRUE) OR (counter < instSize) THEN
-				IF (xStop <> TRUE) THEN
-					IF (xArray[counter] * scale > xCounter) THEN
-						xNext := FALSE;
-						xDirection := TRUE;
-						xStep := NOT xStep;
-						xCounter := xCounter + 1;
-					ELSIF (xArray[counter] * scale < xCounter) THEN
-						xNext := FALSE;
-						xDirection := FALSE;
-						xStep := NOT xStep;
-						xCounter := xCounter - 1; 
-					ELSIF (xArray[counter] * scale = xCounter) THEN
-						ROBOSTATE := PENCILDOWN;
-					END_IF
-				END_IF
-			END_IF
-			
-		PENCILDOWN: 
-			IF (killswitch <> TRUE) THEN
-				IF (bStop <> TRUE) THEN
-					zDirection := TRUE;
-					zStep := NOT zStep;
-					zCounter := zCounter - 1;
-				ELSE
-					counter := counter + 1;
-					ROBOSTATE := DRAW2;
-				END_IF			
-			END_IF
-			
-		DRAW2:
-			IF (killswitch <> TRUE) THEN
-				IF (xStop <> TRUE) THEN
-					IF (xArray[counter] * scale > xCounter) THEN
-						xDirection := TRUE;
-						xStep := NOT xStep;
-						xCounter := xCounter + 1;
-					ELSIF (xArray[counter] * scale < xCounter) THEN
-						xDirection := FALSE;
-						xStep := NOT xStep;
-						xCounter := xCounter - 1; 
-					ELSIF (xArray[counter] * scale = xCounter) THEN
-						ROBOSTATE := PENCILUP;
-					END_IF
-				END_IF
-			END_IF
-			
-		PENCILUP: 
-			IF (killswitch <> TRUE) THEN
-				IF (zCounter < 500) THEN
-					zDirection := FALSE;
-					zStep := NOT zStep;
-					zCounter := zCounter + 1;
-				ELSIF (zCounter = 500) THEN
-					counter := counter + 1;
-					ROBOSTATE := CHECKLINE;
-				END_IF
-			END_IF
-		
-		CHECKLINE:
-			IF (killswitch <> TRUE) THEN
-				IF (yArray[counter + 2] = yArray[counter]) THEN
-					ROBOSTATE := DRAW;
-				ELSE
-					ROBOSTATE := NEXTLINE;
-				END_IF
-			END_IF
-			
-		NEXTLINE:
-			IF (killswitch <> TRUE) THEN
-				IF (yStop <> TRUE) THEN
-					IF (yCounter = (yArray[counter + 1] * scale)) THEN
-						IF (hasBeenSharpened = FALSE) AND (counter MOD(100) = 0) THEN
-							ROBOSTATE := SHARPEN;
-						ELSE
-							ROBOSTATE := DRAW;
-						END_IF
-					ELSIF (yCounter < (yArray[counter + 1] * scale)) THEN
-						yDirection := TRUE;
-						yStep := NOT yStep;
-						yCounter := yCounter + 1;
-					END_IF
-				END_IF
-			END_IF
-			
-		
-		SHARPEN:
-			IF (killswitch <> TRUE) THEN
-				IF (zCounter < 3500 AND zStop <> TRUE AND xStop <> TRUE) THEN
-					zDirection := FALSE;
-					zStep := NOT zStep;
-					zCounter := zCounter + 1;
-				ELSIF (zCounter >= 3500 AND xStop <> TRUE AND zStop <> TRUE) THEN
-					xDirection := FALSE;
-					xStep := NOT xStep;
-					xCounter := xCounter - 1;
-				ELSIF (xStop = TRUE AND zStop <> TRUE) THEN
-					IF (hasBeenSharpened <> TRUE AND zCounter > 1450) THEN
-						sharpener := TRUE;
-						zDirection := TRUE;
-						zStep := NOT zStep;
-						zCounter := zCounter - 1;
-					ELSIF (zCounter = 1450) THEN
-						timer(IN := NOT timer.Q, PT := T#2500ms);
-						hasBeenSharpened := TRUE;
-					END_IF
-					IF (zCounter < 3500 AND hasBeenSharpened = TRUE AND timer.Q) THEN
-						sharpener := FALSE;
-						zDirection := FALSE;
-						zStep := NOT zStep;
-						zCounter := zCounter + 1;
-					ELSIF (zCounter >= 3500 AND hasBeenSharpened = TRUE) THEN
-						ROBOSTATE := BACK;
-					END_IF
-				END_IF
-			END_IF
-			
-		BACK:
-			IF (killswitch <> TRUE) THEN
-				IF (xArray[counter] * scale > xCounter AND hasBeenSharpened = TRUE) THEN
-					xDirection := TRUE;
-					xStep := NOT xStep;
-					xCounter := xCounter + 1;
-				ELSIF (xArray[counter] * scale = xCounter AND bStop <> TRUE AND hasBeenSharpened = TRUE) THEN
-					zDirection := TRUE;
-					zStep := NOT zStep;
-					zCounter := zCounter - 1;
-				ELSIF (xArray[counter] * scale = xCounter AND bStop = TRUE AND hasBeenSharpened = TRUE) THEN
-					ROBOSTATE := DRAW;
-				END_IF
-			END_IF
-			
 		RESET: // ASSUMES XCALIB AND YCALIB AS CONTAINING MAX STEPS ON X AND Y AXIS AS IT USES THESE TO FIND ORIGO
 			sharpener := FALSE;
 			IF (killswitch <> TRUE) THEN
@@ -399,10 +202,159 @@ PROGRAM _CYCLIC
 						zPosMove := FALSE;
 						xCounter := 0;
 						yCounter := 0;
-						ROBOSTATE := MANUAL;
+						ROBOSTATE := DRAW;
 					END_IF
 				END_IF
 			END_IF
+		
+		DRAW:
+			IF (killswitch <> TRUE) THEN
+				IF (counter < (instSize * 2)) THEN
+					IF (xStop <> TRUE) THEN
+						IF (xArray[counter] * scale > xCounter) THEN
+							xNext := FALSE;
+							xDirection := TRUE;
+							xStep := NOT xStep;
+							xCounter := xCounter + 1;
+						ELSIF (xArray[counter] * scale < xCounter) THEN
+							xNext := FALSE;
+							xDirection := FALSE;
+							xStep := NOT xStep;
+							xCounter := xCounter - 1; 
+						ELSIF (xArray[counter] * scale = xCounter) THEN
+							ROBOSTATE := PENCILDOWN;
+						END_IF
+					END_IF
+				ELSE 
+					ROBOSTATE := STOP;
+				END_IF	
+			END_IF
+			
+		PENCILDOWN: 
+			IF (killswitch <> TRUE) THEN
+				IF (bStop <> TRUE) THEN
+					zDirection := TRUE;
+					zStep := NOT zStep;
+					zCounter := zCounter - 1;
+				ELSE
+					counter := counter + 1;
+					zCounter := 0;
+					ROBOSTATE := DRAW2;
+				END_IF			
+			END_IF
+			
+		DRAW2:
+			IF (killswitch <> TRUE) THEN
+				IF (xStop <> TRUE) THEN
+					IF (xArray[counter] * scale > xCounter) THEN
+						xDirection := TRUE;
+						xStep := NOT xStep;
+						xCounter := xCounter + 1;
+					ELSIF (xArray[counter] * scale < xCounter) THEN
+						xDirection := FALSE;
+						xStep := NOT xStep;
+						xCounter := xCounter - 1; 
+					ELSIF (xArray[counter] * scale = xCounter) THEN
+						ROBOSTATE := PENCILUP;
+					END_IF
+				END_IF
+			END_IF
+			
+		PENCILUP: 
+			IF (killswitch <> TRUE) THEN
+				IF (zCounter < 300) THEN
+					zDirection := FALSE;
+					zStep := NOT zStep;
+					zCounter := zCounter + 1;
+				ELSIF (zCounter = 300 OR zStop = TRUE) THEN
+					counter := counter + 1;
+					ROBOSTATE := CHECKLINE;
+				END_IF
+			END_IF
+		
+		CHECKLINE:
+			IF (killswitch <> TRUE) THEN
+				IF (yArray[counter + 2] = yArray[counter]) THEN
+					IF (hasBeenSharpened = FALSE) AND (counter MOD(100) = 0) THEN
+						ROBOSTATE := SHARPEN;
+					ELSE
+						ROBOSTATE := DRAW;
+					END_IF
+				ELSE
+					ROBOSTATE := NEXTLINE;
+				END_IF
+			END_IF
+			
+		NEXTLINE:
+			IF (killswitch <> TRUE) THEN
+				IF (yStop <> TRUE) THEN
+					IF (yCounter = (yArray[counter + 1] * scale)) THEN
+						ROBOSTATE := DRAW;
+					ELSIF (yCounter < (yArray[counter + 1] * scale)) THEN
+						yDirection := TRUE;
+						yStep := NOT yStep;
+						yCounter := yCounter + 1;
+					END_IF
+				END_IF
+			END_IF
+			
+		
+		SHARPEN:
+			IF (killswitch <> TRUE) THEN
+				IF ((zCounter < 3700) AND (zStop <> TRUE) AND (xStop <> TRUE)) THEN
+					zDirection := FALSE;
+					zStep := NOT zStep;
+					zCounter := zCounter + 1;
+				ELSIF ((zCounter >= 3700) AND (xStop <> TRUE) AND (zStop <> TRUE)) THEN
+					xDirection := FALSE;
+					xStep := NOT xStep;
+					xCounter := xCounter - 1;
+				ELSIF ((xStop = TRUE) AND (zStop <> TRUE)) THEN
+					IF ((hasBeenSharpened <> TRUE) AND (zCounter > 1650)) THEN
+						sharpener := TRUE;
+						zDirection := TRUE;
+						zStep := NOT zStep;
+						zCounter := zCounter - 1;
+					ELSIF (zCounter = 1650) THEN
+						timer(IN := NOT timer.Q, PT := T#2500ms);
+						hasBeenSharpened := TRUE;
+					END_IF
+					IF ((zCounter < 3700) AND (hasBeenSharpened = TRUE) AND (timer.Q)) THEN
+						sharpener := FALSE;
+						zDirection := FALSE;
+						zStep := NOT zStep;
+						zCounter := zCounter + 1;
+					ELSIF ((zCounter >= 3700) AND (hasBeenSharpened = TRUE)) THEN
+						ROBOSTATE := BACK;
+					END_IF
+				END_IF
+			END_IF
+			
+		BACK:
+			IF (killswitch <> TRUE) THEN
+				IF ((xArray[counter] * scale > xCounter) AND (hasBeenSharpened = TRUE)) THEN
+					xDirection := TRUE;
+					xStep := NOT xStep;
+					xCounter := xCounter + 1;
+				ELSIF ((xArray[counter] * scale = xCounter) AND (bStop <> TRUE) AND (hasBeenSharpened = TRUE)) THEN
+					zDirection := TRUE;
+					zStep := NOT zStep;
+					zCounter := zCounter - 1;
+				ELSIF ((xArray[counter] * scale = xCounter) AND (bStop = TRUE) AND (hasBeenSharpened = TRUE)) THEN
+					ROBOSTATE := DRAW;
+				END_IF
+			END_IF
+		
+		STOP:
+			IF (killswitch <> TRUE) THEN
+				IF (zCounter < 500) THEN
+					zDirection := FALSE;
+					zStep := NOT zStep;
+					zCounter := zCounter + 1;
+				ELSIF (zCounter = 500) THEN
+				END_IF
+			END_IF
+		
 	END_CASE
 END_PROGRAM
 

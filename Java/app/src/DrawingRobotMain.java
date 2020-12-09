@@ -15,7 +15,7 @@ public class DrawingRobotMain {
         int port = 12345;
 
         //  Initialize variables for image processing
-        String imagePath = "Java/Assets/danny_fullsize.jpg";
+        String imagePath = "Java/Assets/danny.jpg";
 
         int blackOrWhiteThreshold = 50;
 
@@ -53,7 +53,7 @@ public class DrawingRobotMain {
         int x = 0;
         for (int i = 0; i < dr.inst.size(); i++) {
             if (i % 2 != 0) {
-                System.out.print("Sending data : ");
+                System.out.print("Sending data [" + x + "] of [" + dr.inst.size()/2 + "] | [" + String.format("%.2f", ((float)x/(float)dr.inst.size()/2*100)) + "%] done | Data: ");
                 dr.instructions = dr.instructions.concat(String.valueOf(dr.inst.get(i)));
                 rc.write(dr.instructions);
                 System.out.println(dr.instructions);
