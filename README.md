@@ -18,3 +18,4 @@
 The resources available from the beginning is a pre-built 3-axis CNC style robot, equipped with 3 NEMA step-motors, as well as a soft-leaded pencil and an electronic pencil sharpener, all controlled using a X20CP1382 Programmable Logic Controller, connected to three ST330-V3 driver boards to establish a connection between the PLC and the step-motors. 
 Other than that, four pre-programmed Java classes are made available to every group, three of which are used for image- and pixel manipulation, and the last is used for communicating through a socket connection.
 </div>
+
