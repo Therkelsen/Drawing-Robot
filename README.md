@@ -5,7 +5,7 @@
 # dRobTek Group 8 - Semester project 1
 <br>
 
-![Drawing Robot GIF](Java/Assets/timelapse.gif)
+![Drawing Robot GIF](https://i.imgur.com/2OeoSvV.gif)
 <br>
 
 ## Introduction
