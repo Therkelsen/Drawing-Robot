@@ -5,7 +5,7 @@
 # dRobTek Group 8 - Semester project 1
 <br>
 
-![Drawing Robot GIF](https://thumbs.gfycat.com/SadSilentDamselfly-size_restricted.gif)
+![Drawing Robot GIF](https://thumbs.gfycat.com/SadSilentDamselfly-size_restricted.gif =250x)
 <br>
 
 ## Introduction
