@@ -1,5 +1,5 @@
 # Drawing Robot
-<p align="center"> <img src="Java/Assets/SDU_BLACK_RGB_png.png" alt="SDU" title="SDU" width="80%" height="80%"/> </p>
+<p align="center"> <img src="Java/Assets/SDU_BLACK_RGB.png" alt="SDU" title="SDU" width="80%" height="80%"/> </p>
 <br>
 
 # dRobTek Group 8 - Semester project 1
