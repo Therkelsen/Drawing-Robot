@@ -5,16 +5,20 @@
 # dRobTek Group 8 - Semester project 1
 <br>
 
-<img src="https://thumbs.gfycat.com/FrenchSnivelingLeopard-mobile.gif" alt="Drawing Robot GIF" width="800"/>
+<img src="Java/Assets/timelapse.gif" alt="Drawing Robot GIF" width="800"/>
 <br>
 
 ## Introduction
 <div style="text-align: justify">
 The fourth industrial revolution, as many in our time choose to call it, is constant development, and it is observed how several of the industry's as well as everyday processes are automated. One of the many advantages of automation is of course that the mistakes that humans make by the manual process, is eliminated. With this in mind, nurobots are designed and built for all sorts of different purposes. Even a task as simple as drawing a drawing can be automated to avoid the most important errors and thus create an accurate reproduction of a given motive.
-  
+</div> 
+<br>
+
+<div style="text-align: justify">
 This is exactly what the following report deals with: Programming a 3-axis drawing robot , which can scan any digital image, analyze each pixel, and reproduce the image in pencil on paper. The first part of the report describes first and foremost the physical elements of the robot, and in addition the software's 3 sub-elements - the java, socket and PLC programs - which are relevant to understand in connection with the robot's function. and finally a summary conclusion and discussion, which summarizes the report's most important points and results, advantages / disadvantages, and suggestions for how individual elements or problems could be optimized.
 </div> 
 <br>
+
 
 ## Resources
 <div style="text-align: justify">
