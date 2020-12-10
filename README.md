@@ -15,8 +15,7 @@
 
 ## Abstract
 <div style="text-align: justify">
-First of all, <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO">this report</a> will introduce the theory behind creating and understanding a 3-axis drawing robot. Second of all it will additionally be shown how one might program a PLC to draw pictures processed and instructionalized from a Java program through a socket using TCP/IP. 
-Furthermore, grayscaling will be introduced as the main way of taking an image and turn it into coordinates which the PLC can then convert into an asthoningly BREATHTAKING drawing, using a pencil and some paper.
+First of all, <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO">this report</a> will introduce the theory behind creating and understanding a 3-axis drawing robot. Second of all it will additionally be shown how one might program a PLC to draw pictures processed and instructionalized from a Java program through a socket using TCP/IP. Furthermore, grayscaling will be introduced as the main way of taking an image and turn it into coordinates which the PLC can then convert into an asthoningly BREATHTAKING drawing, using a pencil and some paper.
   
 In the Java part, Java as a language and the basic knowledge around it, is described, thereafter going into detail about the different needs and requirements the project has for Java during the course.
 The TCP/IP part describes the communication between the different machines on an internet and how it was achieved. PLC as well as Structured Text will afterwards be introduced and explained, especially how they were a key part in the final solution of the project.
