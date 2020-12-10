@@ -31,3 +31,4 @@ Despite various challenges, such as the choice of the method of drawing, obstacl
 
 Finally, it can finally be concluded that with this project, a method that is - while unoptimal - then at least functional and usable, has been successfully developed for processing and converting a digital image into a physical drawing based on programming a 3-axis CNC-type robot.
 </div>
+
