@@ -1,7 +1,0 @@
-VAR
-	data1 : STRING[1000];
-	data2 : STRING[1000];
-	activeData : USINT;
-	readyForData : BOOL;
-	receivedData : BOOL;
-END_VAR

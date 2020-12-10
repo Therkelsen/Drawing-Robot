@@ -4,4 +4,3 @@
 *.fun linguist-vendored=false
 *.h linguist-vendored=false
 *.st linguist-language=Pascal
-*.gif filter=lfs diff=lfs merge=lfs -text
