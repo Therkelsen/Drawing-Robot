@@ -24,4 +24,13 @@ The TCP/IP part describes the communication between the different machines on an
 The report also contains a chapter on logical gates how they work, what they are, and how to utilize a statemachine to reach the final product.
 At last it will be discussed how this solution to the problem could have been improved and the thoughts behind some of the choices made, with a conclusion of the project course, at the end of the report.
 </div>
+<br>
 
+## Abstract
+<div style="text-align: justify">
+The socket and TCP/IP communication has proven to be crucial for the function of the robot, as this element is vital for the robot's ability to draw the physical copy of the digital image. The PLC part and the Java part are also extremely essential, but these were found to be more optimization-friendly in the form that improvements or changes could be implemented, whereby an increase in efficiency in, for example, the Java pixel analysis and the quality of the drawing could be achieved.
+
+Despite various challenges, such as the choice of the method of decidedly drawing, obstacles such as limitation of the PLC's memory and communication between Java and PLC, the drawing robot has been successfully brought to life through programming. Using Java, it became possible to upload and load information from a digital image and with image processing using pixel analysis and grayscale, after which x, y, z coordinate sets are further utilized by the drawing robot to draw the final physical image.
+
+Finally, it can finally be concluded that with this project, a - if not optimal - then at least functional and usable method has been successfully developed for processing and converting a digital image into a physical drawing based on programming a 3-axis CNC-type robot.
+</div>
