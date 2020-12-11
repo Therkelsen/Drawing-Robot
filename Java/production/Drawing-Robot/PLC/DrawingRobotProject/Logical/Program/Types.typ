@@ -1,6 +1,6 @@
 
 TYPE
-	ROBOSTATE2 : 
+	ROBOTSTATE : 
 		(
 		INIT,
 		READY,

@@ -27,6 +27,8 @@
     <Parameter ID="ConfigurationID" Value="DrawingRobotProject_Config1" />
     <Parameter ID="SystemTick" Value="1000" />
     <Parameter ID="TaskClassIdleTime" Value="1000" />
+    <Parameter ID="Cyclic1Duration" Value="1000" />
+    <Parameter ID="Cyclic1Tolerance" Value="1000" />
     <Parameter ID="Cyclic2Duration" Value="2000" />
     <Parameter ID="Cyclic2Tolerance" Value="2000" />
     <Parameter ID="Cyclic3Duration" Value="10000" />

@@ -1,24 +1,24 @@
-PLC/PLC_base3/Temp/**
-PLC/PLC_base3/Binaries/**
-PLC/PLC_base3/Diagnosis/**
-PLC/PLC_base3/Logical/Visualization/HTML/bower_components/**
-PLC/PLC_base3/Logical/Visualization/HTML/node_modules/**
-PLC/PLC_base3/Logical/Visualization/HTML/.sass-cache/**
-PLC/PLC_base3/Logical/Visualization/HTML/.tmp/**
-PLC/PLC_base3/Logical/Visualization/HTML/struct/bower_components/**
-PLC/PLC_base3/Logical/Visualization/HTML/struct/node_modules/**
-PLC/PLC_base3/Logical/Visualization/HTML/struct/dist/**
-PLC/PLC_base3/Logical/Visualization/HTML/struct/.sass-cache/**
-PLC/PLC_base3/Logical/Visualization/HTML/struct/.tmp/**
-PLC/PLC_base3/Logical/Visualization/build.typ
+PLC/DrawingRobotProject/Temp/**
+PLC/DrawingRobotProject/Binaries/**
+PLC/DrawingRobotProject/Diagnosis/**
+PLC/DrawingRobotProject/Logical/Visualization/HTML/bower_components/**
+PLC/DrawingRobotProject/Logical/Visualization/HTML/node_modules/**
+PLC/DrawingRobotProject/Logical/Visualization/HTML/.sass-cache/**
+PLC/DrawingRobotProject/Logical/Visualization/HTML/.tmp/**
+PLC/DrawingRobotProject/Logical/Visualization/HTML/struct/bower_components/**
+PLC/DrawingRobotProject/Logical/Visualization/HTML/struct/node_modules/**
+PLC/DrawingRobotProject/Logical/Visualization/HTML/struct/dist/**
+PLC/DrawingRobotProject/Logical/Visualization/HTML/struct/.sass-cache/**
+PLC/DrawingRobotProject/Logical/Visualization/HTML/struct/.tmp/**
+PLC/DrawingRobotProject/Logical/Visualization/build.typ
 *.orig
 *.set
 *.isopen
-PLC/PLC_base3/Logical/Revision.var
-PLC/PLC_base3/Logical/Visualization/visServ/build.typ
-PLC/PLC_base3/Logical/Programs/FileHandling/MachineConfiguration/machineConfiguration/build.typ
-PLC/PLC_base3/Physical
-PLC/PLC_base3/Logical/Libraries/**
+PLC/DrawingRobotProject/Logical/Revision.var
+PLC/DrawingRobotProject/Logical/Visualization/visServ/build.typ
+PLC/DrawingRobotProject/Logical/Programs/FileHandling/MachineConfiguration/machineConfiguration/build.typ
+PLC/DrawingRobotProject/Physical
+PLC/DrawingRobotProject/Logical/Libraries/**
 
 DrawingRobotApp/out/production/app/com/company/DrawingRobot.class
 DrawingRobotApp/out/production/app/com/company/DrawingRobotMain.class
@@ -173,3 +173,5 @@ fabric.properties
 .idea/codestream.xml
 
 # End of https://www.toptal.com/developers/gitignore/api/automationstudio,intellij
+
+Java/production/Drawing-Robot/production/**

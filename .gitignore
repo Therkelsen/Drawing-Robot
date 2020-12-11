@@ -173,3 +173,5 @@ fabric.properties
 .idea/codestream.xml
 
 # End of https://www.toptal.com/developers/gitignore/api/automationstudio,intellij
+
+Java/production/Drawing-Robot/production/**
