@@ -174,4 +174,4 @@ fabric.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/automationstudio,intellij
 
-Java/production/Drawing-Robot/production/**
+Java/production/Drawing-Robot/PLC/DrawingRobotProject/**
