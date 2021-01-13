@@ -15,9 +15,9 @@ public class DrawingRobotMain {
         int port = 12345;
 
         //  Initialize variables for image processing
-        String imagePath = "Java/Assets/dickbutt.png";
+        String imagePath = "Java/Assets/Untitled4.png";
 
-        int blackOrWhiteThreshold = 70;
+        int blackOrWhiteThreshold = 80;
 
         System.out.println("Connecting to Drawing Robot");
 
@@ -49,7 +49,7 @@ public class DrawingRobotMain {
         System.out.println("Image processing done");
         System.out.println("Transferring instructions: ");
         Thread.sleep(2500);
-        //robcom.write("Number of pairs of coordinate sets: " + imgpro.inst.size());
+
         int x = 1;
         for (int i = 0; i < imgpro.inst.size(); i++) {
             if (i % 2 != 0) {

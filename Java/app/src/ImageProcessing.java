@@ -1,6 +1,7 @@
 
-package src;//  Importing external classes needed
+package src;
 
+//  Importing external classes needed
 import java.awt.Color;
 import java.util.ArrayList;
 
@@ -20,16 +21,17 @@ public class ImageProcessing {
     Picture image;
 
     //  Initialize variables for storing/sending instructions
-    ArrayList<String> inst = new ArrayList<>();
+    ArrayList<String> inst;
     String instructions = "";
 
     public ImageProcessing(String path, int threshold){
         this.image = new Picture(path);
         this.threshold = threshold;
+        this.inst = new ArrayList<>();
     }
 
     public void convertImage(int col, int row) {
-        // Convert image to grayscale, then convert to black/white (no shading)
+        // Convert pixel to grayscale, then convert to black/white (no shading)
         image.set(col, row, Luminance.toGray(image.get(col, row)));
         grayVal = image.get(col, row).getRed();
 
@@ -44,7 +46,7 @@ public class ImageProcessing {
     }
 
     public void processImage(int col, int row) {
-        // If the intensity of gray is higher than the set limit
+        // If the intensity of gray on the pixel is higher than the set limit
         // Pencil down (Draw), if not, Pencil up (Stop drawing)
         draw = (grayVal < threshold) ? 1 : 0;
 
