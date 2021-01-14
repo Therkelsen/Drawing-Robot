@@ -1,5 +1,5 @@
 
-package src;
+package app.src;
 
 public class DrawingRobotMain {
     public static void main(String[] args) throws InterruptedException {
@@ -53,7 +53,9 @@ public class DrawingRobotMain {
         int x = 1;
         for (int i = 0; i < imgpro.inst.size(); i++) {
             if (i % 2 != 0) {
-                System.out.print("Sending data [" + x + "] of [" + imgpro.inst.size()/2 + "] | [" + String.format("%.2f", (2*((float)x/(float)imgpro.inst.size()*100))) + "%] done | Data: ");
+                System.out.print("Sending data [" + x + "] of [" + imgpro.inst.size()/2 + "] | ["
+                        + String.format("%.2f", (2*((float)x/(float)imgpro.inst.size()*100)))
+                        + "%] done | Data: ");
                 imgpro.instructions = imgpro.instructions.concat(String.valueOf(imgpro.inst.get(i)));
                 robcom.write(imgpro.instructions);
                 System.out.println(imgpro.instructions);

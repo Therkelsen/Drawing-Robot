@@ -1,5 +1,5 @@
 
-package src;
+package app.src;
 
 //  Importing external classes needed
 import java.awt.Color;
