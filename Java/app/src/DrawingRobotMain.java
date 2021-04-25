@@ -17,7 +17,7 @@ public class DrawingRobotMain {
 
         //  Initialize variables for image processing
         //  Set the image file path (Relative paths work)
-        String imagePath = "Assets/danny_fullsize.jpg";
+        String imagePath = "Assets/danny.jpg";
 
         //  Set the threshold for black/white rounding
         //  Differs from image to image (Experiment with it)
@@ -54,7 +54,6 @@ public class DrawingRobotMain {
                     imgpro.processImage(col, row);
                 }
             }
-            Thread.sleep(25);
         }
         System.out.println("Image processing done\n");
 
@@ -86,6 +85,6 @@ public class DrawingRobotMain {
             System.out.println("Program done");
             System.out.println("Exiting program");
         }
-        //System.exit(0);
+        System.exit(0);
     }
 }
