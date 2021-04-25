@@ -1,4 +1,4 @@
-package app.src;/*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -28,6 +28,8 @@ package app.src;/*
  *     for performance (to avoid creating of Color objects when important)?
  *
  ******************************************************************************/
+
+package src;
 
 import java.awt.Color;
 import java.awt.FileDialog;

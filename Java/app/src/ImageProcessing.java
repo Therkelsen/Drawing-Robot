@@ -1,5 +1,5 @@
 
-package app.src;
+package src;
 
 //  Importing external classes needed
 import java.awt.Color;
@@ -25,7 +25,14 @@ public class ImageProcessing {
     String instructions = "";
 
     public ImageProcessing(String path, int threshold){
-        this.image = new Picture(path);
+        try {
+            this.image = new Picture(path);
+        } catch (IllegalArgumentException i) {
+            System.out.println("ERROR: " + i);
+            System.out.println("Path, name, or extension may be incorrect");
+            System.out.println("Exiting program");
+            System.exit(1);
+        }
         this.threshold = threshold;
         this.inst = new ArrayList<>();
     }
@@ -52,14 +59,8 @@ public class ImageProcessing {
 
         //  Only send an instruction if draw is different from prevDraw
         //  (Image goes from black to white, or vice versa
-        String s;
         if (draw != prevDraw) {
-            if (draw == 1) {
-                s = (col + 1) + " " + (row + 1) + " " + draw + ",";
-            } else {
-                s = (col + 1) + " " + (row + 1) + " " + draw + ",";
-            }
-            inst.add(s);
+            inst.add((col + 1) + " " + (row + 1) + " " + draw + ",");
         }
         prevDraw = draw;
     }
